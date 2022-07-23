@@ -1,0 +1,640 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="相信很多小伙伴想看看外面的世界，可惜却没有好的工具，今天就跟大家分享一下如何一次性解决自己的科学上网（fq）问题。 Heroku 是 Salesforce 旗下云服务商，提供方便便捷的各种云服务，如服务器，数据库，监控，计算等等。并且他提供了免费版本，这使得我们这些平时想搞一些小东西的人提供了莫大的便捷，虽然他有时长和宕机的限制，但是对于满足我们日常的科学上网来说已经足够使用了。 我们需要什么？一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022年如何使用免费的HeroKu搭建永久科学上网（fq）环境？免费资源，请勿滥用">
+<meta property="og:url" content="http://example.com/2022/03/20/2022%E5%B9%B4%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%85%8D%E8%B4%B9%E7%9A%84heroku%E6%90%AD%E5%BB%BA%E6%B0%B8%E4%B9%85%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%EF%BC%88fq%EF%BC%89%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="相信很多小伙伴想看看外面的世界，可惜却没有好的工具，今天就跟大家分享一下如何一次性解决自己的科学上网（fq）问题。 Heroku 是 Salesforce 旗下云服务商，提供方便便捷的各种云服务，如服务器，数据库，监控，计算等等。并且他提供了免费版本，这使得我们这些平时想搞一些小东西的人提供了莫大的便捷，虽然他有时长和宕机的限制，但是对于满足我们日常的科学上网来说已经足够使用了。 我们需要什么？一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blogger.googleusercontent.com/img/a/AVvXsEhazD85I4K3Zfj61Fe2gijICcCZ44DHZSpsm6NYwCiMWQUt37Whf2YF8AiB3yBqMtbGiQIR7uX1dqIpWDOuPPD6EI4CqJ2qHzf2EQrCbM2hWsyajOqwEjtgt7n2jswA-NpwOEpzzv84aJliJA8uSLMKq5E8Y8rgSQCPSwd3wCYrnMmEZat34EgLQp9vNQ=s16000">
+<meta property="og:image" content="https://blogger.googleusercontent.com/img/a/AVvXsEh267cwn7mEzimucQgnaS6hdIAEFt6c1TGLlSB0DNXTi0SdGnVepQeiK7YJhS2JBjSQQaSA2DT7l0KfsPXdphmLiSvBJ_bTzTRjePa-q-MQCYScR1jsxbGphmTu7oL6_1iH5sjNus4w_Asv_y4_mTOcdRXFbloHeUCOX8pB_IVI89KZJn3QYy9ymfk0zA=s16000">
+<meta property="og:image" content="https://blogger.googleusercontent.com/img/a/AVvXsEgKmm54elCoD-AVCnTud5SsXA5_Ht6nFjJLHtVd7c_f9PoR6a66EYlVt-PI1_C7MjnxTIqtzGTc7kGTm9FDANBXiVgpetNDkZxx1tzIRZYcIFJ9TvuSOPpq3GhRWQ1mOOqdC8W-wzOKLOjMro0NbY-4tmG1XOoH9UGXRNd3Q9vYfN1boJX3Sny4g6f0eA=s16000">
+<meta property="og:image" content="https://blogger.googleusercontent.com/img/a/AVvXsEhGaRFRqzJU2FFmn7p1RFh9cJS8u2_8vvmXe_amRAWVM1mFuTY_mat1obIp0gVq2DVFq5Uza953uMyZkrX2esqYLt4Vfeq7NwoRerJKxdhf8A_g5dQXcKSDzebgcziFMAZnq0HpvxxsGgRA_DNB-DQtY3AmrMSnFmhNE-zgVOxgsc0UPU_2OGtmzGCFcw=s16000">
+<meta property="og:image" content="https://blogger.googleusercontent.com/img/a/AVvXsEjq3sLVq1O8Cq6DZCcib67PnN7D5yz6p_vxOoTXD9mJv-r0N28_jioCUr2RAIPbkL0vKI_Sh-EhnvjP4JkX_9YhfRo-NCLlpVlHMFIKjmrpYMQNzmljYLRBaM2hOfyIG1NRYEpI5fW0xCWM-P2fXIodCGJwBNybccyYfVfCykACYoR1H3RHbyjb1NVQRg=s16000">
+<meta property="og:image" content="https://blogger.googleusercontent.com/img/a/AVvXsEhnUHxha42GODs_1NAgtF4nfidedLYrFhMkjoK8Q6ARJu2YmVcoyOMZS-2sNXpbetTd_wOgjnvISgdn4cncDY6MX_lfUiCS-KKjuiBqt69cW5-eccVFR1JGoPtEoMxhYKBjO5sZE4_HAs8miOMW7fClS5_7gYpAZBBNxlHmF6i45yqDaNEpSkKL7_o39w=s16000">
+<meta property="article:published_time" content="2022-03-20T09:52:43.000Z">
+<meta property="article:modified_time" content="2022-07-23T12:09:40.624Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blogger.googleusercontent.com/img/a/AVvXsEhazD85I4K3Zfj61Fe2gijICcCZ44DHZSpsm6NYwCiMWQUt37Whf2YF8AiB3yBqMtbGiQIR7uX1dqIpWDOuPPD6EI4CqJ2qHzf2EQrCbM2hWsyajOqwEjtgt7n2jswA-NpwOEpzzv84aJliJA8uSLMKq5E8Y8rgSQCPSwd3wCYrnMmEZat34EgLQp9vNQ=s16000">
+  
+  
+  
+  <title>2022年如何使用免费的HeroKu搭建永久科学上网（fq）环境？免费资源，请勿滥用 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="2022年如何使用免费的HeroKu搭建永久科学上网（fq）环境？免费资源，请勿滥用"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-03-20 17:52" pubdate>
+          2022年3月20日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          17 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">2022年如何使用免费的HeroKu搭建永久科学上网（fq）环境？免费资源，请勿滥用</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>相信很多小伙伴想看看外面的世界，可惜却没有好的工具，今天就跟大家分享一下如何一次性解决自己的科学上网（fq）问题。</p>
+<p>Heroku 是 Salesforce 旗下云服务商，提供方便便捷的各种云服务，如服务器，数据库，监控，计算等等。并且他提供了免费版本，这使得我们这些平时想搞一些小东西的人提供了莫大的便捷，虽然他有时长和宕机的限制，但是对于满足我们日常的科学上网来说已经足够使用了。</p>
+<h2 id="我们需要什么？"><a href="#我们需要什么？" class="headerlink" title="我们需要什么？"></a>我们需要什么？</h2><p>一个非临时邮箱即可快速上网。Gmail或者Outlook邮箱都可以。</p>
+<h2 id="如何搭建？"><a href="#如何搭建？" class="headerlink" title="如何搭建？"></a>如何搭建？</h2><h3 id="1、注册Heroku账户"><a href="#1、注册Heroku账户" class="headerlink" title="1、注册Heroku账户"></a>1、注册Heroku账户</h3><p>进入 <a target="_blank" rel="noopener" href="https://www.heroku.com/">Heroku 官网</a>，因为 Heroku 是国外的站点，所以需要提前准备好上网工具更快浏览网站，不过能看到这篇博客，相信这对于各位朋友来说都不是什么难事。点击 Sign Up，根据要求填写好信息。这里需要注意的是，国内大部分的邮箱和临时邮箱不支持（即使临时邮箱支持注册heroku，后期也是无法注册GitHub账户，使用临时邮箱注册GitHub会被标记），所以这里提前准备好 gmail 邮箱或者Outlook邮箱进行注册。</p>
+<p>值得注意的是，首次访问Heroku账户，会提示我们是否是意大利人，朋友们可以自行选择。</p>
+<p><a target="_blank" rel="noopener" href="https://blogger.googleusercontent.com/img/a/AVvXsEhazD85I4K3Zfj61Fe2gijICcCZ44DHZSpsm6NYwCiMWQUt37Whf2YF8AiB3yBqMtbGiQIR7uX1dqIpWDOuPPD6EI4CqJ2qHzf2EQrCbM2hWsyajOqwEjtgt7n2jswA-NpwOEpzzv84aJliJA8uSLMKq5E8Y8rgSQCPSwd3wCYrnMmEZat34EgLQp9vNQ=s1280"><img src="https://blogger.googleusercontent.com/img/a/AVvXsEhazD85I4K3Zfj61Fe2gijICcCZ44DHZSpsm6NYwCiMWQUt37Whf2YF8AiB3yBqMtbGiQIR7uX1dqIpWDOuPPD6EI4CqJ2qHzf2EQrCbM2hWsyajOqwEjtgt7n2jswA-NpwOEpzzv84aJliJA8uSLMKq5E8Y8rgSQCPSwd3wCYrnMmEZat34EgLQp9vNQ=s16000" srcset="/img/loading.gif" lazyload></a></p>
+<h3 id="2、注册GitHub账户"><a href="#2、注册GitHub账户" class="headerlink" title="2、注册GitHub账户"></a>2、注册GitHub账户</h3><p>进入 <a target="_blank" rel="noopener" href="https://github.com/">github官网</a>，点击右上角Sign up按钮，根据提示输入相应内容，不认识英文的小伙伴可以使用谷歌翻译一下当前页面，注册时会让我们选择一个漩涡星系，点击Create account，之后到邮箱中查看验证码，输入验证码会让我们填写相关的调查问卷，朋友们根据自身情况进行填写就好。我们选择Github为我们提供的免费计划，点击Continue for free就可以成功注册。</p>
+<p>之后我们在搜索框中搜索 <strong>Heroku v2ray</strong>，然后选择按照时间进行排序，也就是<strong>Recently updated</strong>，我们可以看到最新的github上部署Heroku科学上网的项目，当我们发现今天介绍的仓库项目无法进行部署时，可以选择其他仓库进行部署。</p>
+<p>今天给大家演示的是由<a target="_blank" rel="noopener" href="https://github.com/zizifn/v2ray-heroku">zizifn</a>大佬为我们提供的开源项目，可以直接利用github actions 实现v2ray-heroku的部署，停止，和启动。</p>
+<p><a target="_blank" rel="noopener" href="https://blogger.googleusercontent.com/img/a/AVvXsEh267cwn7mEzimucQgnaS6hdIAEFt6c1TGLlSB0DNXTi0SdGnVepQeiK7YJhS2JBjSQQaSA2DT7l0KfsPXdphmLiSvBJ_bTzTRjePa-q-MQCYScR1jsxbGphmTu7oL6_1iH5sjNus4w_Asv_y4_mTOcdRXFbloHeUCOX8pB_IVI89KZJn3QYy9ymfk0zA"><img src="https://blogger.googleusercontent.com/img/a/AVvXsEh267cwn7mEzimucQgnaS6hdIAEFt6c1TGLlSB0DNXTi0SdGnVepQeiK7YJhS2JBjSQQaSA2DT7l0KfsPXdphmLiSvBJ_bTzTRjePa-q-MQCYScR1jsxbGphmTu7oL6_1iH5sjNus4w_Asv_y4_mTOcdRXFbloHeUCOX8pB_IVI89KZJn3QYy9ymfk0zA=s16000" srcset="/img/loading.gif" lazyload></a></p>
+<h3 id="3、搭建节点"><a href="#3、搭建节点" class="headerlink" title="3、搭建节点"></a>3、搭建节点</h3><p>（1）点击<a target="_blank" rel="noopener" href="https://github.com/zizifn/v2ray-heroku">zizifn大佬仓库</a>右上角的fork，将项目复制到我们自己的github账户下，之后我们可以依次点击Setting→Repository name→Rename更改一下我们项目的名称，因为这个名称太明显了<br>（2）配置Secrets在Actions中依次创建新的仓库密钥。</p>
+<p><a target="_blank" rel="noopener" href="https://blogger.googleusercontent.com/img/a/AVvXsEgKmm54elCoD-AVCnTud5SsXA5_Ht6nFjJLHtVd7c_f9PoR6a66EYlVt-PI1_C7MjnxTIqtzGTc7kGTm9FDANBXiVgpetNDkZxx1tzIRZYcIFJ9TvuSOPpq3GhRWQ1mOOqdC8W-wzOKLOjMro0NbY-4tmG1XOoH9UGXRNd3Q9vYfN1boJX3Sny4g6f0eA"><img src="https://blogger.googleusercontent.com/img/a/AVvXsEgKmm54elCoD-AVCnTud5SsXA5_Ht6nFjJLHtVd7c_f9PoR6a66EYlVt-PI1_C7MjnxTIqtzGTc7kGTm9FDANBXiVgpetNDkZxx1tzIRZYcIFJ9TvuSOPpq3GhRWQ1mOOqdC8W-wzOKLOjMro0NbY-4tmG1XOoH9UGXRNd3Q9vYfN1boJX3Sny4g6f0eA=s16000" srcset="/img/loading.gif" lazyload></a></p>
+<p>APP_NAME自定义（<strong>必须以字母开头</strong>，注意不能与其他app name相同，也就是说你的这个name必须是唯一存在的）<br>EMAIL 哪个邮箱注册的Heroku，直接填写HEROKU_API_KEY 点击Heroku右上角的头像→Account settings→API key→Reveal ，选择复制即可HEROKU_V2RAY_UUID 可以根据仓库说的方法自动生成，也可以使用<a target="_blank" rel="noopener" href="https://www.uuidgenerator.net/">在线网站</a>生成随机UUID。配置完成，我们即可来到Actions中，点击heroku-deploy-stop-start→Run workflow</p>
+<p><a target="_blank" rel="noopener" href="https://blogger.googleusercontent.com/img/a/AVvXsEhGaRFRqzJU2FFmn7p1RFh9cJS8u2_8vvmXe_amRAWVM1mFuTY_mat1obIp0gVq2DVFq5Uza953uMyZkrX2esqYLt4Vfeq7NwoRerJKxdhf8A_g5dQXcKSDzebgcziFMAZnq0HpvxxsGgRA_DNB-DQtY3AmrMSnFmhNE-zgVOxgsc0UPU_2OGtmzGCFcw"><img src="https://blogger.googleusercontent.com/img/a/AVvXsEhGaRFRqzJU2FFmn7p1RFh9cJS8u2_8vvmXe_amRAWVM1mFuTY_mat1obIp0gVq2DVFq5Uza953uMyZkrX2esqYLt4Vfeq7NwoRerJKxdhf8A_g5dQXcKSDzebgcziFMAZnq0HpvxxsGgRA_DNB-DQtY3AmrMSnFmhNE-zgVOxgsc0UPU_2OGtmzGCFcw=s16000" srcset="/img/loading.gif" lazyload></a></p>
+<p>等待1分钟不到就可以部署完成（3）使用Cloudflare进行反代注册<a target="_blank" rel="noopener" href="https://www.cloudflare.com/">Cloudflare</a>非常简单，点击右上角的Sign Up，输入您的电子邮箱地址和密码，点击Create Account，之后到邮箱中验证账户即可成功注册。我们点击Workers→Create a Service→Create Service→Quick edit，复制以下代码到左边的输入框中。</p>
+<p>addEventListener(<br>    “fetch”,event &#x3D;&gt; {<br>        let url&#x3D;new URL(event.request.url);<br>        url.hostname&#x3D;”appname.herokuapp.com”;<br>        let request&#x3D;new Request(url,event.request);<br>        event. respondWith(<br>            fetch(request)<br>        )<br>    }<br>)</p>
+<p>我们需要将appname更改成自己在Secrets中自定义的APP_NAME，点击Save and Deploy即可。（4）使用<a target="_blank" rel="noopener" href="https://github.com/XIU2/CloudflareSpeedTest">优选IP工具</a>筛选最快的IP下载相应版本的压缩包解压即可使用，我的是Windows电脑，下载解压打开软件后会自动测试，筛选出最优IP。（5）配置VLESS节点<br>我们到<a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/releases">v2rayN仓库地址</a>中下载Windows电脑端安装包<br>注意：一定要下载带核心的那个目前最新版是：<strong>v2rayN-Core.zip：</strong><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/releases/download/4.32/v2rayN-Core.zip%E4%B8%8B%E8%BD%BD%E8%A7%A3%E5%8E%8B%E6%89%93%E5%BC%80%EF%BC%8C%E6%88%91%E4%BB%AC%E7%82%B9%E5%87%BB%E6%9C%8D%E5%8A%A1%E5%99%A8%E2%86%92%E6%B7%BB%E5%8A%A0/[VLESS/]%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%89%E7%85%A7%E4%B8%8B%E5%9B%BE%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE%E5%8D%B3%E5%8F%AF">https://github.com/2dust/v2rayN/releases/download/4.32/v2rayN-Core.zip下载解压打开，我们点击服务器→添加\[VLESS\]服务器按照下图进行配置即可</a></p>
+<p><a target="_blank" rel="noopener" href="https://blogger.googleusercontent.com/img/a/AVvXsEjq3sLVq1O8Cq6DZCcib67PnN7D5yz6p_vxOoTXD9mJv-r0N28_jioCUr2RAIPbkL0vKI_Sh-EhnvjP4JkX_9YhfRo-NCLlpVlHMFIKjmrpYMQNzmljYLRBaM2hOfyIG1NRYEpI5fW0xCWM-P2fXIodCGJwBNybccyYfVfCykACYoR1H3RHbyjb1NVQRg"><img src="https://blogger.googleusercontent.com/img/a/AVvXsEjq3sLVq1O8Cq6DZCcib67PnN7D5yz6p_vxOoTXD9mJv-r0N28_jioCUr2RAIPbkL0vKI_Sh-EhnvjP4JkX_9YhfRo-NCLlpVlHMFIKjmrpYMQNzmljYLRBaM2hOfyIG1NRYEpI5fW0xCWM-P2fXIodCGJwBNybccyYfVfCykACYoR1H3RHbyjb1NVQRg=s16000" srcset="/img/loading.gif" lazyload></a></p>
+<p>这样我们就成功搭建了一个免费节点。我们可以到YouTube中试一下他的网速</p>
+<p><a target="_blank" rel="noopener" href="https://blogger.googleusercontent.com/img/a/AVvXsEhnUHxha42GODs_1NAgtF4nfidedLYrFhMkjoK8Q6ARJu2YmVcoyOMZS-2sNXpbetTd_wOgjnvISgdn4cncDY6MX_lfUiCS-KKjuiBqt69cW5-eccVFR1JGoPtEoMxhYKBjO5sZE4_HAs8miOMW7fClS5_7gYpAZBBNxlHmF6i45yqDaNEpSkKL7_o39w"><img src="https://blogger.googleusercontent.com/img/a/AVvXsEhnUHxha42GODs_1NAgtF4nfidedLYrFhMkjoK8Q6ARJu2YmVcoyOMZS-2sNXpbetTd_wOgjnvISgdn4cncDY6MX_lfUiCS-KKjuiBqt69cW5-eccVFR1JGoPtEoMxhYKBjO5sZE4_HAs8miOMW7fClS5_7gYpAZBBNxlHmF6i45yqDaNEpSkKL7_o39w=s16000" srcset="/img/loading.gif" lazyload></a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/ll/" class="category-chain-item">ll</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/ll/heroku/" class="category-chain-item">heroku</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>2022年如何使用免费的HeroKu搭建永久科学上网（fq）环境？免费资源，请勿滥用</div>
+      <div>http://example.com/2022/03/20/2022年如何使用免费的heroku搭建永久科学上网（fq）环境/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年3月20日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/03/20/622/" title="Untitled Post - 25">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Untitled Post - 25</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/03/19/612/" title="Untitled Post - 21">
+                        <span class="hidden-mobile">Untitled Post - 21</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

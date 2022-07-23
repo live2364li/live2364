@@ -1,0 +1,642 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="如何安装主题？管理员在后台「外观」-&gt;「主题」页面点击「添加」按钮，进入添加主题页面点击「上传主题」按钮，选择下载好的主题压缩文件，点击「现在安装」即可上传安装并自动启用主题。 如何设置主题？管理员在启用主题之后，后台左侧菜单栏会在最下面多出一项「主题设置」，点击即可进入主题设置页面。 如何设置图片 Logo？“管理员在后台「主题设置」-&gt;「全站配置」页面，找到「图片 Logo」选项，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="免费wrodpress主题《kratos》操作解析">
+<meta property="og:url" content="http://example.com/2021/02/24/%E5%85%8D%E8%B4%B9wrodpress%E4%B8%BB%E9%A2%98%E3%80%8Akratos%E3%80%8B%E6%93%8D%E4%BD%9C%E8%A7%A3%E6%9E%90/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="如何安装主题？管理员在后台「外观」-&gt;「主题」页面点击「添加」按钮，进入添加主题页面点击「上传主题」按钮，选择下载好的主题压缩文件，点击「现在安装」即可上传安装并自动启用主题。 如何设置主题？管理员在启用主题之后，后台左侧菜单栏会在最下面多出一项「主题设置」，点击即可进入主题设置页面。 如何设置图片 Logo？“管理员在后台「主题设置」-&gt;「全站配置」页面，找到「图片 Logo」选项，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-02-24T08:09:42.000Z">
+<meta property="article:modified_time" content="2022-07-23T12:09:40.296Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>免费wrodpress主题《kratos》操作解析 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="免费wrodpress主题《kratos》操作解析"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-02-24 16:09" pubdate>
+          2021年2月24日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          41 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">免费wrodpress主题《kratos》操作解析</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="如何安装主题？"><a href="#如何安装主题？" class="headerlink" title="如何安装主题？"></a>如何安装主题？</h3><p>管理员在后台「外观」-&gt;「主题」页面点击「添加」按钮，进入添加主题页面点击「上传主题」按钮，选择下载好的主题压缩文件，点击「现在安装」即可上传安装并自动启用主题。</p>
+<h3 id="如何设置主题？"><a href="#如何设置主题？" class="headerlink" title="如何设置主题？"></a>如何设置主题？</h3><p>管理员在启用主题之后，后台左侧菜单栏会在最下面多出一项「主题设置」，点击即可进入主题设置页面。</p>
+<h3 id="如何设置图片-Logo？"><a href="#如何设置图片-Logo？" class="headerlink" title="如何设置图片 Logo？"></a>如何设置图片 Logo？</h3><p>“管理员在后台「主题设置」-&gt;「全站配置」页面，找到「图片 Logo」选项，点击「上传」即可上传站点图片 Logo。提示：上传图片之后，原「站点标题」将不再显示，如果删除图片，将继续显示文字标题。同时，输入框也可以直接输入外链的图片地址。”</p>
+<h3 id="如何设置收藏夹图片？"><a href="#如何设置收藏夹图片？" class="headerlink" title="如何设置收藏夹图片？"></a>如何设置收藏夹图片？</h3><p>管理员在后台「主题设置」-&gt;「全站配置」页面，找到「Favicon 图片」选项，点击「上传」即可上传 Favicon 图片。提示：Favicon 图片是指收藏夹图片，如在 Chrome 中将网站添加到书签，将会以 图片+标题 的形式显示。同时，输入框也可以直接输入外链的图片地址。</p>
+<h3 id="如何改变网站背景颜色？"><a href="#如何改变网站背景颜色？" class="headerlink" title="如何改变网站背景颜色？"></a>如何改变网站背景颜色？</h3><p>管理员在后台「主题设置」-&gt;「全站配置」页面，找到「背景颜色」选项，点击「选择颜色」即可选择或输入颜色代码。提示：背景颜色指除去顶部和底部以及中间内容部分剩下可以看到的背景，默认的颜色为<code>#f5f5f5</code>，如果直接输入颜色，需要输入十六进制颜色代码。</p>
+<h3 id="如何开启网站顶部动效？"><a href="#如何开启网站顶部动效？" class="headerlink" title="如何开启网站顶部动效？"></a>如何开启网站顶部动效？</h3><p>管理员在后台「主题设置」-&gt;「全站配置」页面，找到「CSS 动画库」选项，点击勾选即可。提示：动画库采用 animate.css，目前仅应用到了站点副标题与标题描述，会有一个上升的动效。</p>
+<h3 id="如何开启静态资源加速？"><a href="#如何开启静态资源加速？" class="headerlink" title="如何开启静态资源加速？"></a>如何开启静态资源加速？</h3><p>管理员在后台「主题设置」-&gt;「全站配置」页面，找到「静态资源加速」选项，点击开启即可。提示：加速的内容是 CSS、JS、Font，为了保证资源问题，目前仅提供 jsDelivr（网宿节点）。</p>
+<h3 id="如何禁止生成缩略图？"><a href="#如何禁止生成缩略图？" class="headerlink" title="如何禁止生成缩略图？"></a>如何禁止生成缩略图？</h3><p>管理员在后台「主题设置」-&gt;「全站配置」页面，找到「 禁止生成缩略图」选项，点击勾选即可。提示：开启该功能之后，当上传图片资源时，不会生成 150px、300px、768px 和 1024px 的图片，仅上传原尺寸图片。</p>
+<h3 id="如何媒体托管资源？"><a href="#如何媒体托管资源？" class="headerlink" title="如何媒体托管资源？"></a>如何媒体托管资源？</h3><p>管理员在后台「主题设置」-&gt;「全站配置」页面，找到「媒体资源托管」选项，点击勾选后会弹出配置信息，填好之后媒体库中新增的文件将链接到加速域名。提示：媒体资源托管功能是基于 <a target="_blank" rel="noopener" href="https://www.dogecloud.com/">DogeCloud</a> 的对象存储，存储空间名称、加速域名、AccessKey 以及 SecretKey，都可以在 DogeCloud 控制台找到。开启后仅支持新增的内容，还需将原 wp-content&#x2F;uploads 中的文件通过控制台手动上传到存储空间中，才可以显示开启功能之前上传到媒体库中的资源。</p>
+<h3 id="如何启用-Gutenberg-编辑器？"><a href="#如何启用-Gutenberg-编辑器？" class="headerlink" title="如何启用 Gutenberg 编辑器？"></a>如何启用 Gutenberg 编辑器？</h3><p>管理员在后台「主题设置」-&gt;「全站配置」页面，找到「Gutenberg 编辑器」选项，点击勾选即可。提示：主题默认使用 Classic Editor 编辑器，如果需要使用 Gutenberg 编辑器，勾选开启即可。</p>
+<h3 id="如何加速用户头像？"><a href="#如何加速用户头像？" class="headerlink" title="如何加速用户头像？"></a>如何加速用户头像？</h3><p>管理员在后台「主题设置」-&gt;「全站配置」页面，找到「Gravatar 加速」选项，点击勾选即可。提示：Gravatar 服务器位于海外，由于开放策略不同，会导致有些地址在国内被屏蔽，所以为了加快访问速度，该功能会将默认地址替换为国内的镜像站地址。</p>
+<h3 id="如果改变-Chrome-导航栏颜色？"><a href="#如果改变-Chrome-导航栏颜色？" class="headerlink" title="如果改变 Chrome 导航栏颜色？"></a>如果改变 Chrome 导航栏颜色？</h3><p>管理员在后台「主题设置」-&gt;「全站配置」页面，找到「Chrome 导航栏颜色」选项，点击「选择颜色」即可选择或输入颜色代码。提示：该功能颜色指的是 Chrome 移动端浏览器导航栏的颜色，默认的颜色为 #282a2c，如果直接输入颜色，需要输入十六进制颜色代码。</p>
+<h3 id="如何添加微信二维码？"><a href="#如何添加微信二维码？" class="headerlink" title="如何添加微信二维码？"></a>如何添加微信二维码？</h3><p>管理员在后台「主题设置」-&gt;「全站配置」页面，找到「微信二维码」选项，点击勾选后会弹出配置信息，选择上传微信公众号或个人微信的二维码图片即可。提示：开启该功能后，会在网站右下角显示一个微信的悬浮图标，鼠标划过或点击，就会出现配置的二维码图片。同时，输入框也可以直接输入外链的图片地址。</p>
+<h3 id="如何修改-404-页面图片？"><a href="#如何修改-404-页面图片？" class="headerlink" title="如何修改 404 页面图片？"></a>如何修改 404 页面图片？</h3><p>管理员在后台「主题设置」-&gt;「全站配置」页面，找到「404 页面图片」选项，点击「删除」按钮，再点击「上传」按钮，即可上传自定义的显示图片。提示：默认的图片挑选的是无版权图片，可放心使用。同时，输入框也可以直接输入外链的图片地址。</p>
+<h3 id="如何修改分享图片？"><a href="#如何修改分享图片？" class="headerlink" title="如何修改分享图片？"></a>如何修改分享图片？</h3><p>管理员在后台「主题设置」-&gt;「收录配置」页面，找到「分享图片」选项，点击「删除」按钮，再点击「上传」按钮，即可上传自定义的显示图片。提示：此功能配置的图片，是搜索引擎或者社交工具分享首页时抓取的图片。其他页面，比如文章页将抓取特色图片或文章内第一张图片。默认的图片挑选的是无版权图片，可放心使用。同时，输入框也可以直接输入外链的图片地址。</p>
+<h3 id="如何配置关键词？"><a href="#如何配置关键词？" class="headerlink" title="如何配置关键词？"></a>如何配置关键词？</h3><p>管理员在后台「主题设置」-&gt;「收录配置」页面，找到「关键词」选项，在输入框中输入站点关键词即可。提示：此处配置的关键词针对于整站所有的页面，在分类目录页面中还会额外添加分类目录名称，在文章页面中还会额外添加文章标签，在搜索页面中还会额外添加搜索词。每个关键词之间需要使用英文 , 隔开。</p>
+<h3 id="如何配置站点描述？"><a href="#如何配置站点描述？" class="headerlink" title="如何配置站点描述？"></a>如何配置站点描述？</h3><p>管理员在后台「主题设置」-&gt;「收录配置」页面，找到「站点描述」选项，在输入框中输入站点描述即可。提示：此处配置的站点描述仅针对于主页，在分类目录将展示分类目录的图像描述；在文章页面将展示文章摘要，如果没有设置摘要则显示文章内容前 220 个字；在搜索页面将展示类似「XXX」共找到 X 个记录；在标签页面将展示标签的图像描述。</p>
+<h3 id="如何配置统计代码？"><a href="#如何配置统计代码？" class="headerlink" title="如何配置统计代码？"></a>如何配置统计代码？</h3><p>管理员在后台「主题设置」-&gt;「收录配置」页面，找到「统计代码」选项，在输入框中输入统计网站提供的统计代码即可。提示：因为此处可以直接填写 HTML&#x2F;JS 代码，所以一定要格外注意，避免出现 XSS 攻击。</p>
+<h3 id="如何配置-robots-txt？"><a href="#如何配置-robots-txt？" class="headerlink" title="如何配置 robots.txt？"></a>如何配置 robots.txt？</h3><p>管理员在后台「主题设置」-&gt;「收录配置」页面，找到「robots.txt 配置」选项，在输入框中新增需要配置的内容即可。提示：默认已经给出了通用的配置，如果需要其他配置需自行输入。此功能生效的前提是「设置」-&gt;「阅读」-&gt;「对搜索引擎的可见性」是开启的状态，并且网站根目录下没有 robots.txt 文件，反之，此功能不会生效。</p>
+<h3 id="如何开启哀悼功能？"><a href="#如何开启哀悼功能？" class="headerlink" title="如何开启哀悼功能？"></a>如何开启哀悼功能？</h3><p>管理员在后台「主题设置」-&gt;「首页配置」页面，找到「哀悼功能」选项，点击勾选即可开启。提示：开启后将去掉页面颜色，使用黑白灰度显示（该功能仅作用在站点首页，其他页面正常显示），适用于 R.I.P. 场景。</p>
+<h3 id="如何开启并配置特色图片？"><a href="#如何开启并配置特色图片？" class="headerlink" title="如何开启并配置特色图片？"></a>如何开启并配置特色图片？</h3><p>管理员在后台「主题设置」-&gt;「首页配置」页面，找到「特色图片」选项，默认为勾选状态，可直接修改「默认特色图」，点击「删除」按钮，再点击「上传」按钮，即可上传自定义的显示图片。提示：如果不勾选此项，文章列表将不显示特色图片，同时「默认特色图」选项也不会显示。「默认特色图」显示的条件是当文章内没有任何图片，并且没有设置特色图片时显示。建议尺寸为 240*145 像素，兼容尺寸为 1.65:1 。同时，输入框也可以直接输入外链的图片地址。</p>
+<h3 id="如何修改无内容图片？"><a href="#如何修改无内容图片？" class="headerlink" title="如何修改无内容图片？"></a>如何修改无内容图片？</h3><p>管理员在后台「主题设置」-&gt;「首页配置」页面，找到「无内容图片」选项，点击「删除」按钮，再点击「上传」按钮，即可上传自定义的显示图片。提示：此图片仅在搜索不到文章或文章分类中没有文章时显示。</p>
+<h3 id="如何开启知识共享协议？"><a href="#如何开启知识共享协议？" class="headerlink" title="如何开启知识共享协议？"></a>如何开启知识共享协议？</h3><p>管理员在后台「主题设置」-&gt;「文章配置」页面，找到「知识共享协议」选项，点击勾选即可开启。提示：勾选开启之后会显示具体的协议内容，根据自身需要选择合适的共享协议即可，如果不知道协议的具体内容，可以到 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/">creativecommons.org</a> 查询，该协议将显示在文章内容页面的最下方。</p>
+<h3 id="如何开启网易云音乐自动播放？"><a href="#如何开启网易云音乐自动播放？" class="headerlink" title="如何开启网易云音乐自动播放？"></a>如何开启网易云音乐自动播放？</h3><p>管理员在后台「主题设置」-&gt;「文章配置」页面，找到「网易云音乐」选项，点击勾选即可开启。提示：网易云音乐在文章中以短代码的形式插入，例如：</p>
+<p>，短代码中间的数字为音乐 ID，可以在网易云音乐地址栏中找到，如果是有版权的音乐将无法播放。</p>
+<h3 id="如何开启文章打赏？"><a href="#如何开启文章打赏？" class="headerlink" title="如何开启文章打赏？"></a>如何开启文章打赏？</h3><p>管理员在后台「主题设置」-&gt;「文章配置」页面，找到「文章打赏」选项，点击勾选即可开启。提示：勾选开启之后会分别显示「支付宝二维码」和「微信二维码」，分别点击「删除」按钮，再点击「上传」按钮，即可上传自己的收款二维码图片。图片建议裁剪成只剩二维码，并且两张图片尺寸一致。配置完成后在文章内容页面最下方可以看到打赏按钮。同时，输入框也可以直接输入外链的图片地址。</p>
+<h3 id="如何修改站长头像？"><a href="#如何修改站长头像？" class="headerlink" title="如何修改站长头像？"></a>如何修改站长头像？</h3><p>管理员在后台「主题设置」-&gt;「站长配置」页面，找到「个人头像」选项，点击「删除」按钮，再点击「上传」按钮，即可上传自定义的头像图片。提示：该图片显示在小工具「个人简介」以及文章内容页面最下方站长信息中。同时，输入框也可以直接输入外链的图片地址。</p>
+<h3 id="如何修改站长昵称？"><a href="#如何修改站长昵称？" class="headerlink" title="如何修改站长昵称？"></a>如何修改站长昵称？</h3><p>管理员在后台「主题设置」-&gt;「站长配置」页面，找到「个人昵称」选项，在输入框中输入即可。提示：该昵称显示在小工具「个人简介」以及文章内容页面最下方站长信息中。</p>
+<h3 id="如何修改站长简介？"><a href="#如何修改站长简介？" class="headerlink" title="如何修改站长简介？"></a>如何修改站长简介？</h3><p>管理员在后台「主题设置」-&gt;「站长配置」页面，找到「个人简介」选项，在输入框中输入即可。提示：该简介显示在小工具「个人简介」以及文章内容页面最下方站长信息中。</p>
+<h3 id="如何开启-SMTP-服务？"><a href="#如何开启-SMTP-服务？" class="headerlink" title="如何开启 SMTP 服务？"></a>如何开启 SMTP 服务？</h3><p>管理员在后台「主题设置」-&gt;「邮件配置」页面，找到「SMTP 服务」选项，点击勾选后会弹出配置信息，根据提示填写相应的信息即可。提示：邮件服务器由邮件服务商提供，比如：smtp.exmail.qq.com；服务器端口由邮件服务商提供，比如：465；授权方式是登录鉴权的方式，根据服务商提供的信息填写，比如：ssl；邮箱帐号和邮箱密码则填写相应的信息即可，最后可以点击下面的「测试邮件」按钮，如果填写正确，管理员邮箱将收到一封来自所填写邮箱账号的测试邮件。</p>
+<h3 id="如何配置图片导航？"><a href="#如何配置图片导航？" class="headerlink" title="如何配置图片导航？"></a>如何配置图片导航？</h3><p>管理员在后台「主题设置」-&gt;「顶部配置」页面，找到「顶部样式」选项，默认选项为「图片导航」，在「图片导航」栏目中点击「删除」按钮，再点击「上传」按钮，即可上传自定义的顶部图片，并且可以配置页面显示的副标题和标题描述。在分类页面和标签页面中，图片导航中的副标题和标题描述将显示为分类或标签名称以及其图像描述。同时，输入框也可以直接输入外链的图片地址。</p>
+<h3 id="如何配置颜色导航？"><a href="#如何配置颜色导航？" class="headerlink" title="如何配置颜色导航？"></a>如何配置颜色导航？</h3><p>管理员在后台「主题设置」-&gt;「顶部配置」页面，找到「顶部样式」选项，选择「颜色导航」，点击「选择颜色」即可选择或输入颜色代码。提示：默认的颜色为 #24292e，如果直接输入颜色，需要输入十六进制颜色代码。</p>
+<h3 id="如何开启页脚社交图标？"><a href="#如何开启页脚社交图标？" class="headerlink" title="如何开启页脚社交图标？"></a>如何开启页脚社交图标？</h3><p>管理员在后台「主题设置」-&gt;「页脚配置」页面，勾选自身需要的社交平台，勾选之后都会出现一个输入框，根据提示输入社交平台的链接即可。提示：网址需要带 http(s) 协议头，邮箱需要带 mailto 协议头。</p>
+<h3 id="如何配置工信部备案？"><a href="#如何配置工信部备案？" class="headerlink" title="如何配置工信部备案？"></a>如何配置工信部备案？</h3><p>管理员在后台「主题设置」-&gt;「页脚配置」页面，找到「工信部备案信息」选项，根据提示填写备案信息即可。</p>
+<h3 id="如何配置公安网备案？"><a href="#如何配置公安网备案？" class="headerlink" title="如何配置公安网备案？"></a>如何配置公安网备案？</h3><p>管理员在后台「主题设置」-&gt;「页脚配置」页面，找到「公安网备案信息」和「公安网备案连接」选项，根据提示填写备案信息即可。</p>
+<h3 id="如何配置文章页面广告？"><a href="#如何配置文章页面广告？" class="headerlink" title="如何配置文章页面广告？"></a>如何配置文章页面广告？</h3><p>管理员在后台「主题设置」-&gt;「广告配置」页面，找到「文章页面广告」选项，根据需要点击勾选「开启顶部广告」或「开启底部广告」即可开启。提示：勾选开启之后会分别显示「广告图片」和「广告连接」，点击「删除」按钮，再点击「上传」按钮，即可上传广告图片，「广告连接」是选填栏目。同时，输入框也可以直接输入外链的图片地址。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/uncategorized/" class="category-chain-item">uncategorized</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>免费wrodpress主题《kratos》操作解析</div>
+      <div>http://example.com/2021/02/24/免费wrodpress主题《kratos》操作解析/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年2月24日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/02/24/wrodpress%E4%B8%BB%E9%A2%98%E3%80%8Akratos%E3%80%8B%E7%9A%84%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%E3%80%81%E5%AF%BC%E8%88%AA%E6%A0%8F%E8%AE%BE%E7%BD%AE%E3%80%81%E6%B7%BB%E5%8A%A0%E5%B0%8F%E5%B7%A5/" title="wrodpress主题《kratos》的主题设置、导航栏设置、添加小工具">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">wrodpress主题《kratos》的主题设置、导航栏设置、添加小工具</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/02/24/hello-world-2/" title="Hello world!">
+                        <span class="hidden-mobile">Hello world!</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,770 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="Hexo+github搭建个人博客，并绑定域名 本篇教程完整讲述了如何利用Hexo+github搭建个人博客并且绑定自己的域名，成为自己的网站！ 我的博客网站：www.wushishu.xyz---------------------------------(备用wushishu.github.io) 教程参考了很多互联上的内容，在美化教程上面可以根据自己的审美，不必全部照搬~ 在搭建博客的路上有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+github搭建个人博客">
+<meta property="og:url" content="http://example.com/2022/07/22/hexogithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hexo+github搭建个人博客，并绑定域名 本篇教程完整讲述了如何利用Hexo+github搭建个人博客并且绑定自己的域名，成为自己的网站！ 我的博客网站：www.wushishu.xyz---------------------------------(备用wushishu.github.io) 教程参考了很多互联上的内容，在美化教程上面可以根据自己的审美，不必全部照搬~ 在搭建博客的路上有">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/e7/e791f066de4d4577a3687606caf80e36.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/49/49f6fe5a1eaba81d9d331c7fb3159b1f.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/d3/d3496e344c9a4066866dfa3ac0014a3d.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/e2/e282c063962af32b5c22221ffa1a6722.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/88/88fe196d4b93872edf40766575f35af3.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/a2/a29aec8d949a8152bad17e1649316bbc.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/82/827db6ee904638d62a4f5249fe110bdf.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/b0/b06a27bee58606277ea46f413b34ed14.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/dd/ddf2ca2f77a32aaff0c8f17b44bbe99b.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/25/259acb6b590338700c8f61ffcc531593.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/5f/5fde531819308103720a5c098f342092.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/6f/6f77175cb6028832126b38d0b820be95.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/76/76aa4fb226389c10209b17cd97f1b7d8.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/eb/eb043db3b67fa17c51096553f05cc055.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/a9/a94aa787c8627d7bc2d95fc3aabe211d.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/ec/ec4dc5e76906c62036e61f4d083ebaad.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/f1/f139b76ed562b895ece7557ebb5bb791.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/1b/1ba83adbf958f9ed0ad0129bd843f785.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/5e/5e33beb4a80df251722f550b7ca0de88.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/0a/0a397f64a129a210ccbebdff832de7af.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/aa/aa2f760148fbcbf6c3ce0b43cbe3433c.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/d9/d9dc3c789aba0ebfab9b2a06a03754bb.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/3f/3f7b8b410726691082019f2ab603976b.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/4b/4bd9fe08801a3332cf5552216b631149.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/a1/a1ee42ae917eb1c19261ec72b82efde4.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/b0/b08a6de31ecdfcc74ccb0037f23094b3.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/cd/cded5198aec31fec9f8b53bb76676174.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/32/32ad907f045425afedb968d20dab4507.png">
+<meta property="og:image" content="https://static001.geekbang.org/infoq/7e/7e4272e54cb25564b1e708e85c8539d2.png">
+<meta property="article:published_time" content="2022-07-22T13:01:43.000Z">
+<meta property="article:modified_time" content="2022-07-23T12:09:40.657Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://static001.geekbang.org/infoq/e7/e791f066de4d4577a3687606caf80e36.png">
+  
+  
+  
+  <title>Hexo+github搭建个人博客 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Hexo+github搭建个人博客"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-07-22 21:01" pubdate>
+          2022年7月22日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          37 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Hexo+github搭建个人博客</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Hexo-github搭建个人博客，并绑定域名"><a href="#Hexo-github搭建个人博客，并绑定域名" class="headerlink" title="Hexo+github搭建个人博客，并绑定域名"></a>Hexo+github搭建个人博客，并绑定域名</h1><blockquote>
+<p>本篇教程完整讲述了如何利用Hexo+github搭建个人博客并且绑定自己的域名，成为自己的网站！ 我的博客网站：<a target="_blank" rel="noopener" href="http://www.wushishu.xyz------峡--------------------稴-------(wushishu.github.io)/">www.wushishu.xyz---------------------------------(备用wushishu.github.io)</a> 教程参考了很多互联上的内容，在美化教程上面可以根据自己的审美，不必全部照搬~ 在搭建博客的路上有很多bug出现，一定请大家耐心的调试，最终胜利是属于我们的 本文作者：武师叔————————————————————–最近更新时间2022&#x2F;5&#x2F;6 关注公众号武师叔————————–回复博客————————-即可获得博客PDF文件</p>
+</blockquote>
+<h2 id="第一部分视频学习"><a href="#第一部分视频学习" class="headerlink" title="第一部分视频学习"></a>第一部分视频学习</h2><p>链接：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1mU4y1j72n?spm_id_from=333.337.search-card.all.click">https://www.bilibili.com/video/BV1mU4y1j72n?spm_id_from&#x3D;333.337.search-card.all.click</a> 视频中的网址失效了，在本文下面给你最新的博客教程</p>
+<h3 id="安装并配置Node-js"><a href="#安装并配置Node-js" class="headerlink" title="安装并配置Node.js"></a>安装并配置Node.js</h3><p>Node.js下载:【它让JavaScript成为与PHP、Python、Perl、Ruby等服务端语言平起平坐的脚本语言。】 教程：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_52799373/article/details/123840137%EF%BC%88%E8%BF%87%E7%A8%8B%E8%AF%A6%E7%BB%86%EF%BC%8C%E8%BF%98%E8%A6%86%E7%9B%96win11%EF%BC%8C%E8%AF%84%E8%AE%BA%E4%B8%8B%E9%9D%A2%E8%BF%98%E6%9C%89%E5%B8%88%E5%8F%94%E7%9A%84%E8%B6%B3%E8%BF%B9%EF%BC%89">https://blog.csdn.net/weixin_52799373&#x2F;article&#x2F;details&#x2F;123840137（过程详细，还覆盖win11，评论下面还有师叔的足迹）</a></p>
+<h4 id="注意一"><a href="#注意一" class="headerlink" title="注意一"></a>注意一</h4><p>全局安装最常用的 express 模块 进行测试 命令如下:</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>npm install express -g</p>
+<p>报错图片： <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/e7/e791f066de4d4577a3687606caf80e36.png"><img src="https://static001.geekbang.org/infoq/e7/e791f066de4d4577a3687606caf80e36.png" srcset="/img/loading.gif" lazyload alt="img"></a> 解决方法： 【亲测有效】 需要删除 npmrc 文件。 <strong>强调：</strong>不是nodejs安装目录npm模块下的那个npmrc文件 而是在 C:\Users\（你的用户名）\下的.npmrc文件 <em><strong>聪明的你，一定想到了直接用evering搜索，省的还要调用文件管理器在一点一点的找</strong></em> <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/49/49f6fe5a1eaba81d9d331c7fb3159b1f.png"><img src="https://static001.geekbang.org/infoq/49/49f6fe5a1eaba81d9d331c7fb3159b1f.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="注意二"><a href="#注意二" class="headerlink" title="注意二"></a>注意二</h4><p><strong>在文章第四歩测试上查看安装结果</strong> 可能会出现下面照片结果，更改了目录为什么还是C盘目录下，这时候只需要以管理员身份运行命令即可。 在下面路径下找到cmd.exe并且管理员身份运行即可。 推测：出像这种现象的原因就是执行权限不够，推荐大家在桌面建立一个快捷方式（管理员命令的）cmd</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>C:\Windows\System32\cmd.exe</p>
+<p><a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/d3/d3496e344c9a4066866dfa3ac0014a3d.png"><img src="https://static001.geekbang.org/infoq/d3/d3496e344c9a4066866dfa3ac0014a3d.png" srcset="/img/loading.gif" lazyload alt="img"></a> <strong>创建管理员权限的cmd桌面快捷方式</strong> <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/e2/e282c063962af32b5c22221ffa1a6722.png"><img src="https://static001.geekbang.org/infoq/e2/e282c063962af32b5c22221ffa1a6722.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h3 id="安装并配置Git"><a href="#安装并配置Git" class="headerlink" title="安装并配置Git"></a>安装并配置Git</h3><p>git是一个并源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理 Windows系统Git安装教程：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xueweisuoyong/p/11914045.html">https://www.cnblogs.com/xueweisuoyong/p/11914045.html</a></p>
+<h3 id="生成SSH-Keys"><a href="#生成SSH-Keys" class="headerlink" title="生成SSH Keys"></a>生成SSH Keys</h3><p>生成ssh</p>
+<p>PLAINTEXT</p>
+<p>复制成功</p>
+<p>1</p>
+<p>ssh-keygen -t rsa -C “你的邮箱地址”</p>
+<p><a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/88/88fe196d4b93872edf40766575f35af3.png"><img src="https://static001.geekbang.org/infoq/88/88fe196d4b93872edf40766575f35af3.png" srcset="/img/loading.gif" lazyload alt="img"></a> <strong>找到秘钥位置并复制</strong> <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/a2/a29aec8d949a8152bad17e1649316bbc.png"><img src="https://static001.geekbang.org/infoq/a2/a29aec8d949a8152bad17e1649316bbc.png" srcset="/img/loading.gif" lazyload alt="img"></a> <strong>测试ssh是否绑定成功</strong></p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#109;">&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#109;</a></p>
+<p>如果问你（yes or no）,直接 yes 就可以得到下面这段话 <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/82/827db6ee904638d62a4f5249fe110bdf.png"><img src="https://static001.geekbang.org/infoq/82/827db6ee904638d62a4f5249fe110bdf.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h3 id="本地访问博客"><a href="#本地访问博客" class="headerlink" title="本地访问博客"></a>本地访问博客</h3><p>1、创建一个名为 Blog 的文件，在里面启用 Git Bash Here <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/b0/b06a27bee58606277ea46f413b34ed14.png"><img src="https://static001.geekbang.org/infoq/b0/b06a27bee58606277ea46f413b34ed14.png" srcset="/img/loading.gif" lazyload alt="img"></a> 2、初始化hexo</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>hexo init</p>
+<p><a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/dd/ddf2ca2f77a32aaff0c8f17b44bbe99b.png"><img src="https://static001.geekbang.org/infoq/dd/ddf2ca2f77a32aaff0c8f17b44bbe99b.png" srcset="/img/loading.gif" lazyload alt="img"></a> 3、生成本地的hexo页面</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>hexo s</p>
+<p><a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/25/259acb6b590338700c8f61ffcc531593.png"><img src="https://static001.geekbang.org/infoq/25/259acb6b590338700c8f61ffcc531593.png" srcset="/img/loading.gif" lazyload alt="img"></a> 4、访问 打开本地服务器</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p><a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></p>
+<p><a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/5f/5fde531819308103720a5c098f342092.png"><img src="https://static001.geekbang.org/infoq/5f/5fde531819308103720a5c098f342092.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<blockquote>
+<p>长按 Ctrl + c 关闭服务器</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/6f/6f77175cb6028832126b38d0b820be95.png"><img src="https://static001.geekbang.org/infoq/6f/6f77175cb6028832126b38d0b820be95.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h3 id="上传到Github"><a href="#上传到Github" class="headerlink" title="上传到Github"></a>上传到Github</h3><p>修改-config.yml文件 <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/76/76aa4fb226389c10209b17cd97f1b7d8.png"><img src="https://static001.geekbang.org/infoq/76/76aa4fb226389c10209b17cd97f1b7d8.png" srcset="/img/loading.gif" lazyload alt="img"></a> <strong>把图片上位置更换成</strong></p>
+<p>PLAINTEXT</p>
+<p>1<br>2<br>3<br>4</p>
+<p>deploy:<br> type: git<br> repository: 你的github地址<br> branch: main</p>
+<p><a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/eb/eb043db3b67fa17c51096553f05cc055.png"><img src="https://static001.geekbang.org/infoq/eb/eb043db3b67fa17c51096553f05cc055.png" srcset="/img/loading.gif" lazyload alt="img"></a> 安装hexo-deployer-git 自动部署发布工具</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>npm install hexo-deployer-git –save</p>
+<p><a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/a9/a94aa787c8627d7bc2d95fc3aabe211d.png"><img src="https://static001.geekbang.org/infoq/a9/a94aa787c8627d7bc2d95fc3aabe211d.png" srcset="/img/loading.gif" lazyload alt="img"></a> <strong>生成页面</strong></p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>hexo g</p>
+<p><a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/ec/ec4dc5e76906c62036e61f4d083ebaad.png"><img src="https://static001.geekbang.org/infoq/ec/ec4dc5e76906c62036e61f4d083ebaad.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="注意一-1"><a href="#注意一-1" class="headerlink" title="注意一"></a>注意一</h4><p>如果报错如下：（无报错，请忽略此条） 报错信息是提示hexo的yml配置文件 冒号后面少了空格解决方案： 到提示行将对应的空格补上即可 <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/f1/f139b76ed562b895ece7557ebb5bb791.png"><img src="https://static001.geekbang.org/infoq/f1/f139b76ed562b895ece7557ebb5bb791.png" srcset="/img/loading.gif" lazyload alt="img"></a> 本地文件上传到Github上面</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>hexo d</p>
+<p>中间会出现一个登录界面，可以用令牌登录。（令牌及时保存，就看不到了） 结束以后就上传 Github 就成功了！！！ <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/1b/1ba83adbf958f9ed0ad0129bd843f785.png"><img src="https://static001.geekbang.org/infoq/1b/1ba83adbf958f9ed0ad0129bd843f785.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="注意二-1"><a href="#注意二-1" class="headerlink" title="注意二"></a>注意二</h4><p>如果出现如图错误网络报错，再次尝试，多次尝试，直到更换WiFi~~~~ <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/5e/5e33beb4a80df251722f550b7ca0de88.png"><img src="https://static001.geekbang.org/infoq/5e/5e33beb4a80df251722f550b7ca0de88.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h3 id="访问GitHub博客"><a href="#访问GitHub博客" class="headerlink" title="访问GitHub博客"></a>访问GitHub博客</h3><p><a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/0a/0a397f64a129a210ccbebdff832de7af.png"><img src="https://static001.geekbang.org/infoq/0a/0a397f64a129a210ccbebdff832de7af.png" srcset="/img/loading.gif" lazyload alt="img"></a> 访问博客，开始的页面是初始化页面，没有做美化和增加内容。</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p><a target="_blank" rel="noopener" href="https://wushishu.github.io/">https://wushishu.github.io/</a></p>
+<p><a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/aa/aa2f760148fbcbf6c3ce0b43cbe3433c.png"><img src="https://static001.geekbang.org/infoq/aa/aa2f760148fbcbf6c3ce0b43cbe3433c.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h2 id="第二部分-文档学习"><a href="#第二部分-文档学习" class="headerlink" title="第二部分 文档学习"></a>第二部分 文档学习</h2><h3 id="撰写博客"><a href="#撰写博客" class="headerlink" title="撰写博客"></a>撰写博客</h3><p>_<strong>电脑要必须有Typora！电脑要必须有Typora！电脑要必须有Typora！</strong>_（重要的事情说三遍） 文本教程：<a target="_blank" rel="noopener" href="https://dhndzwxj.vercel.app/3276806131.html">https://dhndzwxj.vercel.app/3276806131.html</a> hexo标签教程：<a target="_blank" rel="noopener" href="http://haiyong.site/post/cda958f2.html%EF%BC%88%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3%E7%9C%8B%E9%9C%80%E6%B1%82%E5%8A%A0%E4%B8%8D%E5%8A%A0%EF%BC%89">http://haiyong.site/post/cda958f2.html（参考文档看需求加不加）</a> 我们打开自己的博客根目录，跟着我一个个了解里面的这些文件（夹）都是干什么的： <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/d9/d9dc3c789aba0ebfab9b2a06a03754bb.png"><img src="https://static001.geekbang.org/infoq/d9/d9dc3c789aba0ebfab9b2a06a03754bb.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<ul>
+<li><code>_config.yml</code>：俗称站点配置文件，很多与博客网站的格式、内容相关的设置都需要在里面改。</li>
+<li><code>node_modules</code>:存储Hexo插件的文件，可以实现各种扩展功能。一般不需要管。</li>
+<li><code>package.json</code>：别问我，我也不知道干嘛的。</li>
+<li><code>scaffolds</code>：模板文件夹，里面的<code>post.md</code>文件可以设置每一篇博客的模板。具体用起来就知道能干嘛了。</li>
+<li><code>source</code>：非常重要。所有的个人文件都在里面！</li>
+<li><code>themes</code>：主题文件夹，可以从<a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo主题官网</a>或者网上大神的Github主页下载各种各样美观的主题，让自己的网站变得逼格高端的关键！</li>
+</ul>
+<p>接下来重点介绍<code>source</code>文件夹。新建的博客中，<code>source</code>文件夹下默认只有一个子文件夹——<code>_posts</code>。我们写的博客都放在这个子文件夹里面。我们还可以在<code>source</code>里面新建各种子文件夹满足自己的个性化需求，对初学者而言，我们先把精力放在主线任务上，然后再来搞这些细节。 <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/3f/3f7b8b410726691082019f2ab603976b.png"><img src="https://static001.geekbang.org/infoq/3f/3f7b8b410726691082019f2ab603976b.png" srcset="/img/loading.gif" lazyload alt="img"></a> 写好Hellworld内容后，在命令行一键三连：</p>
+<blockquote>
+<p>‘hexo cl’命令用于清除缓存文件（db.json）和已生成的静态文件（public）。 例如：在更换主题后，如果发现站点更改不生效，可以运行该命令。</p>
+</blockquote>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>hexo cl</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>hexo g</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>hexo s</p>
+<p>然后随便打开一个浏览器，在网址栏输入<code>localhost:4000/</code>，就能发现自己的网站更新了！不过这只是在本地进行了更新，要想部署到网上（Github上），输入如下代码：</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>hexo d</p>
+<p>然后在浏览器地址栏输入<code>https://yourname.github.io</code>，或者<code>yourname.github.io</code>就能在网上浏览自己的博客了！ 以上，我们的博客网站1.0版本就搭建完成了，如果没有更多的需求，做到这里基本上就可以了。如果有更多的要求，还需要进一步的精耕细作！</p>
+<h3 id="精耕细作"><a href="#精耕细作" class="headerlink" title="精耕细作"></a>精耕细作</h3><p><strong>海拥\Butterfly 主题美化：</strong><a target="_blank" rel="noopener" href="http://haiyong.site/post/22e1d5da.html">http://haiyong.site/post/22e1d5da.html</a> <strong>Butterfly参考文档（小白慎入，但是他也是你走向DIY必须迈出的一歩）</strong>:<a target="_blank" rel="noopener" href="https://butterfly.js.org/posts/dc584b87/#Post-Front-matter">https://butterfly.js.org/posts/dc584b87/#Post-Front-matter</a> 文章中要更改的文件（.yml .bug 等）可以要用viscode打开！！！ <strong>Butterfly 主题安装</strong></p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>git clone -b master <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes&#x2F;butterfly</p>
+<p>这里面如果报错，如下图所示（长路漫漫，bug满满） <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/4b/4bd9fe08801a3332cf5552216b631149.png"><img src="https://static001.geekbang.org/infoq/4b/4bd9fe08801a3332cf5552216b631149.png" srcset="/img/loading.gif" lazyload alt="img"></a> 只需要在命令行中执行</p>
+<p>PLAINTEXT</p>
+<p>1<br>2</p>
+<p>git config –global –unset http.proxy<br>git config –global –unset https.proxy</p>
+<p>再次安装主题即可成功 <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/a1/a1ee42ae917eb1c19261ec72b82efde4.png"><img src="https://static001.geekbang.org/infoq/a1/a1ee42ae917eb1c19261ec72b82efde4.png" srcset="/img/loading.gif" lazyload alt="img"></a> <strong>应用主题</strong></p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>theme: butterfly</p>
+<p><a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/b0/b08a6de31ecdfcc74ccb0037f23094b3.png"><img src="https://static001.geekbang.org/infoq/b0/b08a6de31ecdfcc74ccb0037f23094b3.png" srcset="/img/loading.gif" lazyload alt="img"></a> <strong>安装插件</strong> 如果你没有 pug 以及 stylus 的渲染器，请下载安装：</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>npm install hexo-renderer-pug hexo-renderer-stylus –save</p>
+<p><a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/cd/cded5198aec31fec9f8b53bb76676174.png"><img src="https://static001.geekbang.org/infoq/cd/cded5198aec31fec9f8b53bb76676174.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h3 id="Butterfly-主题美化"><a href="#Butterfly-主题美化" class="headerlink" title="Butterfly 主题美化"></a>Butterfly 主题美化</h3><p>生成文章唯一链接 Hexo的默认文章链接格式是年，月，日，标题这种格式来生成的。如果你的标题是中文的话，那你的URL链接就会包含中文， 复制后的URL路径就是把中文变成了一大堆字符串编码，如果你在其他地方用这边文章的url链接，偶然你又修改了改文章的标题，那这个URL链接就会失效。为了给每一篇文章来上一个属于自己的链接，写下此教程，利用 hexo-abbrlink 插件，A Hexo plugin to generate static post link based on post titles ,来解决这个问题。 参考github官方： hexo-abbrlink 按照此教程配置完之后如下： 1、安装插件，在博客根目录 [Blogroot] 下打开终端，运行以下指令：</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>npm install hexo-abbrlink –save</p>
+<p><a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/32/32ad907f045425afedb968d20dab4507.png"><img src="https://static001.geekbang.org/infoq/32/32ad907f045425afedb968d20dab4507.png" srcset="/img/loading.gif" lazyload alt="img"></a> 2、插件安装成功后，在根目录 [Blogroot] 的配置文件 _config.yml 找到 permalink： <a target="_blank" rel="noopener" href="https://static001.geekbang.org/infoq/7e/7e4272e54cb25564b1e708e85c8539d2.png"><img src="https://static001.geekbang.org/infoq/7e/7e4272e54cb25564b1e708e85c8539d2.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h3 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h3><p>这次了解我上面只有一个HelloWord的时候，为什么不让右键新建，<strong>因为需要命令生成啊，铁汁！</strong></p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>npm i hexo-deployer-git</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>hexo new post “新建博客文章名”</p>
+<p>PLAINTEXT</p>
+<p>1</p>
+<p>hexo cl &amp;&amp; hexo g  &amp;&amp; hexo s</p>
+<h3 id="hexo更换背景图片"><a href="#hexo更换背景图片" class="headerlink" title="hexo更换背景图片"></a>hexo更换背景图片</h3><p>背景图片参考网址：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://wallhaven.cc/">https://wallhaven.cc/</a></li>
+<li><a target="_blank" rel="noopener" href="https://wall.alphacoders.com/">https://wall.alphacoders.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://bz.zzzmh.cn/index">https://bz.zzzmh.cn/index</a></li>
+</ul>
+<p><em>本方法解决的是多次同步到GitHub上背景图片未成功的情况</em> 直接更改原文件 图片所在目录：<code>hexo/themes/landscape/source/css/images/</code> 图片名称：<code>banner.jpg</code></p>
+<h2 id="第三部分-绑定自己的域名"><a href="#第三部分-绑定自己的域名" class="headerlink" title="第三部分 绑定自己的域名"></a>第三部分 绑定自己的域名</h2><p>博客地址：<a target="_blank" rel="noopener" href="https://www.likecs.com/show-30474.html">https://www.likecs.com/show-30474.html</a> <strong>绑定之后你就有有一个自己专属的博客了。</strong> 买一个域名，可以一块钱白嫖，但是续费贵的飞天！！！ <em><strong>注意请谨慎绑定，想我就会出现提交一次 (hexo d) ,需要重新绑定域名</strong></em></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BD%91%E7%AB%99%E5%88%86%E4%BA%AB/" class="category-chain-item">网站分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Hexo+github搭建个人博客</div>
+      <div>http://example.com/2022/07/22/hexogithub搭建个人博客/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年7月22日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/23/hello-world/" title="Hello World">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/10/720-2/" title="目前CloufFlare自选IP存在问题">
+                        <span class="hidden-mobile">目前CloufFlare自选IP存在问题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

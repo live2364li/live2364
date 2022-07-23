@@ -1,0 +1,655 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="一、目前CloufFlare自选IP存在问题 二、使用CloudFlare自选IP PLUS解决上述问题？ 三、使用方法 必要条件： 用前必读：   方法一：GitHub Actions 运行（推荐） 方法二：在自己的VPS或电脑中运行 四、总结  WPJAM TOC 一、目前CloufFlare自选IP存在问题上一篇文章提到了使用CloudFlare自选IP加速自己的网站，细心的小伙伴也发现了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="目前CloufFlare自选IP存在问题">
+<meta property="og:url" content="http://example.com/2022/05/10/720-2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、目前CloufFlare自选IP存在问题 二、使用CloudFlare自选IP PLUS解决上述问题？ 三、使用方法 必要条件： 用前必读：   方法一：GitHub Actions 运行（推荐） 方法二：在自己的VPS或电脑中运行 四、总结  WPJAM TOC 一、目前CloufFlare自选IP存在问题上一篇文章提到了使用CloudFlare自选IP加速自己的网站，细心的小伙伴也发现了">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-10T09:59:32.000Z">
+<meta property="article:modified_time" content="2022-07-23T12:09:40.655Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>目前CloufFlare自选IP存在问题 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="目前CloufFlare自选IP存在问题"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-05-10 17:59" pubdate>
+          2022年5月10日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          21 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">目前CloufFlare自选IP存在问题</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <ul>
+<li><a target="_blank" rel="noopener" href="https://hostmonit.com/cloudflare-select-ip-plus/#toc-1">一、目前CloufFlare自选IP存在问题</a></li>
+<li><a target="_blank" rel="noopener" href="https://hostmonit.com/cloudflare-select-ip-plus/#toc-2">二、使用CloudFlare自选IP PLUS解决上述问题？</a></li>
+<li><a target="_blank" rel="noopener" href="https://hostmonit.com/cloudflare-select-ip-plus/#toc-3">三、使用方法</a><ul>
+<li><a target="_blank" rel="noopener" href="https://hostmonit.com/cloudflare-select-ip-plus/#toc-4">必要条件：</a></li>
+<li><a target="_blank" rel="noopener" href="https://hostmonit.com/cloudflare-select-ip-plus/#toc-5">用前必读：</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://hostmonit.com/cloudflare-select-ip-plus/#toc-2">方法一：GitHub Actions 运行（推荐）</a></li>
+<li><a target="_blank" rel="noopener" href="https://hostmonit.com/cloudflare-select-ip-plus/#toc-7">方法二：在自己的VPS或电脑中运行</a></li>
+<li><a target="_blank" rel="noopener" href="https://hostmonit.com/cloudflare-select-ip-plus/#toc-8">四、总结</a></li>
+</ul>
+<p><a target="_blank" rel="noopener" href="http://blog.wpjam.com/project/wpjam-basic/">WPJAM TOC</a></p>
+<h2 id="一、目前CloufFlare自选IP存在问题"><a href="#一、目前CloufFlare自选IP存在问题" class="headerlink" title="一、目前CloufFlare自选IP存在问题"></a>一、目前CloufFlare自选IP存在问题</h2><p>上一篇<a target="_blank" rel="noopener" href="https://hostmonit.com/manually-select-ip/">文章</a>提到了使用CloudFlare自选IP加速自己的网站，细心的小伙伴也发现了问题。简单总结有以下几点缺陷。</p>
+<ol>
+<li>自己A记录填写的CloudFlare IP并不是永久可用，保不齐哪天你填写的CloudFlare IP被GFW给屏蔽了，那你的网站就歇菜了。</li>
+<li>自己A记录填写的CloudFlare IP并不是能持续稳定，即使是CloufFlare，服务器也有被攻击的时候，这时你的网站打开速度就会很慢，有时可能会出现打不开的情况。</li>
+<li>自己A记录填写的CloudFlare IP并不是对所有人访问速度都快，这一点建站的小伙伴要尤为注意，也许你ping这个Cloudflare IP延迟很低，但是你的站点并不是你一个人访问，你需要的是让国内外每个访问者都能高速访问你的网站。</li>
+<li>普通站长很难去找到CloudFLare对不同运营商（移动、联通、电信）访问速度快的IP。</li>
+</ol>
+<h2 id="二、使用CloudFlare自选IP-PLUS解决上述问题？"><a href="#二、使用CloudFlare自选IP-PLUS解决上述问题？" class="headerlink" title="二、使用CloudFlare自选IP PLUS解决上述问题？"></a>二、使用CloudFlare自选IP PLUS解决上述问题？</h2><p>遇到问题那么就要解决掉，为了解决这些问题，站长不惜重金买了几台国内不同运营商的高带宽高流量VDS，并花了两天时间写了一套程序，在每台VDS上都部署一套程序，用来获取相应运营商连接目前已知的1786880个CloudFlare IP中速度最快的IP，并以接口形式提供出来。之后又花了半天时间写了一个脚本，脚本主要功能是调取接口将连接各运营商速度快的CloudFare IP自动解析到DNS域名服务商处。经过一个多月的使用测试，明显感觉到网站的访问速度和稳定性有所提升。</p>
+<h2 id="三、使用方法"><a href="#三、使用方法" class="headerlink" title="三、使用方法"></a>三、使用方法</h2><h4 id="必要条件："><a href="#必要条件：" class="headerlink" title="必要条件："></a><strong>必要条件</strong>：</h4><p><strong>★ Cloudflare自选IP完成并已接入到DNSPOD，不知道怎么自选IP可以查看上个<a target="_blank" rel="noopener" href="https://hostmonit.com/manually-select-ip/">CloudFlare自选IP</a>的教程<br>★ Linux\Windows、Python3、pip3环境</strong></p>
+<h4 id="用前必读："><a href="#用前必读：" class="headerlink" title="用前必读："></a><strong>用前必读</strong>：</h4><p><strong>1. 网络环境错综复杂，适合我的不一定适合你，所以尽量先尝试免费的KEY或者购买试用版的KEY</strong><br><strong>2. 如果当前DNSPod有移动、联通、电信线路的解析将会覆盖掉</strong><br><strong>3. 至于为什么要选择性收费，这个标价我也根本不指望能赚钱，甚至不够我国内一台VDS的钱，况且后续会增加VDS节点，并且增加按区域解析的功能。(小声BB，因为前公司欠薪1年多)</strong></p>
+<h3 id="方法一：GitHub-Actions-运行（推荐）"><a href="#方法一：GitHub-Actions-运行（推荐）" class="headerlink" title="方法一：GitHub Actions 运行（推荐）"></a>方法一：GitHub Actions 运行（推荐）</h3><ol>
+<li><p>登录<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cam/capi">腾讯云后台</a>,获取 SecretId、SecretKey</p>
+</li>
+<li><p>Fork<a target="_blank" rel="noopener" href="https://github.com/ddgth/cf2dns">项目</a>到自己的仓库<a target="_blank" rel="noopener" href="https://img.hostmonit.com/images/2020/11/05/fork.png"></a></p>
+</li>
+<li><p>进入第二步中Fork的项目，点击Settings-&gt;Secrets-New secret，分别是DOMAINS，KEY，SECRETID，SECRETKEY。</p>
+<ul>
+<li>DOMAINS 需改域名信息，填写时注意不要有换行 例如：<code>&#123;&quot;hostmonit.com&quot;: &#123;&quot;@&quot;: [&quot;CM&quot;,&quot;CU&quot;,&quot;CT&quot;], &quot;shop&quot;: [&quot;CM&quot;, &quot;CU&quot;, &quot;CT&quot;], &quot;stock&quot;: [&quot;CM&quot;,&quot;CU&quot;,&quot;CT&quot;]&#125;,&quot;4096.me&quot;: &#123;&quot;@&quot;: [&quot;CM&quot;,&quot;CU&quot;,&quot;CT&quot;], &quot;vv&quot;:[&quot;CM&quot;,&quot;CU&quot;,&quot;CT&quot;]&#125;&#125;</code></li>
+<li>KEY API密钥，从<a target="_blank" rel="noopener" href="https://shop.hostmonit.com/">商店</a>购买KEY，也可以使用这个KEY <code>o1zrmHAF</code> ，区别是 <code>o1zrmHAF</code> 是历史优选的Cloudflare IP(也可以从这个<a target="_blank" rel="noopener" href="https://stock.hostmonit.com/CloudFlareYes">网站</a>查到IP的信息)，而购买的KEY是15分钟内获取到的对各运营商速度最优的的Cloudflare IP</li>
+<li>SECRETID 第一部中从<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cam/capi">腾讯云后台</a>,获取到的 <code>SECRETID</code></li>
+<li>SECRETKEY 第一部中从<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cam/capi">腾讯云后台</a>,获取到的 <code>SECRETKEY</code></li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://img.hostmonit.com/images/2020/11/05/secret.png"></a></p>
+</li>
+<li><p>修改您项目中的 <code>.github/workflows/run.yml</code> 文件，修改定时执行的时长(建议15分钟执行一次)，最后点击 <code>start commit</code> 提交即可在Actions中的build查看到执行情况，如果看到 <code>cf2dns</code> 执行日志中有 <code>CHANGE DNS SUCCESS</code> 详情输出，即表示运行成功。<strong>需要注意观察下次定时是否能正确运行，有时候GitHub Actions 挺抽风的</strong><a target="_blank" rel="noopener" href="https://img.hostmonit.com/images/2020/11/05/modify.png"></a><a target="_blank" rel="noopener" href="https://img.hostmonit.com/images/2020/11/05/commit.png"></a><a target="_blank" rel="noopener" href="https://img.hostmonit.com/images/2020/11/05/build.png"></a></p>
+</li>
+</ol>
+<h3 id="方法二：在自己的VPS或电脑中运行"><a href="#方法二：在自己的VPS或电脑中运行" class="headerlink" title="方法二：在自己的VPS或电脑中运行"></a>方法二：在自己的VPS或电脑中运行</h3><ol>
+<li>安装依赖包<code>pip install -r requirements.txt</code>COPY</li>
+<li>登录<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cam/capi">腾讯云后台</a>,获取 SecretId、SecretKey</li>
+<li>将<a target="_blank" rel="noopener" href="https://github.com/ddgth/cf2dns">GitHub中脚本</a>下载到本地</li>
+<li>将第一步中获取到的SecretId、SecretKey配置到cf2dns.py脚本中,并修改脚本中DOMAINS配置信息，可配置多个域名和多个子域名,但必须是在同一个DNSPOD账号下</li>
+<li>(可选)从<a target="_blank" rel="noopener" href="https://shop.hostmonit.com/">商店</a>购买KEY，当然也可以用脚本中自带的KEY，区别是脚本中自带的KEY是历史优选的Cloudflare IP（可以从<a target="_blank" rel="noopener" href="https://stock.hostmonit.com/CloudFlareYes">全球主机补货监控</a>中查看IP的信息），而购买的KEY是15分钟内获取到的连接到各运营商速度最优的Cloudflare IP。</li>
+<li>运行程序，如果能够正常运行可以选择cron或Windows计划任务定时执行（建议15分钟执行一次）<code>python3 cf2dns.py</code>COPY</li>
+</ol>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>写这套程序和教程也耗费了站长很多精力，希望使用本教程的小伙伴能够在下方的留言区说出使用的效果和感受，更希望您能提出宝贵的建议。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/uncategorized/" class="category-chain-item">uncategorized</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>目前CloufFlare自选IP存在问题</div>
+      <div>http://example.com/2022/05/10/720-2/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年5月10日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/22/hexogithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="Hexo+github搭建个人博客">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hexo+github搭建个人博客</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/09/%E9%80%9A%E8%BF%87-heroku-%E9%83%A8%E7%BD%B2-sharelist-%E6%8C%82%E8%BD%BD-teambition/" title="通过 Heroku 部署 ShareList 挂载 Teambition">
+                        <span class="hidden-mobile">通过 Heroku 部署 ShareList 挂载 Teambition</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

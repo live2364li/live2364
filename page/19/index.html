@@ -1,0 +1,788 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="免流量俱乐部">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/19/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="免流量俱乐部">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/26/heroku-%E6%98%AF%E4%B8%80%E4%B8%AA%E6%94%AF%E6%8C%81%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E4%BA%91%E5%B9%B3%E5%8F%B0%E5%8D%B3%E6%9C%8D%E5%8A%A1%EF%BC%8C%E5%B9%B6%E4%B8%94/" target="_self">
+          Heroku 是一个支持多种编程语言的云平台即服务，并且提供免费的容器服务（美国、欧洲节点），本文就以免费容器为例，搭建 V2 并配置 CF 加速，你懂得！  注意：Heroku 有滥用危险，后果可能就是封禁账号哦！
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/26/heroku-%E6%98%AF%E4%B8%80%E4%B8%AA%E6%94%AF%E6%8C%81%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E4%BA%91%E5%B9%B3%E5%8F%B0%E5%8D%B3%E6%9C%8D%E5%8A%A1%EF%BC%8C%E5%B9%B6%E4%B8%94/" target="_self">
+        <div>
+          一、配置Heroku1、首先注册Heroku账号，点击通过 https:&#x2F;&#x2F;dashboard.heroku.com 注册一个账号，注册时候不能使用QQ邮箱：  2、注册成功以后登录，登录以后点击 我我我我  部署应用！名称随便填写就行了，然后点击 Deploy app 系统会自动部署：  3、部署完成以后，点击 Settings 再点击 Reveal Config Vars 就可以看见 UUID
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-26 19:55" pubdate>
+              2021-02-26
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="category-chain-item">科学上网</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/26/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%A4%A7%E9%9B%86%E5%90%88/" target="_self">
+          科学上网客户端大集合
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/26/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%A4%A7%E9%9B%86%E5%90%88/" target="_self">
+        <div>
+          2月 25, 2021 6点热度 0人点赞 0条评论  现在网上流行科学上网的客户端越来越多，让人眼花缭乱，不知道从哪里下手，下面我搜集了现在市面上所有客户端软件，给大家提供一个快速通道！包括Trojan客户端、V2ray客户端、Clash客户端等（Windows、macOS、安卓Android）全平台客户端下载. 推荐工具 内容介绍 常用类型 项目地址 软件页面 支持系统 Winxray 一个简
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-26 01:21" pubdate>
+              2021-02-26
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="category-chain-item">科学上网</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/25/2021%E5%B9%B410%E4%B8%AA%E5%85%8D%E8%B4%B9%E5%BD%B1%E8%A7%86%E7%BD%91%E7%AB%99-%EF%BD%9C%E7%94%B5%E5%BD%B1%E7%BB%BC%E8%89%BA%E7%94%B5%E8%A7%86%E5%89%A7%E5%8A%A8%E6%BC%AB%EF%BD%9C%E5%85%8D%E8%B4%B9/" target="_self">
+          2021年10个免费影视网站 ｜电影综艺电视剧动漫｜免费大陆最新电视剧｜海外华人的福音
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/25/2021%E5%B9%B410%E4%B8%AA%E5%85%8D%E8%B4%B9%E5%BD%B1%E8%A7%86%E7%BD%91%E7%AB%99-%EF%BD%9C%E7%94%B5%E5%BD%B1%E7%BB%BC%E8%89%BA%E7%94%B5%E8%A7%86%E5%89%A7%E5%8A%A8%E6%BC%AB%EF%BD%9C%E5%85%8D%E8%B4%B9/" target="_self">
+        <div>
+          00:00​ 开场白 00:50​ 低端影视 https:&#x2F;&#x2F;ddys.tv&#x2F;​ 02:06​ 爱美剧 https:&#x2F;&#x2F;www.imeiju.io&#x2F;​ 02:56​ 韩迷TV https:&#x2F;&#x2F;www.hmtv.me&#x2F;​ 04:35​ MK影视 https:&#x2F;&#x2F;www.mkvdo.com&#x2F;​ 05:11​ 美剧网 https:&#x2F;&#x2F;www.mjw2020.com&#x2F;​ 05:32​ 独播库 https:
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-25 16:01" pubdate>
+              2021-02-25
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BD%91%E7%AB%99%E5%88%86%E4%BA%AB/" class="category-chain-item">网站分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/24/%E5%85%8D%E8%B4%B9%E9%AB%98%E6%B8%85%E8%A7%82%E7%9C%8B%E3%80%8A%E6%8B%86%E5%BC%B9%E4%B8%93%E5%AE%B62%E3%80%8B1080p/" target="_self">
+          免费高清观看《拆弹专家2》1080P
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/24/%E5%85%8D%E8%B4%B9%E9%AB%98%E6%B8%85%E8%A7%82%E7%9C%8B%E3%80%8A%E6%8B%86%E5%BC%B9%E4%B8%93%E5%AE%B62%E3%80%8B1080p/" target="_self">
+        <div>
+          2月 22, 2021 24点热度 1人点赞 0条评论  近日，由邱礼涛执导，刘德华监制，李敏和李昇编剧，李忠志任动作指导，刘德华、刘青云和倪妮主演[2][3]，为2017年电影《拆弹专家》的续作[4]，但采用全新的故事线和角色，与上部没有关联。中国大陆和台湾分别于2020年12月24日、12月31日上映，香港由于新冠疫情等因素多次延期，最终于2021年2月18日公映。 因为是刚刚上映，我现在只发
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-24 16:44" pubdate>
+              2021-02-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/ll/" class="category-chain-item">ll</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/ll/wrodpress%E5%8D%9A%E5%AE%A2/" class="category-chain-item">wrodpress博客</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/24/2021-02-24%E9%AB%98%E9%80%9F%E8%8A%82%E7%82%B9%E5%88%86%E4%BA%AB/" target="_self">
+          2021-02-24高速节点分享
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/24/2021-02-24%E9%AB%98%E9%80%9F%E8%8A%82%E7%82%B9%E5%88%86%E4%BA%AB/" target="_self">
+        <div>
+          vmess:&#x2F;&#x2F;eyJhZGQiOiIxNTQuODQuMS4yMzUiLCJhaWQiOjY0LCJob3N0Ijoid3d3LjkxNDI2NzQxNzMueHl6IiwiaWQiOiJkMTUxMTFmNS1hZDkyLTQxNzUtYTIzOC03MjY2Y2Y2NjU3ODYiLCJuZXQiOiJ3cyIsInBhdGgiOiIvZm9vdGVycyIsInBvc
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-24 16:42" pubdate>
+              2021-02-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="category-chain-item">科学上网</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/24/wrodpress%E4%B8%BB%E9%A2%98%E3%80%8Akratos%E3%80%8B%E7%9A%84%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%E3%80%81%E5%AF%BC%E8%88%AA%E6%A0%8F%E8%AE%BE%E7%BD%AE%E3%80%81%E6%B7%BB%E5%8A%A0%E5%B0%8F%E5%B7%A5/" target="_self">
+          wrodpress主题《kratos》的主题设置、导航栏设置、添加小工具
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/24/wrodpress%E4%B8%BB%E9%A2%98%E3%80%8Akratos%E3%80%8B%E7%9A%84%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%E3%80%81%E5%AF%BC%E8%88%AA%E6%A0%8F%E8%AE%BE%E7%BD%AE%E3%80%81%E6%B7%BB%E5%8A%A0%E5%B0%8F%E5%B7%A5/" target="_self">
+        <div>
+          前面咱们介绍了免费的开源wrodpress主题《kratos》内容介绍，小伙伴们可以去前几期看看内容（传送门1+传送门2），嫌麻烦的，可以直接看下面的视频教学！ 首先我们要先建立分类目录。在文章-分类目录里可以看到  做出是添加信息，右侧是添加完的分类目录。这里注意，（别名）看清他的介绍，最好是字母或者数字。  添加完分类目录后，我们再新建一个导航菜单。  先新建一个菜单，然后选择左侧的分类目录。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-24 16:41" pubdate>
+              2021-02-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/uncategorized/" class="category-chain-item">uncategorized</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/24/%E5%85%8D%E8%B4%B9wrodpress%E4%B8%BB%E9%A2%98%E3%80%8Akratos%E3%80%8B%E6%93%8D%E4%BD%9C%E8%A7%A3%E6%9E%90/" target="_self">
+          免费wrodpress主题《kratos》操作解析
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/24/%E5%85%8D%E8%B4%B9wrodpress%E4%B8%BB%E9%A2%98%E3%80%8Akratos%E3%80%8B%E6%93%8D%E4%BD%9C%E8%A7%A3%E6%9E%90/" target="_self">
+        <div>
+          如何安装主题？管理员在后台「外观」-&gt;「主题」页面点击「添加」按钮，进入添加主题页面点击「上传主题」按钮，选择下载好的主题压缩文件，点击「现在安装」即可上传安装并自动启用主题。 如何设置主题？管理员在启用主题之后，后台左侧菜单栏会在最下面多出一项「主题设置」，点击即可进入主题设置页面。 如何设置图片 Logo？“管理员在后台「主题设置」-&gt;「全站配置」页面，找到「图片 Logo」选项，
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-24 16:09" pubdate>
+              2021-02-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/uncategorized/" class="category-chain-item">uncategorized</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/24/hello-world-2/" target="_self">
+          Hello world!
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/24/hello-world-2/" target="_self">
+        <div>
+          Welcome to WordPress. This is your first post. Edit or delete it, then start writing! 【player autoplay&#x3D;”1″ random&#x3D;”1″】
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-24 14:50" pubdate>
+              2021-02-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/uncategorized/" class="category-chain-item">uncategorized</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/18/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/#board">17</a><a class="page-number" href="/page/18/#board">18</a><span class="page-number current">19</span>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

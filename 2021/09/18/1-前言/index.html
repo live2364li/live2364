@@ -1,0 +1,812 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="本文是云函数系列第3部，难度稍微大一点，云函数是腾讯云推出的一款产品，其免费额度也不错，白嫖一下啦！需要注意的是，云函数的流量不免费，特殊地区流量费会偏高。不过不用担心，脚本自动签到带来的红包能补上 这里是一些效果能领一些红包挂着领京豆支持非常多的推送方式，微信server酱、pushplus(推送加)、iOS Bark APP、telegram机器人、钉钉机器人、企业微信机器人、iGot Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1.前言">
+<meta property="og:url" content="http://example.com/2021/09/18/1-%E5%89%8D%E8%A8%80/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本文是云函数系列第3部，难度稍微大一点，云函数是腾讯云推出的一款产品，其免费额度也不错，白嫖一下啦！需要注意的是，云函数的流量不免费，特殊地区流量费会偏高。不过不用担心，脚本自动签到带来的红包能补上 这里是一些效果能领一些红包挂着领京豆支持非常多的推送方式，微信server酱、pushplus(推送加)、iOS Bark APP、telegram机器人、钉钉机器人、企业微信机器人、iGot Git">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/hshx123/picplus/raw/master/20210822105620630.jpg">
+<meta property="og:image" content="https://gitee.com/hshx123/picplus/raw/master/20210818231444104.jpg">
+<meta property="og:image" content="https://gitee.com/hshx123/picplus/raw/master/20210825081105294.jpg">
+<meta property="og:image" content="https://gitee.com/hshx123/picplus/raw/master/20210825081537422.jpg">
+<meta property="og:image" content="https://gitee.com/hshx123/picplus/raw/master/20210819235437209.png">
+<meta property="og:image" content="https://gitee.com/hshx123/picplus/raw/master/20210820233852537.jpg">
+<meta property="og:image" content="https://gitee.com/hshx123/picplus/raw/master/20210822112637950.jpg">
+<meta property="og:image" content="https://gitee.com/hshx123/picplus/raw/master/20210820182531256.png">
+<meta property="og:image" content="https://gravatar.loli.net/avatar/5b7c360e9f5051606b98dfde61673663?s=40&r=X&d=">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/G/IMG/bq/toukan.png">
+<meta property="og:image" content="https://q.qlogo.cn/g?b=qq&nk=532439904&refer=web1n&s=100">
+<meta property="og:image" content="https://q.qlogo.cn/g?b=qq&nk=1403533052&refer=web1n&s=100">
+<meta property="og:image" content="https://q.qlogo.cn/g?b=qq&nk=920593990&refer=web1n&s=100">
+<meta property="og:image" content="https://q.qlogo.cn/g?b=qq&nk=10000&refer=web1n&s=100">
+<meta property="og:image" content="https://q.qlogo.cn/g?b=qq&nk=10000&refer=web1n&s=100">
+<meta property="article:published_time" content="2021-09-18T06:05:51.000Z">
+<meta property="article:modified_time" content="2022-07-23T12:09:40.579Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gitee.com/hshx123/picplus/raw/master/20210822105620630.jpg">
+  
+  
+  
+  <title>1.前言 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="1.前言"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-09-18 14:05" pubdate>
+          2021年9月18日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          38 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">1.前言</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>本文是云函数系列第3部，难度稍微大一点，云函数是腾讯云推出的一款产品，其免费额度也不错，白嫖一下啦！需要注意的是，云函数的流量不免费，特殊地区流量费会偏高。不过不用担心，脚本自动签到带来的红包能补上<br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210822134410053.jpg"></a></p>
+<p>这里是一些效果<br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210818223524695.jpg"></a><br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210818224715065.jpg">能领一些红包</a><br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210818225031043.jpg">挂着领京豆</a><br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210818223733737.jpg">支持非常多的推送方式，微信server酱、pushplus(推送加)、iOS Bark APP、telegram机器人、钉钉机器人、企业微信机器人、iGot</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/zero205/JD_tencent_scf/tree/main">Github地址</a></p>
+<h1 id="2-材料"><a href="#2-材料" class="headerlink" title="2.材料"></a>2.材料</h1><ol>
+<li>一个Github账号(没有的<a target="_blank" rel="noopener" href="https://github.com/signup">点这里申请</a> )</li>
+<li>一个腾讯云账号 ( <a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/developer/auth">已实名认证</a> ) ｜ <a target="_blank" rel="noopener" href="https://cloud.tencent.com/register">点我注册</a></li>
+<li>一双手</li>
+<li>会使用搜索引擎的大脑</li>
+<li><strong>很有用的</strong> <a target="_blank" rel="noopener" href="https://github.com/zero205/JD_tencent_scf/blob/main/githubAction.md">环境变量说明</a></li>
+</ol>
+<p>本人写出本文是为了供广大朋友学习交流，我不知此方法是否会导致你的账号异常，故请慎重考虑后再学习！若你使用此方法导致你的账号异常，本人不承担任何责任！</p>
+<h1 id="3-步骤"><a href="#3-步骤" class="headerlink" title="3.步骤"></a>3.步骤</h1><h2 id="3-1-Github准备"><a href="#3-1-Github准备" class="headerlink" title="3.1. Github准备"></a>3.1. Github准备</h2><h4 id="3-1-1-创建一个空Github库并进入-点我创建"><a href="#3-1-1-创建一个空Github库并进入-点我创建" class="headerlink" title="3.1.1.创建一个空Github库并进入 点我创建"></a>3.1.1.创建一个空Github库并进入 <a target="_blank" rel="noopener" href="https://github.com/new">点我创建</a></h4><p><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210822103750421.jpg"></a><br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210822102108281.jpg">此时你的仓库右侧会有Private字样</a></p>
+<h4 id="3-1-2-进入刚才创建的库-点击左下方的-Import-code"><a href="#3-1-2-进入刚才创建的库-点击左下方的-Import-code" class="headerlink" title="3.1.2.进入刚才创建的库,点击左下方的 Import code"></a>3.1.2.进入刚才创建的库,点击左下方的 Import code</h4><p>输入 <code>https://github.com/Ca11back/doge-template</code> 等待代码同步</p>
+<blockquote>
+<p>图片上链接不正确，不用在意</p>
+</blockquote>
+<p><img src="https://gitee.com/hshx123/picplus/raw/master/20210822105620630.jpg" srcset="/img/loading.gif" lazyload></p>
+<h4 id="3-1-3-申请PAT"><a href="#3-1-3-申请PAT" class="headerlink" title="3.1.3.申请PAT"></a>3.1.3.申请PAT</h4><p><a target="_blank" rel="noopener" href="https://github.com/settings/tokens/new">点此来生成一个 token</a> ，把 <code>repo</code>和<code>workflow</code> 两部分勾上，然后点击最下面的创建按钮。<br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210818230355079.jpg"></a><br><strong>此时会生成一串字符，切记储存好这一段字符，只显示一次</strong><br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210818230955850.jpg"></a></p>
+<h4 id="3-1-4-填写PAT到Secrets"><a href="#3-1-4-填写PAT到Secrets" class="headerlink" title="3.1.4.填写PAT到Secrets"></a>3.1.4.填写PAT到Secrets</h4><p>申请完毕后，在刚刚创建的库中点击<br><code>Settings</code>-<code>Secrets</code>-<code>New secret</code><br>这个就是用来配置环境变量的啦</p>
+<p><img src="https://gitee.com/hshx123/picplus/raw/master/20210818231444104.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>name填PAT，Value填入上方申请到的PAT,保存即可<br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210818231643370.jpg"></a></p>
+<h4 id="3-1-5-同步仓库"><a href="#3-1-5-同步仓库" class="headerlink" title="3.1.5.同步仓库"></a>3.1.5.同步仓库</h4><p>在刚刚创建的库中点击 <code>Actions</code>-<code>Select Workflow</code>(PC端无该选择)-<code>Sync(手动执行接换到部署分支)</code>。如果有黄色提示，点击黄色提示右侧按钮进行启用Workflow</p>
+<blockquote>
+<p>图片上为旧版，名字不一样，操作一致</p>
+</blockquote>
+<p><img src="https://gitee.com/hshx123/picplus/raw/master/20210825081105294.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>再点击右侧 <code>Run workflow</code>即可完成同步</p>
+<p><img src="https://gitee.com/hshx123/picplus/raw/master/20210825081537422.jpg" srcset="/img/loading.gif" lazyload></p>
+<h2 id="3-2-云函数准备"><a href="#3-2-云函数准备" class="headerlink" title="3.2.云函数准备"></a>3.2.云函数准备</h2><h4 id="3-2-1-开通必要服务"><a href="#3-2-1-开通必要服务" class="headerlink" title="3.2.1.开通必要服务"></a>3.2.1.开通必要服务</h4><p>依次登录 <a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/scf">SCF 云函数控制台</a> 和 <a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/sls">SLS 控制台</a> 开通相关服务。一般来说，进入后等一下会出现开通服务的提示。<br>确保账户下已开通服务并创建相应 <a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cam/role">服务角色</a> : SCF_QcsRole、SLS_QcsRole<br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210818235138982.jpg"></a>注意！为了确保权限足够，获取这两个参数时不要使用子账户！此外，腾讯云账户需要<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/developer/auth">实名认证</a></p>
+<h4 id="3-2-2-配置腾讯云访问密钥"><a href="#3-2-2-配置腾讯云访问密钥" class="headerlink" title="3.2.2.配置腾讯云访问密钥"></a>3.2.2.配置腾讯云访问密钥</h4><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cam/capi">点我创建密钥</a><br><strong>记录<code>SecretKey</code>和<code>SecretId</code>两串字符</strong></p>
+<p>在刚刚创建的库中点击<br><code>Settings</code>-<code>Secrets</code>-<code>New secret</code></p>
+<p>name填 <code>TENCENT_SECRET_ID</code> ，Value填入上方申请到的<code>SecretId</code>,保存即可<br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210818235901249.jpg"></a><br>同理，再点击 <code>New secret</code><br>name填 <code>TENCENT_SECRET_KEY</code> ，Value填入上方申请到的 <code>SecretKey</code> ,保存即可<br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210819000348757.jpg"></a></p>
+<h4 id="3-2-3-Github的云函数配置"><a href="#3-2-3-Github的云函数配置" class="headerlink" title="3.2.3.Github的云函数配置"></a>3.2.3.Github的云函数配置</h4><p>［notice]区域可以任选(流量费不一样，尽量国内)，如果需要使用TG机器人推送通知，建议选择香港<br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/583/17299">定价和更多地区请点我查看</a>[&#x2F;notice]</p>
+<ol>
+<li>想好你选择的地区代号，成都为<code>ap-chengdu</code>，香港为<code>ap-hongkong</code> <a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/583/17299">定价和更多地区请点我查看</a></li>
+<li>在Github方前创建的库中点击<code>Settings</code>-<code>Secrets</code>-<code>New secret</code> 依次创建两个变量，Name和Value分别为</li>
+</ol>
+<p>Name</p>
+<p>Value</p>
+<p>TENCENT_FUNCTION_NAME</p>
+<p>jd</p>
+<p>SCF_REGION</p>
+<p>你的云函数的地区代号</p>
+<h2 id="3-3-获取京东的Cookie"><a href="#3-3-获取京东的Cookie" class="headerlink" title="3.3.获取京东的Cookie"></a>3.3.获取京东的Cookie</h2><h4 id="3-3-1-PC端"><a href="#3-3-1-PC端" class="headerlink" title="3.3.1.PC端"></a>3.3.1.PC端</h4><ol>
+<li>打开 <a target="_blank" rel="noopener" href="https://m.jd.com/">京东手机版页面</a> 并使用手机验证码登陆(这种方式Cookie有效期最长，约31天)</li>
+<li>按 <code>F12</code> 打开开发者工具，选到 <code>Application</code></li>
+<li>复制pk_key和pt_pin，按照以下格式排列，<strong>注意符号</strong></li>
+</ol>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">pt_key</span>=复制的key值<span class="hljs-comment">;pt_pin=复制的pin值;</span><br></code></pre></td></tr></table></figure>
+
+<p>TxtCopy</p>
+<ul>
+<li>实例:</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">pt_key</span>=AAJhHagTi62vyR3720LsBJVjRMdjbdusu<span class="hljs-comment">;pt_pin=jd_49434;</span><br></code></pre></td></tr></table></figure>
+
+<p>EgCopy</p>
+<ul>
+<li>如果有多个京东账号，用<code>&amp;</code>连接，格式为:一个京东账号Cookie<code>&amp;</code>另一个京东账号Cookie</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">pt_key</span>=AAJhHagTi62v2sdudNdjbdusu<span class="hljs-comment">;pt_pin=jd_49434584;&amp;pt_key=AAJhHagTi62v2sdudNdjbdusu;pt_pin=jd_49434584;</span><br></code></pre></td></tr></table></figure>
+
+<p>EgCopy</p>
+<h4 id="3-3-2-安卓端"><a href="#3-3-2-安卓端" class="headerlink" title="3.3.2.安卓端"></a>3.3.2.安卓端</h4><ol>
+<li>安装kiwi浏览器(或有开发者工具的浏览器都可以) <a target="_blank" rel="noopener" href="https://66ccff.work/other/kiwi.html">查看链接</a></li>
+<li>打开 <a target="_blank" rel="noopener" href="https://m.jd.com/">京东手机版页面</a> 并使用手机验证码登陆(这种方式Cookie有效期最长，约31天)</li>
+<li>打开开发者工具(菜单栏里)，打开电脑模式，选择 <code>Application</code><br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210820132845750.jpg"></a></li>
+<li>找到pk_key和pt_pin</li>
+</ol>
+<ul>
+<li>方法①如果你的手机可以打开 <strong>小窗</strong> ，尝试长按文字后拖入某些可以打字的窗口［如:系统自带的笔记&#x2F;标签，QQ］<br><a target="_blank" rel="noopener" href="https://pic.66ccff.top/20210820173435211.gif"></a></li>
+<li>方法②截图，用某些软件文字识别(比如翻译软件、QQ等)<br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210820132845750.jpg"></a></li>
+<li>按照以下格式排列，<strong>注意符号和识别后产生的空格</strong></li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">pt_key</span>=复制的key值<span class="hljs-comment">;pt_pin=复制的pin值;</span><br></code></pre></td></tr></table></figure>
+
+<p>TxtCopy</p>
+<ul>
+<li>实例:</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">pt_key</span>=AAJhHagTi62v2sdudNdjbdusu<span class="hljs-comment">;pt_pin=jd_49434584;</span><br></code></pre></td></tr></table></figure>
+
+<p>EgCopy</p>
+<ul>
+<li>如果有多个京东账号，用 <code>&amp;</code> 连接，格式为:一个京东账号Cookie<code>&amp;</code>另一个京东账号Cookie</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">pt_key</span>=AAJhHagTi62v2sdudNdjbdusu<span class="hljs-comment">;pt_pin=jd_49434584;&amp;pt_key=AAJhHagTi62v2sdudNdjbdusu;pt_pin=jd_49434584;</span><br></code></pre></td></tr></table></figure>
+
+<p>EgCopy</p>
+<h4 id="3-3-3-Github添加Cookie变量"><a href="#3-3-3-Github添加Cookie变量" class="headerlink" title="3.3.3.Github添加Cookie变量"></a>3.3.3.Github添加Cookie变量</h4><p>根据脚本作者的<a target="_blank" rel="noopener" href="https://github.com/zero205/JD_tencent_scf/blob/main/githubAction.md">环境变量说明</a> 可知: 在刚才创建的库中点击<br><code>Settings</code>-<code>Secrets</code>-<code>New secret</code></p>
+<p>Name</p>
+<p>Value</p>
+<p>JD_COOKIE</p>
+<p>刚才排列好的Cookie</p>
+<h2 id="3-4-无推送直接部署"><a href="#3-4-无推送直接部署" class="headerlink" title="3.4.无推送直接部署"></a>3.4.无推送直接部署</h2><blockquote>
+<p>如果你不需要消息推送的话，现在就可以部署了，坏处就是云函数坏了不能及时了解</p>
+</blockquote>
+<p>在刚才创建的库中点击 <code>Actions</code>按图操作<br><strong>注意:</strong> 如果有一个黄色提示，请先点击提示右侧的按键再按图操作<br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210822112637950.jpg"></a>检查是否部署成功<br>进入 <a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/scf/list-detail?rid=5&ns=default&id=jd">函数服务</a><br>查看环境变量，若变量同步到云函数，即为成功<br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210820181147683.jpg"></a></p>
+<p><a target="_blank" rel="noopener" href="https://66ccff.work/teach/jd.html#2">点我进入下一步:测试</a></p>
+<h2 id="3-5-使用Sever酱微信推送"><a href="#3-5-使用Sever酱微信推送" class="headerlink" title="3.5.使用Sever酱微信推送"></a>3.5.使用Sever酱微信推送</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://sct.ftqq.com/3.version">Sever酱官网</a> 开通并使用上它，只需要一分钟</li>
+<li>根据脚本作者的<a target="_blank" rel="noopener" href="https://github.com/zero205/JD_tencent_scf/blob/main/githubAction.md">环境变量说明</a> 可知: 在刚才创建的库中点击<br><code>Settings</code>-<code>Secrets</code>-<code>New secret</code></li>
+</ul>
+<p>Name</p>
+<p>Value</p>
+<p>PUSH_KEY</p>
+<p>Sever酱给你的SendKey</p>
+<h2 id="3-6-使用TG机器人推送"><a href="#3-6-使用TG机器人推送" class="headerlink" title="3.6.使用TG机器人推送"></a>3.6.使用TG机器人推送</h2><blockquote>
+<p>部分参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/30450761">可能是全网最基础的创建telegram bot的教程</a><br>此时，我们假设你有了合适的网络，一个TG账号</p>
+</blockquote>
+<h4 id="3-6-1-向Bot-Father-申请一个bot-token"><a href="#3-6-1-向Bot-Father-申请一个bot-token" class="headerlink" title="3.6.1.向Bot Father 申请一个bot token"></a>3.6.1.向Bot Father 申请一个bot token</h4><ol>
+<li>首先在telegram中搜索 <code>botfather</code> ，并和botfather开始对话：<br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210819235436812.jpg"></a></li>
+<li>按下 <code>/start</code> 之后，botfather会回复如下信息：<br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210819235437186.jpg"></a></li>
+<li>紧接着回复 <code>/newbot</code> 开始创建你的bot，botfather会要求你输入 <code>bot的名字</code> 和 <code>bot用户名</code><br>bot名会显示在搜索界面，而bot的username在搜索bot和添加bot入group的时候会起作用（你无法通过搜索bot名来添加bot如群组）</li>
+<li>username <strong>必须</strong> 以 bot 或者 _bot （不区分大小写）结尾：如 ABCBot，ABC_bot。<br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210819235437199.jpg"></a></li>
+<li>完成了这两项后，botfather会给你bot专属的token( <strong>保存好，之后会用</strong> )：<br>大概像这样</li>
+</ol>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clojure"><span class="hljs-number">123456789</span><span class="hljs-symbol">:qwertyuiopasdfghjklzxcvbnmmnbvcxz</span><br></code></pre></td></tr></table></figure>
+
+<p>EgCopy</p>
+<p><img src="https://gitee.com/hshx123/picplus/raw/master/20210819235437209.png" srcset="/img/loading.gif" lazyload></p>
+<ol>
+<li>给你创建的机器人随便发条消息，否则机器人无法主动发给你消息</li>
+</ol>
+<h4 id="3-6-2-获取你的用户id"><a href="#3-6-2-获取你的用户id" class="headerlink" title="3.6.2.获取你的用户id"></a>3.6.2.获取你的用户id</h4><ol>
+<li>打开TG，搜索<code>@userinfobot</code> 机器人(如图)<br><a target="_blank" rel="noopener" href="https://pic.66ccff.top/20210820174646059.jpg"></a></li>
+<li>按下方 <code>/start</code> 后，机器人发给你一条包含id的消息，保存好，待会用<br><a target="_blank" rel="noopener" href="https://pic.66ccff.top/20210820174646107.jpg"></a></li>
+</ol>
+<h4 id="3-6-3-配置Github的Secrets"><a href="#3-6-3-配置Github的Secrets" class="headerlink" title="3.6.3.配置Github的Secrets"></a>3.6.3.配置Github的Secrets</h4><p>应该不用多说了吧…看不懂？肯定没好好看教程</p>
+<p>Name</p>
+<p>Value</p>
+<p>TG_BOT_TOKEN</p>
+<p>刚才申请的机器人的Token</p>
+<p>TG_USER_ID</p>
+<p>刚才从机器人得到的用户id</p>
+<h2 id="3-7-PUSHPLUS"><a href="#3-7-PUSHPLUS" class="headerlink" title="3.7.PUSHPLUS"></a>3.7.PUSHPLUS</h2><h4 id="3-7-1一对一推送"><a href="#3-7-1一对一推送" class="headerlink" title="3.7.1一对一推送"></a>3.7.1一对一推送</h4><blockquote>
+<p>和Sever酱很像，多了一个群组功能</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.pushplus.plus/push1.html">点我进入PushPlus官网</a></p>
+<p>扫码登陆后，可以获得一个Token</p>
+<p>Github配置Secrets:</p>
+<p>Name</p>
+<p>Value</p>
+<p>PUSH_PLUS_TOKEN</p>
+<p>Pushplus给你的Token</p>
+<h4 id="3-7-2-一对多推送"><a href="#3-7-2-一对多推送" class="headerlink" title="3.7.2.一对多推送"></a>3.7.2.一对多推送</h4><p>在这里创建一个群组，记录群组编号<br><a target="_blank" rel="noopener" href="https://www.pushplus.plus/push2.html">查看链接</a></p>
+<p><img src="https://gitee.com/hshx123/picplus/raw/master/20210820233852537.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>群组创建完毕后，你<strong>需要</strong>扫描二维码加入，订阅者也需要扫描二维码码加入</p>
+<hr>
+<p>Github配置Secrets:</p>
+<p>Name</p>
+<p>Value</p>
+<p>PUSH_PLUS_TOKEN</p>
+<p>Pushplus给你的Token</p>
+<p>PUSH_PLUS_USER</p>
+<p>群组编号</p>
+<p>更多推送正在撰写，你可以参考脚本作者的<a target="_blank" rel="noopener" href="https://github.com/zero205/JD_tencent_scf/blob/main/githubAction.md">环境变量说明</a> 进行配置</p>
+<h1 id="4-部署"><a href="#4-部署" class="headerlink" title="4.部署"></a>4.部署</h1><p>在刚才创建的库中点击 <code>Actions</code>按图操作<br><strong>注意:</strong> 如果有一个黄色提示，请先点击提示右侧的按键再按图操作</p>
+<p><img src="https://gitee.com/hshx123/picplus/raw/master/20210822112637950.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210822112637950.jpg"></a>检查是否部署成功<br>进入 <a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/scf/list-detail?rid=5&ns=default&id=jd">函数服务</a><br>查看环境变量，若变量同步到云函数，即为成功<br><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210820181147683.jpg"></a></p>
+<h2 id="4-1-测试"><a href="#4-1-测试" class="headerlink" title="4.1.测试"></a>4.1.测试</h2><p>切换到旧版编辑器，选择 <code>Timer 定时触发器事件模板</code> ，Message右边双引号内写(不要删掉引号)</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c">jd_bean_sign<span class="hljs-meta">&amp;jd_bean_change</span><br></code></pre></td></tr></table></figure>
+
+<p>JavaScriptCopy</p>
+<p>点击测试</p>
+<p><img src="https://gitee.com/hshx123/picplus/raw/master/20210820182531256.png" srcset="/img/loading.gif" lazyload></p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/hshx123/picplus/raw/master/20210820182531256.png"></a>你将会收到通知推送(假如你设置了的话)，文章字数超限了，没法放日志233</p>
+<h1 id="Enjoy"><a href="#Enjoy" class="headerlink" title="Enjoy"></a>Enjoy</h1><hr>
+<p>版权属于：hshx123</p>
+<p>本站文章版权声明：自由转载-非商用-保持署名<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/3.0/deed.zh">Creative Commons BY-NC 3.0</a></p>
+<p>你可转载和修改文章，但必须注明原作者和原文链接，不得用于商业用途</p>
+<p>本站资源声明: 1.本文部分内容转载自其它媒体，但并不代表本站赞同其观点和对其真实性负责。</p>
+<p>2.若您需要商业运营或用于其他商业活动，请您购买正版授权并合法使用。</p>
+<p>3.如果本站有侵犯、不妥之处的资源，请在网站最下方联系我们。将会第一时间解决！</p>
+<p>4.本站所有资源均由互联网收集整理、网友上传以及本人制作，仅供大家参考、学习，不存在任何商业目的与商业用途。</p>
+<p>5.本站提供的所有资源仅供参考学习使用，版权归原著所有，禁止下载本站资源参与商业和非法行为，请在24小时之内自行删除!</p>
+<p>喝杯水 ENJOY 42</p>
+<p><a target="_blank" rel="noopener" href="https://66ccff.work/tag/yhs/">云函数</a></p>
+<p>最后编辑于18天前</p>
+<h2 id="添加新评论"><a href="#添加新评论" class="headerlink" title="添加新评论"></a>添加新评论</h2><p>(OwO)发射</p>
+<ol>
+<li><img src="https://gravatar.loli.net/avatar/5b7c360e9f5051606b98dfde61673663?s=40&r=X&d=" srcset="/img/loading.gif" lazyload alt="她的胸毛">她的胸毛2021-09-18 08:39腾讯的服务收费情况如何，刚开通第一天3毛5， <img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/G/IMG/bq/toukan.png" srcset="/img/loading.gif" lazyload><a target="_blank" rel="noopener" href="https://66ccff.work/teach/jd.html/comment-page-1?replyTo=2012#respond-post-400">回复</a></li>
+<li><img src="https://q.qlogo.cn/g?b=qq&nk=532439904&refer=web1n&s=100" srcset="/img/loading.gif" lazyload alt="cathay">cathay2021-09-17 15:31我的Github Action被禁用了，有什么办法解禁么？<a target="_blank" rel="noopener" href="https://66ccff.work/teach/jd.html/comment-page-1?replyTo=2008#respond-post-400">回复</a></li>
+<li><img src="https://q.qlogo.cn/g?b=qq&nk=1403533052&refer=web1n&s=100" srcset="/img/loading.gif" lazyload alt="ensignwy">ensignwy2021-09-17 11:55同步仓库就卡住了，我没有那个Sync yml repo<a target="_blank" rel="noopener" href="https://66ccff.work/teach/jd.html/comment-page-1?replyTo=2007#respond-post-400">回复</a></li>
+<li><img src="https://q.qlogo.cn/g?b=qq&nk=920593990&refer=web1n&s=100" srcset="/img/loading.gif" lazyload alt="小痕">小痕2021-09-15 06:42请问怎么获取助力码啊，我咋只给别人助力<a target="_blank" rel="noopener" href="https://66ccff.work/teach/jd.html/comment-page-1?replyTo=2003#respond-post-400">回复</a></li>
+<li><img src="https://q.qlogo.cn/g?b=qq&nk=10000&refer=web1n&s=100" srcset="/img/loading.gif" lazyload alt="男的">男的2021-09-13 18:04大佬，cookie过期需要修改secrets然后部署嘛？<a target="_blank" rel="noopener" href="https://66ccff.work/teach/jd.html/comment-page-1?replyTo=1996#respond-post-400">回复</a><ol>
+<li><img src="https://q.qlogo.cn/g?b=qq&nk=10000&refer=web1n&s=100" srcset="/img/loading.gif" lazyload alt="男的">男的2021-09-13 18:28在app抓包抓到访问un.m.jd.com的时候cooki里有个pt_key参数，我试了下也可以用，不知道有效期多久</li>
+</ol>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/uncategorized/" class="category-chain-item">uncategorized</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>1.前言</div>
+      <div>http://example.com/2021/09/18/1-前言/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年9月18日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/10/03/%E5%9B%BD%E5%BA%86%E6%9B%B4%E6%96%B0%E7%99%BD%E5%AB%96%E4%BA%91%E5%87%BD%E6%95%B0%E8%BF%9B%E8%A1%8C%E4%BA%AC%E4%B8%9C%E8%87%AA%E5%8A%A8%E7%AD%BE%E5%88%B0%E9%A2%86%E4%BA%AC%E8%B1%86-%E7%BA%A2/" title="(国庆更新)白嫖云函数进行京东自动签到领京豆/红包 Vol.3">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">(国庆更新)白嫖云函数进行京东自动签到领京豆/红包 Vol.3</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/12/v2ray%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/" title="V2Ray一键脚本">
+                        <span class="hidden-mobile">V2Ray一键脚本</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

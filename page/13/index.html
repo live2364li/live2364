@@ -1,0 +1,945 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="免流量俱乐部">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/13/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="免流量俱乐部">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/17/%E5%81%9C%E6%9C%BA%E5%8D%A1%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" target="_self">
+          停机卡使用教程
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/04/17/%E5%81%9C%E6%9C%BA%E5%8D%A1%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" target="_self">
+        <div>
+          办理停机 下载电信掌厅APP 通过验证码登录你的停机卡手机号这里如果收不到验证码，确认话费已经且成功到账则说明电信系统录入号码可能存在延迟，过一段时间再试试！ 【可选择】重置服务密码，为了便于停机后方便操作号码业务，这里可以在我-&gt;设置-&gt;密码重置处修改，并妥善保存 充值话费10-20元，不需要过多，停机保号月租：5元，没话费的时候充上就行了如果不充值话费无法办理停机，超过3个月也会被
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-17 15:17" pubdate>
+              2021-04-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="category-chain-item">科学上网</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/17/%E3%80%90%E6%95%99%E7%A8%8B%E3%80%91root%E7%83%AD%E7%82%B9%E6%95%99%E7%A8%8B%E5%AE%89%E5%8D%93/" target="_self">
+          【教程】ROOT热点教程{安卓}
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/04/17/%E3%80%90%E6%95%99%E7%A8%8B%E3%80%91root%E7%83%AD%E7%82%B9%E6%95%99%E7%A8%8B%E5%AE%89%E5%8D%93/" target="_self">
+        <div>
+          984字数 分类： 默认分类   首页 正文     一、下载软件下载地址:https:&#x2F;&#x2F;xyrxx.lanzous.com&#x2F;igxNOk7b6aj 二、安装ROOT版热点工具 三、连接上软件的配置文件四、开启手机的共享热点{建议关闭开发者选项中的热点硬件加速器} 五、开启APP内的第二个按钮，也就是Wlan0 六、软件需要ROOT权限直接允许就行 七、开启 尝试修复DHCP 选项和保持WIF
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-17 15:13" pubdate>
+              2021-04-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/integer/" class="category-chain-item">integer</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/integer/%E5%85%8D%E6%B5%81%E6%90%AD%E5%BB%BA%E5%AE%89%E5%8D%93/" class="category-chain-item">免流搭建安卓</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/17/iptv%E3%80%81%E7%94%B5%E8%A7%86%E7%9B%B4%E6%92%AD%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86%E5%88%86%E4%BA%AB/" target="_self">
+          IPTV、电视直播相关资源整理分享
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/04/17/iptv%E3%80%81%E7%94%B5%E8%A7%86%E7%9B%B4%E6%92%AD%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86%E5%88%86%E4%BA%AB/" target="_self">
+        <div>
+          首页 直播 Netflix 技术折腾 主机 影传社の导航站 关于  影传社 首页 直播 Netflix 技术折腾 主机 影传社の导航站 关于  发现有趣，留存新奇IPTV、电视直播相关资源整理分享 2020年3月29日  2条评论  3,969次阅读  24人点赞   前面几天其实就在油管Youtube上传了简单的使用视频，推荐前往观看，需要梯子或机场的小伙伴可以试下这个或这个 还有 这个，都是
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-17 14:17" pubdate>
+              2021-04-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Netflix/" class="category-chain-item">Netflix</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/13/%E6%91%A7%E6%AF%81/" target="_self">
+          摧毁
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/04/13/%E6%91%A7%E6%AF%81/" target="_self">
+        <div>
+          $uName&#x3D;$_POST[“userName”];$uPwd&#x3D;$_POST[“password”]; $_SESSION[“uName”]&#x3D;$uName; $url &#x3D; “mysql:host&#x3D;mysql;dbname&#x3D;database_24331_19_91504”;$user &#x3D; “24331_19_91504”;&amp;#x2
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-13 16:04" pubdate>
+              2021-04-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/e5-ad-a6-e4-b9-a0/" class="category-chain-item">%e5%ad%a6%e4%b9%a0</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/e5-ad-a6-e4-b9-a0/PHP/" class="category-chain-item">PHP</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/12/php91493/" target="_self">
+          PHP91493
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/04/12/php91493/" target="_self">
+        <div>
+          exec($sql);  $\_SESSION\[&quot;userName&quot;\] &#x3D; $userName;  $st &#x3D; $conn-&gt;query(&quot;select \* from admin where username&#x3D;&#39;$userName&#39; and password&#x3D;&#39;$password&#39;&quot;);   $rs &#x3D; $st-&gt;fetch();  $\_SESSION\[&quot;userId&quot;\] &#x3D; $rs\
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-12 11:41" pubdate>
+              2021-04-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/e5-ad-a6-e4-b9-a0/" class="category-chain-item">%e5%ad%a6%e4%b9%a0</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/e5-ad-a6-e4-b9-a0/PHP/" class="category-chain-item">PHP</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/10/%F0%9F%A4%96%EF%B8%8F%E5%AE%89%E5%8D%93%E5%85%8D%E6%B5%81%E6%95%99%E7%A8%8B/" target="_self">
+          🤖️安卓免流教程
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/04/10/%F0%9F%A4%96%EF%B8%8F%E5%AE%89%E5%8D%93%E5%85%8D%E6%B5%81%E6%95%99%E7%A8%8B/" target="_self">
+        <div>
+          免流原理  利用混淆参数来欺骗运营商从而伪装流量使其计算免费的定向流量，利用这个混淆参数让运营商以为你在访问免流范围内的网页或者使用免流范围内的软件，从而达到全局免流的效果  开机卡免流教程  先了解清楚自己的手机卡套餐具体哪些软件支持免流，然后选择合适的混淆参数  例如我用的是电信大鱼卡套餐，套餐内天翼视讯支持免流，那我就用天翼视讯的混淆参数    选择一个80端口的节点，不要用其它端口的，
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-10 23:48" pubdate>
+              2021-04-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/integer/" class="category-chain-item">integer</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/integer/%E5%85%8D%E6%B5%81%E6%90%AD%E5%BB%BA%E5%AE%89%E5%8D%93/" class="category-chain-item">免流搭建安卓</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/10/%E5%85%8D%E6%B5%81%E6%B7%B7%E6%B7%86%E5%8F%82%E6%95%B0/" target="_self">
+          免流混淆参数
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/04/10/%E5%85%8D%E6%B5%81%E6%B7%B7%E6%B7%86%E5%8F%82%E6%95%B0/" target="_self">
+        <div>
+          高级混淆参数是给SSR用的，请勿在V2Ray中使用12345青岛啤酒免费领取流量(联通)http:&#x2F;&#x2F;www.mlwifi.cn&#x2F;qdll&#x2F;联通趣味天天摇https:&#x2F;&#x2F;m.client.10010.com&#x2F;sma-lottery&#x2F;qpactivity&#x2F;qingpiindex  ️ 1234567891011121314151617181920212223242526272829303132333
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-10 23:11" pubdate>
+              2021-04-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/integer/" class="category-chain-item">integer</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/integer/%E5%85%8D%E6%B5%81%E6%90%AD%E5%BB%BA%E5%AE%89%E5%8D%93/" class="category-chain-item">免流搭建安卓</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/10/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8B%E8%BD%BD/" target="_self">
+          客户端下载
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/04/10/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8B%E8%BD%BD/" target="_self">
+        <div>
+          客户端下载12345678910111213141516171819202122232425262728293031323334353637&amp;#123;文件已放觔斗雲云盘，免翻墙即可下载&amp;#125;Android点击下载&amp;#123;V2RayNG使用国内免流节点时需要把远程DNS设置成114.114.114.114，不然会很慢，Shadowrocket请忽略此步骤国内节点是ping不通Google
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-10 23:10" pubdate>
+              2021-04-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/integer/" class="category-chain-item">integer</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/integer/%E5%85%8D%E6%B5%81%E6%90%AD%E5%BB%BA%E8%8B%B9%E6%9E%9C/" class="category-chain-item">免流搭建苹果</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/10/%E7%94%B5%E4%BF%A1%E5%81%9C%E6%9C%BA%E5%8D%A1%E5%85%8D%E6%B5%81%E6%95%99%E7%A8%8B/" target="_self">
+          电信停机卡免流教程
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/04/10/%E7%94%B5%E4%BF%A1%E5%81%9C%E6%9C%BA%E5%8D%A1%E5%85%8D%E6%B5%81%E6%95%99%E7%A8%8B/" target="_self">
+        <div>
+          电信停机卡免流教程  用手机营业厅软件或者打人工服务电话申请停机保号(停机保号费每月5¥，要保持足够的余额养卡)  申请停机保号后，打开数据看是否有4G信号，有4G信号的话判断是否有绿通，在浏览器访问weixin.com，有绿通的话免流方法与开机卡类似，用绿通混淆参数，奔放!  限速问题  部分地区可能会有限速，具体以实际测试为准  端口问题  有些地区限制端口，有些地区不限制端口，例如湖南电
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-10 23:09" pubdate>
+              2021-04-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/integer/" class="category-chain-item">integer</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/integer/%E5%85%8D%E6%B5%81%E6%90%AD%E5%BB%BA%E5%AE%89%E5%8D%93/" class="category-chain-item">免流搭建安卓</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/10/%E7%BE%A4%E4%B8%BB%E5%B8%B8%E7%94%A8%E7%9A%84%E5%85%8D%E6%B5%81%E6%B7%B7%E6%B7%86%E5%8F%82%E6%95%B0/" target="_self">
+          群主常用的免流混淆参数
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/04/10/%E7%BE%A4%E4%B8%BB%E5%B8%B8%E7%94%A8%E7%9A%84%E5%85%8D%E6%B5%81%E6%B7%B7%E6%B7%86%E5%8F%82%E6%95%B0/" target="_self">
+        <div>
+          广东联通大王卡(手厅直播定向) pull.free.video.10010.com(80端口) 湖南电信星卡29元畅玩版(优酷定向) vali-dns.cp31.ott.cibntv.net(80端口) 湖南电信停机卡(不限速) lt.hn.189.cn:1082(80端口) lt.hn.189.cn(1082端口) 解除端口限制(仅tcp_http协议可以解除端口限制) path填写 http:
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-10 23:09" pubdate>
+              2021-04-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/integer/" class="category-chain-item">integer</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/integer/%E5%85%8D%E6%B5%81%E6%90%AD%E5%BB%BA%E5%AE%89%E5%8D%93/" class="category-chain-item">免流搭建安卓</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/12/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/#board">11</a><a class="page-number" href="/page/12/#board">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/#board">14</a><a class="page-number" href="/page/15/#board">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/#board">19</a><a class="extend next" rel="next" href="/page/14/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

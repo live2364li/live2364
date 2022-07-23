@@ -1,0 +1,833 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="×   免流混淆参数  免流混淆参数，理论完美支持联通电信全国所有地区 使用方法举个例子：使用的是大鱼卡，而大鱼卡对高德地图是免流的，那么我就可以使用高德地图的混淆参数，把客户端的混淆参数改成 mps.amap.com#Connection: Keep-AlivenAccept-Encoding: gzipnContent-Length: 680，代理模式设置为全局，安卓客户端的代理模式在路由那里">
+<meta property="og:type" content="article">
+<meta property="og:title" content="免流混淆参数">
+<meta property="og:url" content="http://example.com/2021/05/09/%E5%85%8D%E6%B5%81%E6%B7%B7%E6%B7%86%E5%8F%82%E6%95%B0-2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="×   免流混淆参数  免流混淆参数，理论完美支持联通电信全国所有地区 使用方法举个例子：使用的是大鱼卡，而大鱼卡对高德地图是免流的，那么我就可以使用高德地图的混淆参数，把客户端的混淆参数改成 mps.amap.com#Connection: Keep-AlivenAccept-Encoding: gzipnContent-Length: 680，代理模式设置为全局，安卓客户端的代理模式在路由那里">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/logo-right.png">
+<meta property="og:image" content="https://xuxiansheng.oss-cn-chengdu.aliyuncs.com/wp-content/uploads/2019/07/77ed36f4b18679c.jpg">
+<meta property="og:image" content="https://secure.gravatar.com/avatar/aabd06174f6c4504753055895c305efb?s=48&d=https://leoyum.com/wp-content/themes/simple/images/kide.jpg&r=g">
+<meta property="og:image" content="https://secure.gravatar.com/avatar/a526c419336e128354907311a7036db5?s=48&d=https://leoyum.com/wp-content/themes/simple/images/kide.jpg&r=g">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/cy.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/hanx.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/huaix.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/tx.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/se.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/wx.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/zk.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/shui.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/kuk.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/lh.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/gz.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/ku.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/kel.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/yiw.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/yun.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/jy.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/dy.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/gg.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/fn.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/fendou.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/shuai.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/kl.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/pj.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/fan.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/lw.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/qiang.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/ruo.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/ws.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/ok.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/gy.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/qt.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/cj.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/aini.gif">
+<meta property="og:image" content="https://leoyum.com/wp-content/themes/simple/images/smilies/bu.gif">
+<meta property="og:image" content="https://wallhaven.cc/latest?page=2/2021/05/image.png">
+<meta property="article:published_time" content="2021-05-09T06:28:56.000Z">
+<meta property="article:modified_time" content="2022-07-23T12:09:40.486Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://leoyum.com/wp-content/themes/simple/images/logo-right.png">
+  
+  
+  
+  <title>免流混淆参数 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="免流混淆参数"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-05-09 14:28" pubdate>
+          2021年5月9日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          8.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          75 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">免流混淆参数</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>× </p>
+<p><a target="_blank" rel="noopener" href="https://leoyum.com/"><img src="https://leoyum.com/wp-content/themes/simple/images/logo-right.png" srcset="/img/loading.gif" lazyload alt="logo"></a></p>
+<p>免流混淆参数</p>
+<p><img src="https://xuxiansheng.oss-cn-chengdu.aliyuncs.com/wp-content/uploads/2019/07/77ed36f4b18679c.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>免流混淆参数，理论完美支持联通电信全国所有地区</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a><strong>使用方法</strong></h3><p>举个例子：使用的是大鱼卡，而大鱼卡对高德地图是免流的，那么我就可以使用高德地图的混淆参数，把客户端的混淆参数改成 mps.amap.com#Connection: Keep-AlivenAccept-Encoding: gzipnContent-Length: 680，代理模式设置为全局，安卓客户端的代理模式在路由那里 (默认全局，无需修改)，IOS 小火箭的全局路由改成代理模式就可以了，理论支持电信联通所有互联网套餐卡！</p>
+<h4 id="1-联通普卡混淆"><a href="#1-联通普卡混淆" class="headerlink" title="1.联通普卡混淆"></a>1.联通普卡混淆</h4><ul>
+<li>全国联通沃商店混淆参数1:game.hxll.wostore.cn</li>
+<li>全国联通沃商店混淆参数2:music.hxll.wostore.cn</li>
+<li>沃阅读混淆参数:partner.iread.wo.com.cn</li>
+<li>全国联通沃商店高级混淆参数1:game.hxll.wostore.cn#Connection:Keep-Alive\nAccept-Encoding:gzip</li>
+<li>全国联通沃商店高级混淆参数2:music.hxll.wostore.cn#Connection:Keep-Alive\nAccept-Encoding:gzip</li>
+<li>沃阅读高级混淆参数:partner.iread.wo.com.cn#Connection:Keep-Alive\nAccept-Encoding:gzip</li>
+<li>(理论全国可用，吉林北京河南山东安徽江苏福建江西浙江广西贵州湖南湖北深圳已免。）</li>
+<li>全国联通沃音乐：box.10155.com</li>
+</ul>
+<h4 id="2-普通免流混淆参数"><a href="#2-普通免流混淆参数" class="headerlink" title="2.普通免流混淆参数"></a>2.普通免流混淆参数</h4><ul>
+<li>QQ音乐混淆参数:dl.stream.qqmusic.com</li>
+<li>梦想e卡混淆参数1:imhdfs.icbc.com.cn</li>
+<li>梦想e卡混淆参数2(福建已免):v.icbc.com.cn</li>
+<li>爱奇艺混淆参数:data.video.qiyi.com</li>
+<li>优酷混淆参数:vali-dns.cp31.ott.cibntv.net</li>
+<li>高德地图混淆参数:mps.amap.com</li>
+<li>央视影音混淆参数:asp.cntv.myalicdn.com</li>
+<li>百度贴吧混淆参数:static.tieba.baidu.com</li>
+<li>微信混淆参数(遵义广州已免):short.weixin.qq.com</li>
+<li>虾米音乐混淆参数:pic.xiami.net</li>
+<li>天翼视讯混淆参数:vod3.nty.tv189.cn</li>
+<li>钉钉混淆参数：tms.dingtalk.com</li>
+<li>微博混淆参数：tobe.vip.weibo.com</li>
+<li>微博混淆参数：new.vip.weibo.cn</li>
+<li>微博混淆参数：simg.s.weibo.com</li>
+<li>优酷混淆参数：push.m.youku.com</li>
+<li>优酷混淆参数：api.mobile.youku.com</li>
+<li>书旗混淆参数：spend1.shuqireader.com</li>
+<li>书旗混淆参数：c1.shuqireader.com</li>
+<li>优酷混淆参数：<a target="_blank" rel="noopener" href="http://www.youku.com/">www.youku.com</a></li>
+</ul>
+<h4 id="3-高级免流混淆参数"><a href="#3-高级免流混淆参数" class="headerlink" title="3.高级免流混淆参数"></a>3.高级免流混淆参数</h4><ul>
+<li><p>优酷高级混淆参数:vali-dns.cp31.ott.cibntv.net#Range:bytes&#x3D;25165824-32586598\nAccept: *&#x2F;*</p>
+</li>
+<li><p>爱看4G高级混淆参数:ltevod.tv189.cn#Connection: Keep-Alive\nAccept-Encoding: gzip</p>
+</li>
+<li><p>沃音乐高级混淆参数:woif.10155.com#Accept-Encoding: gzip</p>
+</li>
+<li><p>微信高级混淆参数(深圳已免):szminorshort.weixin.qq.com#Upgrade: mmtls\nAccept: *&#x2F;*\nConnection: close\nContent-Length: 533\nContent-Type: application&#x2F;octet-stream</p>
+</li>
+<li><p>淘宝高级混淆参数:adashbc.m.taobao.com#Accept-Encoding: gzip</p>
+</li>
+<li><p>央视影音高级混淆参数:asp.cntv.myalicdn.com#Icy-MetaData: 1</p>
+</li>
+<li><p>抖音高级混淆参数:dm.toutiao.com#Connection: Keep-Alive\nAccept-Encoding: gzip</p>
+</li>
+<li><p>百度贴吧高级混淆参数:tbcdn.hiphotos.baidu.com#needginfo: 1&#x2F;nConnection: Keep-Alive&#x2F;nUser-Agent: bdtb for Android 9.0.8.0</p>
+</li>
+<li><p>爱奇艺高级混淆参数:data.video.qiyi.com#Accept: *&#x2F;*</p>
+</li>
+<li><p>美团高级混淆参数:apimeishi.meituan.com#Connection: Keep-Alive</p>
+</li>
+<li><p>高德地图高级混淆参数:mps.amap.com#Connection: Keep-Alive\nAccept-Encoding: gzip\nContent-Length: 680</p>
+</li>
+<li><p>移动</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.10086.cn/">www.10086.cn</a></p>
+</li>
+<li><p>mm.10086.cn</p>
+</li>
+<li><p>抖音卡头条卡定向 有定向包可用dm.toutiao.com</p>
+</li>
+<li><p>抖音卡头条卡定向 有定向包可用v9-dy.ixigua.com</p>
+</li>
+<li><p>电信</p>
+</li>
+<li><p>天翼视讯 h5.nty.tv189.com</p>
+</li>
+<li><p>天翼视讯 vod3.nty.tv189.cn</p>
+</li>
+<li><p>爱玩端口任意 open.4g.play.cn</p>
+</li>
+<li><p>爱看端口任意 ltetp.tv189.com</p>
+</li>
+<li><p>湖北电信：hb.10000shequ.com:8081</p>
+</li>
+<li><p>电信天翼：dy3.nty.tv189.cn</p>
+</li>
+<li><p>电信天翼：ltewap.tv189.com</p>
+</li>
+<li><p>电信天翼：tp.nty.tv189.com</p>
+</li>
+<li><p>电信天翼：ltewap.tv189.com&#x2F;ik4g&#x2F;v&#x2F;C40605803.html?appid&#x3D;115020310073&amp;token&#x3D;baebaf0fda892726032db7e8f2f7e0ee&amp;devid&#x3D;000001&amp;version&#x3D;5.3.13.14ctch1&amp;channelid&#x3D;01832020\r\n</p>
+</li>
+<li><p>电信爱听：dl.music.189.cn&#x2F;res&#x2F;V&#x2F;1388&#x2F;mp3&#x2F;33&#x2F;58&#x2F;94&#x2F;1388335894003000.mp3?mb&#x3D;15380197563&amp;fs&#x3D;10104163&amp;s&#x3D;800&amp;n&#x3D;&amp;id&#x3D;63696337&amp;M&#x3D;online&amp;sid&#x3D;240387514</p>
+</li>
+<li><p>电信爱玩：open.4g.play.cn&#x2F;api&#x2F;v2&#x2F;egame&#x2F;log.json&amp;access_token&#x3D;dc15d6902663913b10a6ff56ae4e0c44&amp;imsi&#x3D;460022443530655&amp;vc&#x3D;145&amp;app_key&#x3D;8888015&amp;channel_id&#x3D;20310025</p>
+</li>
+<li><p>电信大王卡(可欠费使用)：lt.hn.189.cn:1082</p>
+</li>
+<li><p>阿里鱼卡：mps.amap.com#Connection: Keep-Alive\nAccept-Encoding: gzip\nContent-Length: 680</p>
+</li>
+<li><p>联通</p>
+</li>
+</ul>
+<p>山东联通：m.t.17186.cn</p>
+<p>联通 114 圣子全国：114.255.201.163 (重庆、河南、福建、湖南等地)<br>哔哩哔哩：i1.hdslb.com<br>哔哩哔哩：i0.hdslb.com<br>浙江联通 wo+：w.zj165.com<br>联通 wotv 全国：wotv.17wo.cn（浙江、安徽、江苏）<br>河北：hb.10000shequ.com<br>湖北 (优先 wap 接入点不免 net)：box.10155.com<br>沃音乐：box.10155.com (四川、湖北、重庆、河北等)<br>沃阅读：partner.iread.wo.com.cn (北京、河南等)<br>工商 e 卡：v.icbc.com.cn</p>
+<ul>
+<li>.icbc.com.cn</li>
+<li>m.mall.icbc.com.cn</li>
+<li>elife.icbc.com.cn</li>
+<li>act.icbc.com.cn</li>
+<li>hit.icbc.com.cn</li>
+<li>pv.mall.icbc.com.cn</li>
+<li>mybank.icbc.com.cn</li>
+</ul>
+<p>腾讯大王卡：szminorshort.weixin.qq.com#Upgrade: mmtlsnAccept: &#x2F;nConnection: closenContent-Length: 533nContent-Type: application&#x2F;octet-stream腾讯大王卡：tx.flv.huya.com<br>腾讯大王卡：short.weixin.qq.com<br>腾讯大王卡：szextshort.weixin.qq.com<br>short.weixin.qq.com<br>百度圣卡：data.video.qiyi.com<br>阿里宝卡：vali-dns.cp31.ott.cibntv.net<br>阿里宝卡微博卡：gw.alicdn.com<br>优酷：api.mobile.youku.com<br>米粉 api：api.ad.xiaomi.com<br>小米应用商店：data.mistat.xiaomi.com<br>小米直播：zbupic.zb.mi.com<br>小米充值：f100.g.mi.com<br>小米商城：mi.com</p>
+<h4 id="联通卡注意："><a href="#联通卡注意：" class="headerlink" title="联通卡注意："></a>联通卡注意：</h4><p>联通卡不管什么套餐请优先用沃商店混淆！例如使用的是联通大王卡，大王卡对微信是免流的，所以使用微信混淆参数，通过联通掌上营业厅查询免费流量使用总量增加就是免流成功！而大王卡当月超过 40G 是不计算大王卡免费应用的！所以 40G 后使用全国混淆即可继续免流！或者不用微信直接用全国混淆也行！，要免流代理模式必须全局！接入点优先 net！</p>
+<p>以上来源于许先生 原文：<a target="_blank" rel="noopener" href="https://www.mrxu.net/archives/76">https://www.mrxu.net/archives/76</a></p>
+<h3 id="附收集的免流混淆"><a href="#附收集的免流混淆" class="headerlink" title="附收集的免流混淆"></a>附收集的免流混淆</h3><p><strong>电信停机卡：</strong><br>四川wap.sc.189.cn<br>浙江 北京 wapzt.189.cn<br>广东 gd.189.cn&#x2F;TS&#x2F;recharge&#x2F;tzUrl.html<br>重庆Host webwebfenxi.189.cn:9000<br>广西wapgx.189.cn\r\nAccept: *&#x2F;*\r\n<br>江苏wapjs.189.cn<br>湖南lt.hn.189.cn:1082</p>
+<p>新联通小歪卡（v2ray全国所有省份必免稳定无40G限制）：dm.toutiao.com<br>电信百度大圣卡（全国所有省份必免）：dx-baiducdnct.inter.iqiyi.com<br>全国联通沃商店：game.hxll.wostore.cn<br>全国联通沃商店：music.hxll.wostore.cn<br>沃阅读混淆参数：partner.iread.wo.com.cn<br>全国联通沃商店高级：game.hxll.wostore.cn#Connection: Keep-Alive\nAccept-Encoding: gzip<br>全国联通沃商店高级：music.hxll.wostore.cn#Connection: Keep-Alive\nAccept-Encoding: gzip<br>沃阅读高级：partner.iread.wo.com.cn#Connection: Keep-Alive\nAccept-Encoding: gzip</p>
+<p><strong>通用免流混淆参数A</strong></p>
+<p>新联通小歪卡（v2ray全国所有省份必免稳定无40G限制）：dm.toutiao.com<br>电信百度大圣卡（全国所有省份必免）：dx-baiducdnct.inter.iqiyi.com<br>QQ音乐混淆参数：dl.stream.qqmusic.com<br>梦想e卡混淆参数：imhdfs.icbc.com.cn<br>梦想e卡混淆参数(福建已免)：v.icbc.com.cn<br>爱奇艺混淆参数：data.video.qiyi.com<br>优酷混淆参数：vali-dns.cp31.ott.cibntv.net<br>高德地图混淆参数：mps.amap.com<br>央视影音混淆参数：asp.cntv.myalicdn.com<br>百度贴吧混淆参数：static.tieba.baidu.com<br>微信混淆参数(遵义广州已免)：short.weixin.qq.com<br>虾米音乐混淆参数：pic.xiami.net<br>天翼视讯混淆参数：vod3.nty.tv189.cn<br>钉钉混淆参数：tms.dingtalk.com<br>微博混淆参数：tobe.vip.weibo.com<br>微博混淆参数：new.vip.weibo.cn<br>微博混淆参数：simg.s.weibo.com<br>优酷混淆参数：push.m.youku.com<br>优酷混淆参数：api.mobile.youku.com<br>书旗混淆参数：spend1.shuqireader.com<br>书旗混淆参数：c1.shuqireader.com<br>优酷混淆参数：<a target="_blank" rel="noopener" href="http://www.youku.com/">www.youku.com</a></p>
+<p><strong>通用免流混淆参数B</strong></p>
+<p>新联通小歪卡（v2ray全国所有省份必免稳定无40G限制）：dm.toutiao.com<br>电信百度大圣卡（全国所有省份必免）：dx-baiducdnct.inter.iqiyi.com<br>优酷：vali-dns.cp31.ott.cibntv.net#Range:bytes&#x3D;25165824-32586598\nAccept:?&#x2F;<br>爱看4G：ltevod.tv189.cn#Connection: Keep-Alive\nAccept-Encoding: gzip<br>沃音乐：woif.10155.com#Accept-Encoding: gzip<br>微信(深圳已免)：szminorshort.weixin.qq.com#Upgrade: mmtls\nAccept:?&#x2F;\nConnection: close\nContent-Length: 533\nContent-Type: application&#x2F;octet-stream<br>淘宝：adashbc.m.taobao.com#Accept-Encoding: gzip<br>央视影音：asp.cntv.myalicdn.com#Icy-MetaData: 1<br>抖音：dm.toutiao.com#Connection: Keep-Alive\nAccept-Encoding: gzip<br>百度：tbcdn.hiphotos.baidu.com#needginfo: 1&#x2F;nConnection: Keep-Alive&#x2F;nUser-Agent: bdtb for Android 9.0.8.0<br>爱奇艺：data.video.qiyi.com#Accept:?&#x2F;<br>美团：apimeishi.meituan.com#Connection: Keep-Alive<br>高德地图：mps.amap.com#Connection: Keep-Alive\nAccept-Encoding: gzip\nContent-Length: 680</p>
+<p><strong>移动</strong></p>
+<p><a target="_blank" rel="noopener" href="http://www.10086.cn/">www.10086.cn</a><br>mm.10086.cn<br>抖音卡头条卡定向 有定向包可用：dm.toutiao.com<br>抖音卡头条卡定向 有定向包可用：v9-dy.ixigua.com</p>
+<p><strong>电信</strong></p>
+<p>新联通小歪卡（v2ray全国所有省份必免稳定无40G限制）：dm.toutiao.com<br>电信百度大圣卡（全国所有省份必免）：dx-baiducdnct.inter.iqiyi.com<br>天翼视讯：h5.nty.tv189.com<br>天翼视讯：vod3.nty.tv189.cn<br>爱玩4G：open.4g.play.cn<br>爱看4G： ltetp.tv189.com<br>湖北电信：hb.10000shequ.com<br>湖北电信：hb.10000shequ.com:8081<br>电信天翼：dy3.nty.tv189.cn<br>电信天翼：ltewap.tv189.com<br>电信天翼：tp.nty.tv189.com<br>电信大王卡(可欠费使用)：lt.hn.189.cn:1082<br>阿里鱼卡：mps.amap.com#Connection: Keep-Alive\nAccept-Encoding: gzip\nContent-Length: 680</p>
+<p><strong>联通</strong></p>
+<p>新联通小歪卡（v2ray全国所有省份必免稳定无40G限制）：dm.toutiao.com<br>腾讯大王卡（优先测试，已免90%省份！）：wx.qlogo.cn#X-Online-Host: wx.qlogo.cn\nreferer: <a target="_blank" rel="noopener" href="http://weixin.qq.com/?version=63">http://weixin.qq.com/?version=63</a> … 13000&amp;signal&#x3D;77\nConnection: Keep-Alive?<br>山东联通：m.t.17186.cn<br>小天神卡：box.10155.com<br>联通114圣子全国：114.255.201.163(重庆、河南、福建、湖南等地)<br>哔哩哔哩：i1.hdslb.com<br>哔哩哔哩：i0.hdslb.com<br>浙江联通wo+：w.zj165.com<br>联通wotv全国：wotv.17wo.cn（浙江、安徽、江苏）<br>河北：hb.10000shequ.com<br>湖北(优先wap接入点不免net)：box.10155.com<br>沃音乐：box.10155.com<br>沃阅读：partner.iread.wo.com.cn<br>工商e卡：v.icbc.com.cn<br>m.icbc.com.cn<br>m.mall.icbc.com.cn<br>elife.icbc.com.cn<br>act.icbc.com.cn<br>hit.icbc.com.cn<br>pv.mall.icbc.com.cn<br>mybank.icbc.com.cn<br>腾讯大王卡（优先测试，已免90%省份！）：wx.qlogo.cn#X-Online-Host: wx.qlogo.cn\nreferer: <a target="_blank" rel="noopener" href="http://weixin.qq.com/?version=63">http://weixin.qq.com/?version=63</a> … 13000&amp;signal&#x3D;77\nConnection: Keep-Alive?<br>腾讯大王卡：szminorshort.weixin.qq.com#Upgrade: mmtls\nAccept:?&#x2F;\nConnection: close\nContent-Length: 533\nContent-Type: application&#x2F;octet-stream<br>腾讯大王卡：tx.flv.huya.com<br>腾讯大王卡：short.weixin.qq.com<br>腾讯大王卡：szextshort.weixin.qq.com<br>short.weixin.qq.com<br>新联通小歪卡（v2ray全国所有省份必免稳定无40G限制）：dm.toutiao.com<br>电信百度大圣卡（全国所有省份必免）：dx-baiducdnct.inter.iqiyi.com<br>百度圣卡：data.video.qiyi.com<br>阿里宝卡：vali-dns.cp31.ott.cibntv.net<br>阿里宝卡：gw.alicdn.com<br>api.mobile.youku.com<br>米粉卡混淆参数：api.ad.xiaomi.com<br>〖微信〗mmbiz.qpic.cn<br>〖微信〗shmmsns.qpic.cn<br>〖QQ〗r.vip.qq.com<br>〖QQ〗m.qpic.cn<br>〖王者荣耀〗down-update.qq.com<br>〖王者荣耀〗140.207.122.139<br>〖王者茉耀〗58.247.215.101<br>〖支付宝〗mdap.alipay.com<br>〖芒果TV〗pcvideows.titan.mgtv.com<br>〖西瓜视频〗v6-ppx.ixigua.com<br>〖快手〗api.gifshow.com<br>〖快手〗ali2.a.yximgs.com<br>〖头条〗sf1-ttcdn-tos.pstatp.com<br>〖新浪微博〗mjs.sinaimg.cn<br>〖快手〗api.ksapisrv.com<br>〖QQ音乐〗dl.stream.qqmusic.qq.com<br>〖百度〗pic.rmb.bdstatic.com<br>〖UC〗serverfile. ac.uc.cn<br>〖网易〗s3.music.126.net<br>〖微云〗sz-download.weiyun.com<br>〖微云〗sh-download.weiyun.com<br>〖微信〗mmbiz.qpic.cn<br>〖百度〗vd3.bdstatic.com<br>〖微信〗shmmsns.qpic.cn<br>〖抖音〗v1-dy.ixigua.com<br>〖腾讯视频〗livep.l.qq.com<br>〖QQ空间登陆页面〗qzonestyle.gtimg.cn<br>〖抖音&#x2F;头条〗log.snssdk.com<br>〖西瓜视频〗api.huoshan.com<br>〖西瓜视频〗v11-xg.ixigua.com<br>〖西瓜视频〗v9-dy-x.ixigua.co<br>〖爱奇艺〗t7z.cupid.iqiyi.com<br>〖百度知道〗zhidao.baidu.com<br>〖好看视频&#x2F;百度系〗hpd.baidu.com<br>〖好看视频〗sv.baidu.com<br>〖腾讯视频〗pgdt.gtimg.cn</p>
+<h3 id="共有-3-条留言"><a href="#共有-3-条留言" class="headerlink" title="共有 3 条留言"></a>共有 3 条留言</h3><ol>
+<li><img src="https://secure.gravatar.com/avatar/aabd06174f6c4504753055895c305efb?s=48&d=https://leoyum.com/wp-content/themes/simple/images/kide.jpg&r=g" srcset="/img/loading.gif" lazyload>东方亚马使用的v2ray么 ws 协议2020-11-30 01:50  <a target="_blank" rel="noopener" href="https://leoyum.com/587.html?replytocom=67924#respond">回复</a><ol>
+<li><img src="https://secure.gravatar.com/avatar/a526c419336e128354907311a7036db5?s=48&d=https://leoyum.com/wp-content/themes/simple/images/kide.jpg&r=g" srcset="/img/loading.gif" lazyload>leoyum√ ws+混淆2020-12-01 20:14  <a target="_blank" rel="noopener" href="https://leoyum.com/587.html?replytocom=68078#respond">回复</a></li>
+</ol>
+</li>
+</ol>
+<p><a href="javascript:grin(':cy:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/cy.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':hanx:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/hanx.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':huaix:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/huaix.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':tx:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/tx.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':se:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/se.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':wx:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/wx.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':zk:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/zk.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':shui:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/shui.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':kuk:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/kuk.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':lh:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/lh.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':gz:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/gz.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':ku:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/ku.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':kel:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/kel.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':yiw:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/yiw.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':yun:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/yun.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':jy:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/jy.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':dy:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/dy.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':gg:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/gg.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':fn:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/fn.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':fendou:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/fendou.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':shuai:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/shuai.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':kl:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/kl.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':pj:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/pj.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':fan:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/fan.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':lw:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/lw.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':qiang:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/qiang.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':ruo:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/ruo.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':ws:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/ws.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':ok:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/ok.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':gy:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/gy.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':qt:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/qt.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':cj:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/cj.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':aini:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/aini.gif" srcset="/img/loading.gif" lazyload></a></p>
+<p><a href="javascript:grin(':bu:')"><img src="https://leoyum.com/wp-content/themes/simple/images/smilies/bu.gif" srcset="/img/loading.gif" lazyload></a></p>
+<h4 id="分类目录"><a href="#分类目录" class="headerlink" title="分类目录"></a>分类目录</h4><p><a target="_blank" rel="noopener" href="https://leoyum.com/category/hi">Hi</a><a target="_blank" rel="noopener" href="https://leoyum.com/category/learn">learn</a><a target="_blank" rel="noopener" href="https://leoyum.com/category/linux">Linux</a><a target="_blank" rel="noopener" href="https://leoyum.com/category/photo">Photo</a><a target="_blank" rel="noopener" href="https://leoyum.com/category/share">Share</a><a target="_blank" rel="noopener" href="https://leoyum.com/category/tools">Tools</a><a target="_blank" rel="noopener" href="https://leoyum.com/category/un">UN</a><a target="_blank" rel="noopener" href="https://leoyum.com/category/vps">VPS</a><a target="_blank" rel="noopener" href="https://leoyum.com/category/web">Web</a><a target="_blank" rel="noopener" href="https://leoyum.com/category/win">Win</a></p>
+<h4 id="文章标签"><a href="#文章标签" class="headerlink" title="文章标签"></a>文章标签</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://leoyum.com/tag/ssh">ssh (5)</a></li>
+<li><a target="_blank" rel="noopener" href="https://leoyum.com/tag/netflix">netflix (4)</a></li>
+<li><a target="_blank" rel="noopener" href="https://leoyum.com/tag/linux">Linux (3)</a></li>
+<li><a target="_blank" rel="noopener" href="https://leoyum.com/tag/%e6%b5%8b%e8%af%95">测试 (3)</a></li>
+<li><a target="_blank" rel="noopener" href="https://leoyum.com/tag/%e5%8a%a0%e9%80%9f">加速 (3)</a></li>
+<li><a target="_blank" rel="noopener" href="https://leoyum.com/tag/wordpress">wordpress (3)</a></li>
+<li><a target="_blank" rel="noopener" href="https://leoyum.com/tag/apache">Apache (3)</a></li>
+<li><a target="_blank" rel="noopener" href="https://leoyum.com/tag/nginx">Nginx (3)</a></li>
+<li><a target="_blank" rel="noopener" href="https://leoyum.com/tag/%e5%85%8d%e6%b5%81">免流 (3)</a></li>
+<li><a target="_blank" rel="noopener" href="https://leoyum.com/tag/ftp">ftp (2)</a></li>
+<li><a target="_blank" rel="noopener" href="https://leoyum.com/tag/bbr">bbr (2)</a></li>
+<li><a target="_blank" rel="noopener" href="https://leoyum.com/tag/%e9%94%90%e9%80%9f">锐速 (2)</a></li>
+</ul>
+<h4 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h4><p><a target="_blank" rel="noopener" href="http://home.meo.pub/">Home</a><a target="_blank" rel="noopener" href="http://64ml.com/">MM</a><a target="_blank" rel="noopener" href="http://status.64ml.com/">Status</a><a target="_blank" rel="noopener" href="https://www.hostloc.com/forum-45-1.html">Hostloc</a></p>
+<h4 id="关注我"><a href="#关注我" class="headerlink" title="关注我"></a>关注我</h4><p>Copyright 2020© <a target="_blank" rel="noopener" href="https://leoyum.com/">Leoyum</a>   加载用时：0.271s<a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=3150521314">在线联系</a></p>
+<p><a href="javascript:;">×</a></p>
+<p><img src="https://wallhaven.cc/latest?page=2/2021/05/image.png" srcset="/img/loading.gif" lazyload></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="category-chain-item">科学上网</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>免流混淆参数</div>
+      <div>http://example.com/2021/05/09/免流混淆参数-2/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年5月9日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/05/09/%E5%85%8D%E6%B5%81%E6%B7%B7%E6%B7%86%E5%8F%82%E6%95%B0%EF%BC%8C%E7%90%86%E8%AE%BA%E5%AE%8C%E7%BE%8E%E6%94%AF%E6%8C%81%E8%81%94%E9%80%9A%E7%94%B5%E4%BF%A1%E5%85%A8%E5%9B%BD%E6%89%80%E6%9C%89%E5%9C%B0/" title="免流混淆参数，理论完美支持联通电信全国所有地区">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">免流混淆参数，理论完美支持联通电信全国所有地区</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/05/07/java%E4%BC%AA%E9%9D%99%E6%80%81/" title="Java伪静态">
+                        <span class="hidden-mobile">Java伪静态</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

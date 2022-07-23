@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="闲蛋中转面板 闲蛋中转面板是在原作者的面板基础上noobcfy大佬二次开发的一款多协议中转面板，首次开放公测发布于全球主机交流论坛。 官方介绍： 本系统基于闲蛋中转面板 1.0.7 源码，二次开发，并取得原作者授权(本人在原版也曾是开源贡献者)。系统介绍：  支持多种转发方式 流量收集重做 区分上下行 新增插件管理模式 新增一键救援模式 多服务器、多用户、多端口管理 自动化达量停机、超时停机 轻量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="闲蛋中转面板">
+<meta property="og:url" content="http://example.com/2021/08/27/%E9%97%B2%E8%9B%8B%E4%B8%AD%E8%BD%AC%E9%9D%A2%E6%9D%BF/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="闲蛋中转面板 闲蛋中转面板是在原作者的面板基础上noobcfy大佬二次开发的一款多协议中转面板，首次开放公测发布于全球主机交流论坛。 官方介绍： 本系统基于闲蛋中转面板 1.0.7 源码，二次开发，并取得原作者授权(本人在原版也曾是开源贡献者)。系统介绍：  支持多种转发方式 流量收集重做 区分上下行 新增插件管理模式 新增一键救援模式 多服务器、多用户、多端口管理 自动化达量停机、超时停机 轻量">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/1502881263.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/719116900.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/637667917.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/1932948517.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/1651677798.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/431653232.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/518124646.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/1956503259.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/1287976158.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/1618492226.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/3597378542.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/679996723.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/2946608326.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/2167324407.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/668229183.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/4098739309.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/83380910.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/348544133.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/3467600529.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/637430932.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/3648526969.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/06/982256661.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/07/2224561324.png">
+<meta property="og:image" content="https://heaid.top/usr/uploads/2021/07/1242403313.png">
+<meta property="article:published_time" content="2021-08-26T17:21:48.000Z">
+<meta property="article:modified_time" content="2022-07-23T12:09:40.563Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://heaid.top/usr/uploads/2021/06/1502881263.png">
+  
+  
+  
+  <title>闲蛋中转面板 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="闲蛋中转面板"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-08-27 01:21" pubdate>
+          2021年8月27日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          19 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">闲蛋中转面板</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>闲蛋中转面板</p>
+<p>闲蛋中转面板是在原作者的面板基础上noobcfy大佬二次开发的一款多协议中转面板，首次开放公测发布于全球主机交流论坛。</p>
+<p>官方介绍：</p>
+<p>本系统基于闲蛋中转面板 1.0.7 源码，二次开发，并取得原作者授权(本人在原版也曾是开源贡献者)。<br><strong>系统介绍：</strong></p>
+<ul>
+<li>支持多种转发方式</li>
+<li>流量收集重做 区分上下行</li>
+<li>新增插件管理模式</li>
+<li>新增一键救援模式</li>
+<li>多服务器、多用户、多端口管理</li>
+<li>自动化达量停机、超时停机</li>
+<li>轻量平台式管理，中转机无被控，无机型要求 nat、vps、vds、杜甫均可使用</li>
+<li>一键脚本安装、更新 ，无门槛 上手快</li>
+</ul>
+<p>目前我自己也搭建过使用了一段时间，确实比以往的脚本方式方便了很多，很多功能都可以一键完成。</p>
+<p>下面给介绍下安装和使用方法（截止到本文发布时间的闲蛋版本为v 1.4.0）。</p>
+<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><p>推荐使用官方一键安装脚本</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs lisp">bash &lt;(<span class="hljs-name">wget</span> --no-check-certificate -qO- &#x27;https<span class="hljs-symbol">://sh</span>.xdmb.xyz/xiandan/xd.sh&#x27;)<br></code></pre></td></tr></table></figure>
+
+<p>官方一键升级脚本</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs lisp">bash &lt;(<span class="hljs-name">wget</span> --no-check-certificate -qO- &#x27;https<span class="hljs-symbol">://sh</span>.xdmb.xyz/xiandan/xd.sh&#x27;) update<br></code></pre></td></tr></table></figure>
+
+<p>准备一台vps，推荐配置1c1g即可。通过一键脚本安装。</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/1502881263.png"><img src="https://heaid.top/usr/uploads/2021/06/1502881263.png" srcset="/img/loading.gif" lazyload alt="请输入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/1502881263.png">请输入图片描述</a></p>
+<p>中途会要求输入面板映射端口。我自己就添加了54321。</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/719116900.png"><img src="https://heaid.top/usr/uploads/2021/06/719116900.png" srcset="/img/loading.gif" lazyload alt="请输入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/719116900.png">请输入图片描述</a></p>
+<p>安装速度取决于你的机器性能和带宽，接下来就是耐心等待了。</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/637667917.png"><img src="https://heaid.top/usr/uploads/2021/06/637667917.png" srcset="/img/loading.gif" lazyload alt="请输入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/637667917.png">请输入图片描述</a></p>
+<p>安装完毕后耐心等待几分钟才能访问。访问地址就是 IP:端口号，默认的账号和密码都是admin</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/1932948517.png"><img src="https://heaid.top/usr/uploads/2021/06/1932948517.png" srcset="/img/loading.gif" lazyload alt="请输入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/1932948517.png">请输入图片描述</a></p>
+<h2 id="面板界面介绍"><a href="#面板界面介绍" class="headerlink" title="面板界面介绍"></a>面板界面介绍</h2><p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/1651677798.png"><img src="https://heaid.top/usr/uploads/2021/06/1651677798.png" srcset="/img/loading.gif" lazyload alt="请输入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/1651677798.png">请输入图片描述</a></p>
+<ul>
+<li>服务器监控</li>
+<li>统计分析</li>
+<li>服务器管理</li>
+<li>账号管理</li>
+<li>中转管理</li>
+<li>系统设置</li>
+<li>通知设置</li>
+<li>授权商城</li>
+</ul>
+<p>监控页面类似探针，可以看到服务器的各项状态。</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/431653232.png"><img src="https://heaid.top/usr/uploads/2021/06/431653232.png" srcset="/img/loading.gif" lazyload alt="请输入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/431653232.png">请输入图片描述</a></p>
+<h2 id="上手教程"><a href="#上手教程" class="headerlink" title="上手教程"></a>上手教程</h2><h3 id="1-添加服务器"><a href="#1-添加服务器" class="headerlink" title="1. 添加服务器"></a>1. 添加服务器</h3><p>下面添加一台服务器并添加转发。</p>
+<p>点击服务器管理，添加服务器</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/518124646.png"><img src="https://heaid.top/usr/uploads/2021/06/518124646.png" srcset="/img/loading.gif" lazyload alt="请输入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/518124646.png">请输入图片描述</a></p>
+<p>添加完毕后会以卡片的形式显示出来</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/1956503259.png"><img src="https://heaid.top/usr/uploads/2021/06/1956503259.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/1956503259.png">image.png</a></p>
+<h3 id="3-安装插件"><a href="#3-安装插件" class="headerlink" title="3. 安装插件"></a>3. 安装插件</h3><p>点击配置会显示插件，免费版只能使用iptalbe，付费版可以使用下面更多的插件工具。</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/1287976158.png"><img src="https://heaid.top/usr/uploads/2021/06/1287976158.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/1287976158.png">image.png</a></p>
+<p>下图展示了，所有插件全部安装完毕后的功能（注意安装好插件必须开启，后面才能使用，安装好插件，如果关闭状态下也是无法使用的）</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/1618492226.png"><img src="https://heaid.top/usr/uploads/2021/06/1618492226.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/1618492226.png">image.png</a></p>
+<p>根据你的需求来决定使用哪些插件。</p>
+<h3 id="4-添加服务器端口"><a href="#4-添加服务器端口" class="headerlink" title="4. 添加服务器端口"></a>4. 添加服务器端口</h3><p>回到卡片页面，点击服务器上的端口维护，点击添加，最后点击确定。</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/3597378542.png"><img src="https://heaid.top/usr/uploads/2021/06/3597378542.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/3597378542.png">image.png</a></p>
+<h3 id="5-端口分配"><a href="#5-端口分配" class="headerlink" title="5. 端口分配"></a>5. 端口分配</h3><p>点击账号管理，默认的只有admin账户，如果你只是自用可以把服务器端口分配给admin账户即可，如果你想给别人分配，点击开通账号，新建一个用户即可。</p>
+<p>点击你想分配的账号卡片上的端口分配，然后点击弹出菜单中的分配端口</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/679996723.png"><img src="https://heaid.top/usr/uploads/2021/06/679996723.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/679996723.png">image.png</a></p>
+<p>在右侧菜单中选择你刚刚添加的服务器，在选择你要分配的端口，如果全部添加选择分配所有即可</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/2946608326.png"><img src="https://heaid.top/usr/uploads/2021/06/2946608326.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/2946608326.png">image.png</a></p>
+<h3 id="6-添加转发"><a href="#6-添加转发" class="headerlink" title="6. 添加转发"></a>6. 添加转发</h3><p>点击中转管理，顶部左侧admin处可以选择账号，右侧可以选择服务器。选择好刚刚添加好的服务器后，下方会展示出10个刚刚我们添加的10个端口信息。</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/2167324407.png"><img src="https://heaid.top/usr/uploads/2021/06/2167324407.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/2167324407.png">image.png</a></p>
+<p>选择一个端口卡片，点击启用，选择好中转插件（注意服务器安装好的插件必须在服务器管理中开启，此处才会显示），这里我们中转一个被墙了的ip的22端口做测试。</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/668229183.png"><img src="https://heaid.top/usr/uploads/2021/06/668229183.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/668229183.png">image.png</a></p>
+<p>点击确定后，点击故障检测查看，没有显示故障就代表中转成功。</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/4098739309.png"><img src="https://heaid.top/usr/uploads/2021/06/4098739309.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/4098739309.png">image.png</a></p>
+<p>在finalshell里添加好中转后的地址和端口。</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/83380910.png"><img src="https://heaid.top/usr/uploads/2021/06/83380910.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/83380910.png">image.png</a></p>
+<p>成功连接</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/348544133.png"><img src="https://heaid.top/usr/uploads/2021/06/348544133.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/348544133.png">image.png</a></p>
+<p>以上是简单的上手教程。</p>
+<h3 id="7-隧道转发"><a href="#7-隧道转发" class="headerlink" title="7. 隧道转发"></a>7. 隧道转发</h3><p>闲蛋面板提供了gost和echo隧道转发，需要注意的是这两种隧道转发是授权后才可以使用的。</p>
+<p>在服务器管理页面安装好插件后，启用。</p>
+<p>下面以echo+wss隧道中转做演示，闲蛋的gost和echo隧道转发步骤都一样</p>
+<p>比如我们搭建了一个ssr要中转的地址为a12.wuxiujiaqi.xyz端口为54439</p>
+<p>在中转管理选择好echo+wss隧道中转，地址添加a12.wuxiujiaqi.xyz端口添加一个除了54439以外的其他端口（此端口为隧道端口），这里我随意添加了一个54420</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/3467600529.png"><img src="https://heaid.top/usr/uploads/2021/06/3467600529.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/3467600529.png">image.png</a></p>
+<p>确定后，会显示命令</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/637430932.png"><img src="https://heaid.top/usr/uploads/2021/06/637430932.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/637430932.png">image.png</a></p>
+<p>把此命令复制到落地机上执行,询问代理节点地址时直接默认即可，此处的询问代理端口请输入54439</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/3648526969.png"><img src="https://heaid.top/usr/uploads/2021/06/3648526969.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/3648526969.png">image.png</a></p>
+<p>最后选择开机自动启动，显示active（running）表示正常运行。</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/982256661.png"><img src="https://heaid.top/usr/uploads/2021/06/982256661.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/06/982256661.png">image.png</a></p>
+<p>最后测试节点是否连通。</p>
+<h3 id="8-隧道转发（中间加一层跳板）"><a href="#8-隧道转发（中间加一层跳板）" class="headerlink" title="8. 隧道转发（中间加一层跳板）"></a>8. 隧道转发（中间加一层跳板）</h3><blockquote>
+<p>加一层跳板的意思顾名思义就是两层转发</p>
+<p>比如你有一台垃圾美国小鸡，国内连接非常慢。你就可以通过在香港中间加一层转发来给美国小鸡加速</p>
+<p>当然普通转发两层也可以实现，但是隧道更加安全，使用闲蛋隧道转发也很方便。</p>
+<p>举例：</p>
+<p>国内机：guoneiji.com 端口1</p>
+<p>跳板机：tiaobanji.com端口2</p>
+<p>落地机：luodiji.com 端口3</p>
+</blockquote>
+<p>中转的方式为， 国内机→gost隧道→香港（跳板机）→美国（落地机）</p>
+<p>在落地机上搭建代理，luodiji.com 端口 3</p>
+<p>打开闲蛋面板，在中转管理找到国内机的端口1，添加跳板机的地址和端口，点击确定</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/07/2224561324.png"><img src="https://heaid.top/usr/uploads/2021/07/2224561324.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/07/2224561324.png">image.png</a></p>
+<p>然后，中转管理找到跳板机的端口2，添加好落地机的地址和端口，这里注意要勾选gost服务端</p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/07/1242403313.png"><img src="https://heaid.top/usr/uploads/2021/07/1242403313.png" srcset="/img/loading.gif" lazyload alt="image.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://heaid.top/usr/uploads/2021/07/1242403313.png">image.png</a></p>
+<p>这样你的代理地址就成为了guoneiji.com端口1</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="category-chain-item">学习</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>闲蛋中转面板</div>
+      <div>http://example.com/2021/08/27/闲蛋中转面板/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年8月27日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/08/27/%E6%9B%B4%E6%96%B0%E4%BA%86%E7%99%BD%E5%AB%96%E4%BA%91%E5%87%BD%E6%95%B0%E8%BF%9B%E8%A1%8C%E4%BA%AC%E4%B8%9C%E8%87%AA%E5%8A%A8%E7%AD%BE%E5%88%B0%E9%A2%86%E4%BA%AC%E8%B1%86-%E7%BA%A2%E5%8C%85-vol-3/" title="(更新了)白嫖云函数进行京东自动签到领京豆/红包 Vol.3">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">(更新了)白嫖云函数进行京东自动签到领京豆/红包 Vol.3</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/08/27/%E5%AF%B9%E4%BA%8E%E6%9F%90%E4%BA%9B%E7%89%B9%E6%AE%8A%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85bbr%E6%95%99%E7%A8%8B/" title="对于某些“特殊”服务器，手动安装BBR教程">
+                        <span class="hidden-mobile">对于某些“特殊”服务器，手动安装BBR教程</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,678 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="版本：v1.1 发布日期：2019年11月5日  老吴自己制作的macOS Catalina 10.15.1正式版 19B88恢复版镜像，采用原版官方macOS Catalina镜像刻录U盘安装后打包而成。在windows下用ParagonHardDiskManager直接恢复即可，去掉了安装过程，设置过程，直接进入系统，快捷方便。也是老吴在淘宝为客户安装黑苹果所使用的恢复包，下载的安装包中也有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【老吴】黑苹果 macOS Catalina 10.15.1正式版 19B88 硬盘恢复版镜像包">
+<meta property="og:url" content="http://example.com/2021/08/24/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C-macos-catalina-10-15-1%E6%AD%A3%E5%BC%8F%E7%89%88-19b88-%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="版本：v1.1 发布日期：2019年11月5日  老吴自己制作的macOS Catalina 10.15.1正式版 19B88恢复版镜像，采用原版官方macOS Catalina镜像刻录U盘安装后打包而成。在windows下用ParagonHardDiskManager直接恢复即可，去掉了安装过程，设置过程，直接进入系统，快捷方便。也是老吴在淘宝为客户安装黑苹果所使用的恢复包，下载的安装包中也有">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/catalina_featured.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/19b88.png">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170736.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170743.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170751.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170801.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170829.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170855.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170905.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170918.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170922.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170927.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170934.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170939.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170944.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-171002.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-171010.jpg">
+<meta property="og:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-171042.jpg">
+<meta property="article:published_time" content="2021-08-23T19:13:54.000Z">
+<meta property="article:modified_time" content="2022-07-23T12:09:40.557Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/catalina_featured.jpg">
+  
+  
+  
+  <title>【老吴】黑苹果 macOS Catalina 10.15.1正式版 19B88 硬盘恢复版镜像包 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="【老吴】黑苹果 macOS Catalina 10.15.1正式版 19B88 硬盘恢复版镜像包"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-08-24 03:13" pubdate>
+          2021年8月24日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          10 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【老吴】黑苹果 macOS Catalina 10.15.1正式版 19B88 硬盘恢复版镜像包</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/catalina_featured.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>版本：v1.1 发布日期：2019年11月5日</p>
+<hr>
+<p>老吴自己制作的macOS Catalina 10.15.1正式版 19B88恢复版镜像，采用原版官方macOS Catalina镜像刻录U盘安装后打包而成。在windows下用ParagonHardDiskManager直接恢复即可，去掉了安装过程，设置过程，直接进入系统，快捷方便。也是老吴在淘宝为客户安装黑苹果所使用的恢复包，下载的安装包中也有相应的工具和软件，有需要的可随意取用。<br>需要注意的是，catalina必须要求为apfs格式，该恢复版只在本机上进行过测试，恢复过程中，目标磁盘必须大于80G，并预留200MB空间。</p>
+<hr>
+<p><strong>友情提示：</strong></p>
+<ol>
+<li>预装Teamviewer远程工具，如不适，请删除</li>
+<li>集成了一些黑苹果调试工具在桌面，如不需要，可直接删除整个文件夹</li>
+<li>由于系统盘只读，暂时无法关闭SIP</li>
+<li>设置了可安装任何来源</li>
+<li>系统密码为空，需要修改密码的自行设置，默认用户名为macos</li>
+<li>预装了Tuxera NTFS工具，可读写NTFS分区，己破解</li>
+<li>安装了百度mac版五笔和拼音输入法</li>
+</ol>
+<hr>
+<h1 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h1><ul>
+<li>文件大小：9.87G</li>
+<li>下载地址：链接:<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1mm_qo7SZxVo6YLShaxz7Rw">https://pan.baidu.com/s/1mm_qo7SZxVo6YLShaxz7Rw</a> 密码:ot34</li>
+<li>MD5校验码（mac10151.rar）：178880342fe98aab79e6720ecb0e4345</li>
+</ul>
+<hr>
+<h1 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h1><h4 id="Win-macOS黑苹果双系统恢复版安装教程："><a href="#Win-macOS黑苹果双系统恢复版安装教程：" class="headerlink" title="Win+macOS黑苹果双系统恢复版安装教程："></a>Win+macOS黑苹果双系统恢复版安装教程：</h4><p>图文教程：<a target="_blank" rel="noopener" href="http://k61.org/Win10-macOS-hackintosh-Restore.html">【老吴黑苹果】Win10+macOS黑苹果双系统恢复版安装教程 老吴黑苹果工作室</a><br>视频教程：<a target="_blank" rel="noopener" href="https://www.ixigua.com/i6752743611340685827/">【老吴黑苹果】Win10+macOS黑苹果双系统恢复版安装教程 - 西瓜视频</a></p>
+<h4 id="如何将MBR转GPT，传统引导转UEFI引导："><a href="#如何将MBR转GPT，传统引导转UEFI引导：" class="headerlink" title="如何将MBR转GPT，传统引导转UEFI引导："></a>如何将MBR转GPT，传统引导转UEFI引导：</h4><p>视频教程：<a target="_blank" rel="noopener" href="https://www.ixigua.com/i6736745657328992776/">MBR无损转GPT教程 - 西瓜视频</a></p>
+<hr>
+<h1 id="截图："><a href="#截图：" class="headerlink" title="截图："></a>截图：</h1><p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/19b88.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170736.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170743.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170751.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170801.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170829.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170855.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170905.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170918.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170922.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170927.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170934.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170939.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-170944.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-171002.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-171010.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="http://k61.org/%E3%80%90%E8%80%81%E5%90%B4%E3%80%91%E9%BB%91%E8%8B%B9%E6%9E%9C%20macOS%20Catalina%2010.15%2019A583%20%E7%A1%AC%E7%9B%98%E6%81%A2%E5%A4%8D%E7%89%88%E9%95%9C%E5%83%8F%E5%8C%85/QQ20191026-171042.jpg" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<h1 id="下载地址-1"><a href="#下载地址-1" class="headerlink" title="下载地址"></a>下载地址</h1><ul>
+<li>下载地址：链接:<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1mm_qo7SZxVo6YLShaxz7Rw">https://pan.baidu.com/s/1mm_qo7SZxVo6YLShaxz7Rw</a> 密码:ot34</li>
+<li>MD5校验码（mac10151.rar）：178880342fe98aab79e6720ecb0e4345</li>
+</ul>
+<hr>
+<h1 id="其它恢复版下载"><a href="#其它恢复版下载" class="headerlink" title="其它恢复版下载"></a>其它恢复版下载</h1><ul>
+<li><a target="_blank" rel="noopener" href="http://k61.org/macOS-Sierra-10.12.6-16G29-Restore.html">【老吴】黑苹果 macOS Sierra 10.12.6 16G29 硬盘恢复版镜像包</a> MD5:080cf50e0400d923065c6fa5deef377b</li>
+<li><a target="_blank" rel="noopener" href="http://k61.org/macOS-Sierra-10.13.6-17G65-Restore.html">【老吴】黑苹果 macOS High Sierra 10.13.6 17G65 硬盘恢复版镜像包</a> MD5:418b46852537a512b593a220e7c9008a</li>
+<li><a target="_blank" rel="noopener" href="http://k61.org/macOS-Mojave-10.14.6-18G87-Restore.html">【老吴】黑苹果 macOS Mojave 10.14.6 18G87 硬盘恢复版镜像包</a> MD5:66e10938c622d515f12eb802f84ef1e9</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="category-chain-item">学习</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>【老吴】黑苹果 macOS Catalina 10.15.1正式版 19B88 硬盘恢复版镜像包</div>
+      <div>http://example.com/2021/08/24/【老吴】黑苹果-macos-catalina-10-15-1正式版-19b88-硬盘恢复版镜像包/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年8月24日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/08/24/%E4%B8%A4%E6%AD%A5%E5%AE%89%E8%A3%85%E9%BB%91%E8%8B%B9%E6%9E%9C%E7%BA%AF%E5%87%80%E7%B3%BB%E7%BB%9Fhfs%E6%81%A2%E5%A4%8D%E7%89%88%E6%95%99%E7%A8%8B%EF%BC%88%E6%97%A0%E9%9C%80u%E7%9B%98%EF%BC%89/" title="两步安装黑苹果纯净系统HFS恢复版教程（无需U盘）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">两步安装黑苹果纯净系统HFS恢复版教程（无需U盘）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/08/24/macos-catalina-10-15-617g73%E6%81%A2%E5%A4%8D%E7%89%88%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F%E5%8C%85/" title="macOS Catalina 10.15.6(17G73)恢复版系统镜像包">
+                        <span class="hidden-mobile">macOS Catalina 10.15.6(17G73)恢复版系统镜像包</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
