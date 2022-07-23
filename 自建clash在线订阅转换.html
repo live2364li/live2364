@@ -1,0 +1,643 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/live2364li.io/img/fluid.png">
+  <link rel="icon" href="/live2364li.io/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="前言​ clash这个科学上网的客户端很强大也很麻烦,和我们平常使用的V2rayN、winxray、ssr不一样，其不能直接添加单个节点,添加节点只能通过配置文件添加,而且这个配置文件的格式会随着clash版本更新变化.​ 所以为了方便使用,很多网站提供了在线订阅地址转换的服务.但是很多这样的在线订阅地址转换存在节点信息泄露的问题. ​ 对于这样一个问题,我们可以通过自建订阅转换的方法来解决.这里">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自建clash在线订阅转换">
+<meta property="og:url" content="http://example.com/live2364li.io/%E8%87%AA%E5%BB%BAclash%E5%9C%A8%E7%BA%BF%E8%AE%A2%E9%98%85%E8%BD%AC%E6%8D%A2.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言​ clash这个科学上网的客户端很强大也很麻烦,和我们平常使用的V2rayN、winxray、ssr不一样，其不能直接添加单个节点,添加节点只能通过配置文件添加,而且这个配置文件的格式会随着clash版本更新变化.​ 所以为了方便使用,很多网站提供了在线订阅地址转换的服务.但是很多这样的在线订阅地址转换存在节点信息泄露的问题. ​ 对于这样一个问题,我们可以通过自建订阅转换的方法来解决.这里">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/img/20211120132246.png">
+<meta property="article:published_time" content="2022-04-04T06:12:28.000Z">
+<meta property="article:modified_time" content="2022-07-23T12:09:40.638Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/img/20211120132246.png">
+  
+  
+  
+  <title>自建clash在线订阅转换 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/live2364li.io/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/live2364li.io/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/live2364li.io/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/live2364li.io/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/live2364li.io/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/live2364li.io/js/utils.js" ></script>
+  <script  src="/live2364li.io/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/live2364li.io/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/live2364li.io/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="自建clash在线订阅转换"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-04-04 14:12" pubdate>
+          2022年4月4日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">自建clash在线订阅转换</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​ clash这个科学上网的客户端很强大也很麻烦,和我们平常使用的V2rayN、winxray、ssr不一样，其不能直接添加单个节点,添加节点只能通过配置文件添加,而且这个配置文件的格式会随着clash版本更新变化.<br>​ 所以为了方便使用,很多网站提供了在线订阅地址转换的服务.但是很多这样的在线订阅地址转换存在节点信息泄露的问题.</p>
+<p>​ 对于这样一个问题,我们可以通过自建订阅转换的方法来解决.这里有两种思路一个是在本地建一个订阅转换的服务,自己在本地使用.<br>另外一个是搭建一个类似的在线网站,自己拥有全部权限.</p>
+<p>​ 本文介绍第二种方法–搭建一个在线订阅地址转换网站.</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a><a target="_blank" rel="noopener" href="https://yunbaitech.cf/2021/11/20/57773f920884/#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"></a>准备工作</h2><p>1 &#x2F; 两个邮箱，用来注册heroku，推荐使用临时邮箱</p>
+<p>我自己搭建的临时邮箱地址： <a target="_blank" rel="noopener" href="http://mail.445600.gq/">http://mail.445600.gq/</a></p>
+<blockquote>
+<p>啥时候提示临时邮箱不能用了,到电报群里找我修改域名前缀.</p>
+</blockquote>
+<blockquote>
+<p>或者你可以自己搭建一个,详见视频 <a target="_blank" rel="noopener" href="https://youtu.be/WAJ-jAXvdzU">https://youtu.be/WAJ-jAXvdzU</a></p>
+</blockquote>
+<p>2&#x2F; 个常用邮箱用了注册前端服务网站</p>
+<p>这次推荐使用render <a target="_blank" rel="noopener" href="https://render.com/">https://render.com/</a><br>​</p>
+<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a><a target="_blank" rel="noopener" href="https://yunbaitech.cf/2021/11/20/57773f920884/#%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA"></a>开始搭建</h2><p>一&#x2F; 后端搭建</p>
+<p>github 项目地址: <a target="_blank" rel="noopener" href="https://github.com/jth445600/subconverter-heroku">https://github.com/jth445600/subconverter-heroku</a></p>
+<p>注册 heroku 使用 临时邮箱注册两个账号 并且获取api</p>
+<p>heroku官网<br><a target="_blank" rel="noopener" href="https://dashboard.heroku.com/apps">https://dashboard.heroku.com/apps</a></p>
+<p>使用cf进行反代,并且解决heroku免费账户550小时的问题.</p>
+<p>解决方案就是 需要创建两个容器 单双号交替使用.和以前的heroku-v2ray的处理方式是一样的.</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20</p>
+<p>const SingleDay &#x3D; ‘应用程序名1.herokuapp.com’<br>const DoubleDay &#x3D; ‘应用程序名2.herokuapp.com’<br>addEventListener(<br>“fetch”,event &#x3D;&gt; {  </p>
+<p>let nd &#x3D; new Date();<br>if (nd.getDate()%2) {<br>host &#x3D; SingleDay<br>} else {<br>host &#x3D; DoubleDay<br>}  </p>
+<p>let url&#x3D;new URL(event.request.url);<br>url.hostname&#x3D;host;<br>let request&#x3D;new Request(url,event.request);<br>event. respondWith(<br>fetch(request)<br>)<br>}<br>)</p>
+<p>搭建完woker之后,就可以配置前端了.</p>
+<p>二&#x2F; 前端</p>
+<p>前端使用免费的静态网页服务厂商来搭建.这里推荐使用render</p>
+<p>注册 render</p>
+<p><a target="_blank" rel="noopener" href="https://render.com/">https://render.com/</a></p>
+<p>打开这个网站,有自己的邮箱注册就行了,不用绑定信用卡,可以免费使用</p>
+<p>也可以使用 cloudflare page</p>
+<p>打开cloudflare的官网 <a target="_blank" rel="noopener" href="http://www.cloudflare.com/">www.cloudflare.com</a></p>
+<p>github 项目地址: <a target="_blank" rel="noopener" href="https://github.com/jth445600/sub-web">https://github.com/jth445600/sub-web</a></p>
+<p>fork之后,修改一下<br><img src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/img/20211120132246.png" srcset="/live2364li.io/img/loading.gif" lazyload alt="20211120132246"></p>
+<p>修改刚才搭建的woker的地址</p>
+<p>最后就是部署到render就可以了</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/live2364li.io/categories/uncategorized/" class="category-chain-item">uncategorized</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>自建clash在线订阅转换</div>
+      <div>http://example.com/live2364li.io/自建clash在线订阅转换.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年4月4日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/live2364li.io/xrayr%E4%B8%BAgithub%E4%B8%8A%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%EF%BC%8C%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80.html" title="免费后端 XrayR部署V2ray,Trojan">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">免费后端 XrayR部署V2ray,Trojan</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/live2364li.io/809%E5%85%8D%E6%B5%81.html" title="809免流">
+                        <span class="hidden-mobile">809免流</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/live2364li.io/js/events.js" ></script>
+<script  src="/live2364li.io/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/live2364li.io/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/live2364li.io/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/live2364li.io/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,811 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/live2364li.io/img/fluid.png">
+  <link rel="icon" href="/live2364li.io/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="复习与巩固  python语言的缺点？ Python语言的优点有哪些，列举4个。 什么是跨平台性？  -——————————————————————————————-  什么是模块？  安装第三方模块用到哪个工具，安装的语法命令是什么？  导入第三方模块的语法是什么？  什么是标识符，有哪些规范？  python中的注视有几种，语法分别是？  什么是字符串，语法是？  数据类型分为哪几类（都有哪些">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python综合练习">
+<meta property="og:url" content="http://example.com/live2364li.io/python%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="复习与巩固  python语言的缺点？ Python语言的优点有哪些，列举4个。 什么是跨平台性？  -——————————————————————————————-  什么是模块？  安装第三方模块用到哪个工具，安装的语法命令是什么？  导入第三方模块的语法是什么？  什么是标识符，有哪些规范？  python中的注视有几种，语法分别是？  什么是字符串，语法是？  数据类型分为哪几类（都有哪些">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-18T03:38:48.000Z">
+<meta property="article:modified_time" content="2022-07-23T12:09:40.510Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>python综合练习 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/live2364li.io/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/live2364li.io/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/live2364li.io/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/live2364li.io/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/live2364li.io/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/live2364li.io/js/utils.js" ></script>
+  <script  src="/live2364li.io/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/live2364li.io/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/live2364li.io/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="python综合练习"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-05-18 11:38" pubdate>
+          2021年5月18日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          9.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          82 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">python综合练习</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><strong>复习与巩固</strong></p>
+<ol>
+<li>python语言的缺点？</li>
+<li>Python语言的优点有哪些，列举4个。</li>
+<li>什么是跨平台性？</li>
+</ol>
+<p>-——————————————————————————————-</p>
+<ul>
+<li><p>什么是模块？</p>
+</li>
+<li><p>安装第三方模块用到哪个工具，安装的语法命令是什么？</p>
+</li>
+<li><p>导入第三方模块的语法是什么？</p>
+</li>
+<li><p>什么是标识符，有哪些规范？</p>
+</li>
+<li><p>python中的注视有几种，语法分别是？</p>
+</li>
+<li><p>什么是字符串，语法是？</p>
+</li>
+<li><p>数据类型分为哪几类（都有哪些）？</p>
+</li>
+</ul>
+<p>复习上节dos界面的几个程序。</p>
+<p>复习pycharm创建项目</p>
+<p>-———————————————————————————-</p>
+<ol>
+<li><strong>什么是列表？它的语法？</strong></li>
+<li><strong>什么是集合，它的语法是什么，特点是什么？</strong></li>
+<li><strong>什么是元组，它的语法是？</strong></li>
+<li><strong>集合与列表的区别是什么？</strong></li>
+<li><strong>什么是字典？定义字典的语法是什么？</strong></li>
+<li>**持久性存储的方式是什么？将对象序列化的方法有哪些？将序列话后的数据恢复的方法有哪些？（loads(file)**<strong>）</strong></li>
+</ol>
+<p>练习字典</p>
+<p>定义一个字典名为introduce,包括以下内容：</p>
+<p>昵称：xiaoer，</p>
+<p>密码：******，</p>
+<p>性别:男</p>
+<p>邮箱：<a href="mailto:2470095666@qq.com，">2470095666@qq.com，</a></p>
+<p>爱好：跑步</p>
+<p>年龄：22</p>
+<p>个人简介：……</p>
+<p>要求输出绿色的内容。</p>
+<p><strong>练习1****：</strong></p>
+<p><strong>已知BMI****值的计算公式如下：</strong></p>
+<p><strong>体质指数（BMI****）&#x3D;</strong> <strong>体重（kg<strong><strong>）÷身高^2</strong></strong>（m****）</strong></p>
+<p><strong>本实例要求编写代码实现：从键盘上输入一个人的姓名，然后输入该用户的的身高，体重数据，最后计算BMI<strong><strong>指数，并且输出它的姓名，身高，体重，BMI</strong></strong>值。</strong></p>
+<p><strong>练习2****：</strong></p>
+<p>*<em>从键盘上输入三角形的三个边长，a,b,c</em><em><strong>的值（3</strong></em><em>，4</em><em><strong>，5</strong></em><em>），求三角形的面积S</em>***。#**<strong>开平方运算（跟号运算）</strong></p>
+<p><strong>import math</strong></p>
+<p>**a&#x3D;math.sqrt(**<strong>数据)</strong>                                                                                                                                                                                                                                                                                                    </p>
+<p>练习3：</p>
+<p>给你一个圆的半径r，求得圆的周长d和圆的面积S。Pi&#x3D;math.pi，</p>
+<p>练习4：</p>
+<p>给一个数a，然后判断a是奇数还是偶数，要求输出a是奇数还是偶数。</p>
+<p>import math<br>r&#x3D;input(“请输入数据r：”)<br>b&#x3D;input(“请输入数据b：”)<br>c&#x3D;input(“请输入数据c：”)<br>s&#x3D;int(r)**2*math.pi<br>print(“圆的面积是等数据：”,s,r,b,c)</p>
+<p><strong>分支结构练习1****：闰年平年问题：</strong></p>
+<p><strong>被整除的特性不同</strong> *<em>非整百年的年份中,<strong><strong>能被4</strong></strong>整除的为闰年,<strong><strong>不能被4</strong></strong>整除的为平年。如2004</em><em><strong>年就是闰年,2001</strong></em><em>年平年。</em>* *<em>整百年的年份中,<strong><strong>能被400</strong></strong>整除的是闰年,<strong><strong>不能被400</strong></strong>整除的是平年。如2000</em>*<strong>年是闰年…</strong></p>
+<p>循环结构</p>
+<p>练习0#</p>
+<p>从键盘上输入一个数N，要求输出从0到N之间各个数是奇数还是偶数。参考课本56页。用while循环实现。</p>
+<p><strong>练习1</strong></p>
+<p><strong>使用while<strong><strong>循环，输出100</strong></strong>以内能够被M<strong><strong>整除的所有数（从键盘上输入一个数M</strong></strong>，2&lt;M&lt;10****）。</strong></p>
+<p><strong>练习2</strong></p>
+<p><strong>公鸡5****元一只</strong> <strong>母鸡3****元一只</strong> <strong>小鸡1<strong><strong>元3</strong></strong>只</strong> <strong>要求100<strong><strong>元刚好买100</strong></strong>只鸡的买法</strong></p>
+<p>练习3</p>
+<p>9*9乘法表</p>
+<p>练习4</p>
+<p>0~N的和。（从键盘上输入一个数N）</p>
+<p>*<em>练习1</em>***：循环输入一个同学的姓名，平时成绩,****期末成绩，然后计算总成绩（平时成绩50%+****期末成绩50%**<strong>）。当总成绩不及格时，输出该同学的信息（姓名，平时成绩，期末成绩，总成绩，不及格），并终止循环。</strong></p>
+<p>*<em>练习2</em><em><strong>猜数字（100</strong></em>*以内的数）：你输入一个数字&#x2F;**<strong>随机生成一个数字，然后让你的小伙伴猜数字，给出提示信息，大了还是小了，直到猜中为止，统计他猜了多少次。</strong></p>
+<p><strong>练习3</strong> **摇色子&#x2F;**<strong>石头剪刀布()</strong></p>
+<p><strong>A<strong><strong>和B</strong></strong>摇色子，显示每次A<strong><strong>和B</strong></strong>摇的结果，当A<strong><strong>赢的时候，输出A</strong></strong>摇了几次，终止循环。提示使用随机函数，如import random         A&#x3D;random.randint(1,6)</strong></p>
+<p><strong>例如：</strong></p>
+<ol>
+<li><strong>A<strong><strong>摇的是5</strong></strong>，B****摇的是6</strong></li>
+<li><strong>A<strong><strong>摇的是4</strong></strong>，B<strong><strong>摇的是3</strong></strong>，A****赢了，摇了两次。</strong></li>
+</ol>
+<p><strong>&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;</strong></p>
+<p><strong>Shijianbu&#x3D;[“<strong><strong>石头”,”</strong></strong>剪刀”,”****布”], zsh&#x3D;random.randint(0,2)  xm&#x3D;random.randint(0,2)</strong></p>
+<p><strong>Shijianbu[zsh]&#x3D;&#x3D;”<strong><strong>石头” and Shijianbu[xm]&#x3D;&#x3D;”</strong></strong>剪刀”</strong></p>
+<p><strong>1<strong><strong>，zsh</strong></strong>的是石头，xm****的是布</strong></p>
+<p><strong>2<strong><strong>，zsh</strong></strong>的是石头，xm<strong><strong>的是剪刀，zsh</strong></strong>赢了，玩了两次。</strong></p>
+<p><strong>练习4<strong><strong>数N</strong></strong>的游戏</strong></p>
+<p>**#<strong><strong>数字游戏：从键盘上输入一个数（2&lt;N&lt;10</strong></strong>）<br>N&#x3D;int(input(“<strong><strong>请输入您要玩的数字N</strong></strong>：要求（2&lt;N&lt;10<strong>*<em>）：”))<br>for i in range(1,101):<br>#<strong><strong>（1</strong></strong>）7</em>*</strong>的倍数，（2<strong><strong>）个位上带7</strong></strong>的，如17,27,37,47<strong>*<em>，……97.(3)<strong><strong>十位上带7</strong></strong>的，如70,71,72,73</em>*</strong>，……79<br>    if i%10&#x3D;&#x3D;0:<br>        print()<br>    if i%N&#x3D;&#x3D;0 or i%10&#x3D;&#x3D;N or i&#x2F;&#x2F;10&#x3D;&#x3D;N:<br>        print(“**<strong>拍手”,end&#x3D;’ ‘)<br>    else:<br>        print(i,end&#x3D;”\t”)</strong></p>
+<ol>
+<li>*<em>从键盘上输入一句</em>***英文语句，要求输出具有正确的英文格式的语句（首单词首字符大写，其他字符都小写）。提示使用capitalize()**<strong>，lower()</strong></li>
+</ol>
+<p><strong>例如，****输入i like PYTHON.</strong> <strong>输出是I like python.</strong></p>
+<ul>
+<li><strong>从键盘上输入一句<strong><strong>汉语，把其中出现的敏感词（傻X</strong></strong>，SB****，杀人）常用的处理方法</strong></li>
+</ul>
+<p>**是使用特殊符号（如“****<strong>”）对敏感词进行替换。输出没有敏感词的语句。提示使用</strong></p>
+<p>*<em>replace(old, new)<strong><strong>，</strong></strong>如输入：你真坑，输出：你真*</em>*</p>
+<ul>
+<li>*<em>从键盘上输入一段话</em>***，要求程序能够具备删除空格、英文标点替换（,****；.**<strong>。）、英</strong></li>
+</ul>
+<p>**文单词全部大写功能，提示使用upper()***<em>，replace(old, new)<strong>*<em>，lstrip()<strong><strong>。</strong></strong>如输入：     math</em>* <strong>是很棒的一个科目,</strong> <strong>我很喜欢学习数学.</strong> <strong>输出：MATH</strong></strong>是很棒的一个科目，我很喜欢学习数学。</em>*</p>
+<p><strong>列表练习1****：</strong></p>
+<p>#定义一个列表名score，暂时不添加任何元素。要求从键盘上输入10个成绩插入到score里，然后输出score的最大值，和最小值。<br># 提示方法 max（score）,min(score)</p>
+<p><strong>源码：</strong></p>
+<p><strong>cs&#x3D;[]</strong></p>
+<p>**for i in (input(“**<strong>请输入一个学生的成绩：”).split(‘ ‘)):</strong></p>
+<p> <strong>cs.append(float(i))</strong></p>
+<p><strong>print(cs)</strong></p>
+<p><strong>列表的推导式</strong>my_set &#x3D; [int(i) for i in input(“请输入学生的成绩:”).split()]</p>
+<p><strong>字典，集合的推导式：</strong></p>
+<p><strong>元组练习1****：</strong></p>
+<p>#定义一个元组名score，暂时不添加任何元素。要求从键盘上输入10个成绩插入到score里，然后输出score的最大值，和最小值，和它的长度。<br># 提示方法 list(元组名),tuple(列表名),max（score）,min(score)，len().</p>
+<p>#color1 &#x3D; (1, 2, ‘red’, ‘green’, ‘pink’)<br>#color1&#x3D;list(color1)</p>
+<p><strong>集合练习1</strong></p>
+<p>#定义一个集合名score，暂时不添加任何元素。要求从键盘上输入5个成绩插入到score里，然后输出它的长度，它本身，删除等于59的成绩，并输出删除后的集合本身。<br># 提示方法 set(),len(),add()</p>
+<p><strong>字典练习1</strong></p>
+<p><strong>访问字典的键，访问字典的值，访问所有。</strong></p>
+<p>cs&#x3D;{1:’name’,2:’age’,3:’like’}<br>for i,v in cs.items():<br>    print(i,v)<br>print(cs.values())<br>print(cs.items())</p>
+<p><strong>字典练习2</strong></p>
+<p><strong>通讯录是记录了联系人姓名和联系方式的名录，手机通讯录是最常见的通讯录之一，人们可以在通讯录中通过姓名查看相关联系人的联系方式等信息，也可以在其中新增联系人，或修改、删除联系人信息。</strong></p>
+<p><strong>本实例要求编写程序，实现具备添加、查看、修改以及删除联系人信息功能的手机通讯录。</strong></p>
+<p><strong>通讯录参考部分源码：</strong></p>
+<p>txl&#x3D;{}<br>#1,增加，2，修改，3删除，0退出。<br>print(“请输入您的指令:\n0，查询联系人\n1，增加联系人\n2，修改联系人\n3，删除联系人\n-1，退出程序。”)<br>while(True):<br>    flag&#x3D;input(“请输入您的指令，如1：”)<br>    if(flag&#x3D;&#x3D;’1’):<br>        name&#x3D;input(“请输入要插入的姓名，如zsh：”)<br>        txl[name]&#x3D;input(“请输入他的联系方式：”)<br>        print(‘添加成功！请继续操作。’)<br>    elif(flag&#x3D;&#x3D;’0’):<br>        print(f”该通讯录是{txl}”)<br>    elif(flag&#x3D;&#x3D;-1):<br>        print(‘谢谢使用！’)<br>        break</p>
+<p><strong>通讯录参考源码：</strong></p>
+<p>txl&#x3D;{}<br>#1,增加，2，修改，3删除，0查询所有联系人，00查询某个联系人，-1退出。<br>print(“请输入您的指令:\n0，查询所有联系人\n00，查询某个联系人\n1，增加联系人\n2，修改联系人\n3，删除联系人\n-1，退出程序。”)<br>while(True):<br>    flag&#x3D;input(“请输入您的指令，如0：”)<br>    if(flag&#x3D;&#x3D;’0’):<br>        print(“该通讯录所有联系人的信息是:”)<br>        for i in txl.keys():<br>            print(f”{i}”)<br>        print(‘———————————‘)<br>#—————————————————————-<br>    elif(flag &#x3D;&#x3D; ‘00’):<br>        name &#x3D; input(“请输入要查询的姓名，如zsh：”)<br>        if(name in txl):<br>            print(f’他的联系方式是{txl[name]}’)<br>            print(‘———————————‘)<br>        else:<br>            print(“该联系人不在，请添加他的信息。”)<br>            print(‘———————————‘)<br># —————————————————————-<br>    elif (flag &#x3D;&#x3D; ‘1’):<br>        name &#x3D; input(“请输入添加人的姓名，如zsh：”)<br>        if (name in txl):<br>            print(f’{name}的联系方式是{txl[name]},请勿重复添加！’)<br>            print(‘———————————‘)<br>        else:<br>            txl[name]&#x3D;input(“请输入该联系人的联系方式：”)<br>            print(f’已添加成功，他的信息是{name},{txl[name]}’)<br>            print(‘———————————‘)<br># —————————————————————-<br>    elif (flag &#x3D;&#x3D; ‘2’):<br>        name &#x3D; input(“请输入修改人的姓名，如zsh：”)<br>        if (name not in txl):<br>            print(f’该修改人不在，请添加他的信息！’)<br>            print(‘———————————‘)<br>        else:<br>            txl[name]&#x3D;input(“请输入该联系人新的联系方式：”)<br>            print(f’已修改成功，他修改后的信息是{name},{txl[name]}’)<br>            print(‘———————————‘)<br># —————————————————————-<br>    elif (flag &#x3D;&#x3D; ‘3’):<br>        name &#x3D; input(“请输入删除人的姓名，如zsh：”)<br>        if (name not in txl):<br>            print(f’该修改人不存在，无法删除，请进行其他操作！’)<br>            print(‘———————————‘)<br>        else:<br>            del txl[name]<br>            print(f’已成功删除，删除后的所有的联系人的信息是{txl}’)<br>            print(‘———————————‘)<br># —————————————————————-<br>    elif(flag &#x3D;&#x3D; ‘-1’):<br>        print(“谢谢使用！”)<br>        break</p>
+<p><strong>复杂数据类型综合练习1****、</strong></p>
+<p><strong>学校拟组织一场歌手大赛，从参赛选手中选拔出十名相对突出的学生，授予“校园十大歌手”称号。比赛之中设置有评委组，每名选手演唱完毕之后会由评委组的<strong><strong>十名评委</strong></strong>打分。为保证比赛公平公正，防止作弊和恶意打分，计算得分时会先去掉最高分和最低分，再计算平均分。</strong></p>
+<p><strong>本实例要求编写程序，实现根据需求对每位歌手计算平均分的功能。（输入他的姓名，10****个成绩，删除他的最高分，最低分，然后求平均分，最后输出他的姓名，最高分，最低分和平均分。</strong></p>
+<p><strong>复杂数据类型综合练习2****、</strong></p>
+<p><strong>如今两年偶像选秀节目风头正盛，吸引了许多喜欢唱跳、有一颗明星梦想的少年少女参加，青春有你正是节目之一。青春有你采用计票机制，选手获得的票数越多，排名就越靠前。</strong></p>
+<p><strong>本实例要求编写程序，<strong><strong>接收10</strong></strong>名选手的姓名和票数，输出排序后的成绩（姓名，票数）。如</strong></p>
+<p><strong>张三 100</strong></p>
+<p><strong>李四 99</strong></p>
+<p><strong>歌手排名源码1****：</strong></p>
+<p>mingdan&#x3D;[i for i in input(“请输入所有歌手的姓名，以英文逗号分隔：”).split(‘,’)]<br># print(mingdan)<br>geshou&#x3D;dict.fromkeys(mingdan,0)<br>print(‘初始化后的字典为：’,geshou)<br>for i in mingdan:<br>    print(f”请输入{i}的成绩，保留两位小数：”,end&#x3D;’ ‘)<br>    geshou[i]&#x3D;float(input())<br># geshou&#x3D;{‘zsh’:85,’xll’:84,’zjl’:75}<br>print(geshou)<br>cj&#x3D;[j for j in geshou.values()]<br>cj.sort(reverse&#x3D;True)<br># print(cj)<br>geshou2&#x3D;{j:i for i,j in geshou.items()}<br>print(“最终成绩如下：”)<br>for i in cj:<br>    print(geshou2[i],i)</p>
+<p><strong>歌手排名源码2****：</strong></p>
+<p>**mingdan&#x3D;[i for i in input(“<strong><strong>请输入10</strong></strong>名歌手的姓名：”).split(‘,’)]<br>gsxx&#x3D;{}<br>gsxx&#x3D;dict.fromkeys(mingdan,0)<br>for i in mingdan:<br>    gsxx[i]&#x3D;input(f”****请输入{i}**<strong>的成绩：”)<br>sc&#x3D;[i for i in gsxx.values()]<br># print(sc)<br>sc.sort(reverse&#x3D;True)<br>gsxx&#x3D;{j:i for i,j in gsxx.items()}<br>for i in sc:<br>    print(f’{gsxx[i]},{i}’)</strong></p>
+<p><strong>红心算法源码</strong></p>
+<p>from turtle import *<br>pensize(10)<br>pencolor(‘red’)<br>fillcolor(‘pink’)<br>speed(8)<br>up()<br>goto(-30, 100)<br>down()<br>begin_fill()<br>left(90)<br>circle(120,180)<br>circle(360,70)<br>left(38)<br>circle(360,70)<br>circle(120,180)<br>end_fill()<br>up()<br>goto(-100,-100)<br>down()</p>
+<p><strong>敏感词源码</strong></p>
+<p>sentens&#x3D;input(“请输入一句话：”)<br>minganci&#x3D;[“傻X”,”SB”,”杀人”,”坑”,”塔被偷了”]<br># for i in range(len(minganci)):<br>#     sentens&#x3D;sentens.replace(minganci[i],”**“)<br>for i in minganci:  </p>
+<p>    flag&#x3D;”*“*len(i)<br>    sentens&#x3D;sentens.replace(i,flag)</p>
+<p><strong>猜数字（100****以内的数）源码</strong></p>
+<p>import random<br>Num&#x3D;random.randint(0,100)<br>print(“随机数为:”,Num)<br>for i in range(12):<br>    print(“—————————-“)<br>times&#x3D;0<br>while True:<br>    c&#x3D;int(input(“您猜的数字为:”))<br>    times&#x3D;times+1<br>    if c&#x3D;&#x3D;Num:<br>        print(“你真棒，总共猜了”,times,”次”)<br>        break<br>    elif c&gt;Num:<br>        print(“你猜的偏大了，请往小了猜”)<br>    else:<br>        print(“你猜的偏小了，请往大了猜”)</p>
+<p>石头剪刀布的游戏源码</p>
+<p>import random<br>shijianbu&#x3D;[“石头”,”剪刀”,”布”,”剪刀”]#0,1,2,3<br>times&#x3D;0<br>while True:<br>    xiabiao&#x3D;random.randint(0,3)<br>    ziji&#x3D;input(“您出的是”)<br>    times&#x3D;times+1<br>    #if ziji &#x3D;&#x3D; “石头” and shijianbu[xiabiao] &#x3D;&#x3D; “剪刀”<br>    if (ziji&#x3D;&#x3D;”石头” and xiabiao&#x3D;&#x3D;1) or (ziji&#x3D;&#x3D;”石头” and xiabiao&#x3D;&#x3D;3 ) or (ziji&#x3D;&#x3D;”剪刀” and xiabiao&#x3D;&#x3D;2) or (ziji&#x3D;&#x3D;”布” and xiabiao&#x3D;&#x3D;0):<br>        print(“这是第”, times, “次”, “你出的是：”, ziji,”电脑出的是：”, shijianbu[xiabiao],”你赢了”)<br>        break<br>    else:<br>        print(“这是第”, times, “次”, “你出的是：”, ziji,”电脑出的是：”, shijianbu[xiabiao])</p>
+<p>车牌号源码：</p>
+<p>import random<br>#random.randint(i, j),产生一个i到j范围内整数<br>j&#x3D;random.randint(0, 25)<br>zimu&#x3D;[‘a’,’b’,’c’,’d’,’e’,’f’,’g’,’h’,’i’,’j’,’k’,’l’,’m’,’n’,’o’,’p’,’q’,’r’,’s’,’t’,’u’,’v’,’w’,’x’,’y’,’z’]<br>#print(zimu[i])<br>while True:<br>    i&#x3D;random.randint(1000000, 100000000)<br>    print(‘豫L’,zimu[j],i)<br>    break</p>
+<p>第9周函数</p>
+<p>练习1：从键盘上输入r，然后定义两个函数，如下# getArea(r)求圆的面积。<br># getPerimeter(r)求圆的周长，最后调用这些函数输出，对应半径下，圆的面积以及周长。</p>
+<p>练习2：</p>
+<p><strong>定义一个gsxx<strong><strong>字典存储10</strong></strong>名选手的姓名和票数，定义一个函数paiming<strong><strong>（gsxx</strong></strong>）功能是输出排序后的成绩（姓名，票数）。</strong></p>
+<p>练习3,4</p>
+<p>3、从键盘上接受一个数N，定义一个函数JO(n),该函数用来判断n奇数偶数。最后输出N是奇数还是偶数。<br>4、 从键盘上接受一个年份Y，定义一个函数RP(y)，该函数用来判断y是闰年还是平年，最后输出Y是什么年。</p>
+<p>练习5</p>
+<p>从键盘上输入一个N，然后定义一个SUM（n）函数求1~N的累加和，最后输出结果。</p>
+<p>练习6</p>
+<p># 本实例要求编写代码，利用函数实现具有显示饮品信息、计算总额等功能的程序。<br># 1、娃哈哈（2元)，2、王老吉（3元），3、脉动（4元）。<br>N代表类型,M代表买的个数。从键盘上输入N，M。<br>定义一个gouwu(N,M),返回计算的总额。最后输出商品信息（2瓶王老吉）以及总额。</p>
+<p>#0，选择结束。定义一个Shangpin列表，用来存储购买商品的个数。[2,3,4],gouwu(shangpin)</p>
+<p>自动购物机源码。</p>
+<p># 0代表选择结束，1代表增加娃哈哈，2代表增加王老吉，3代表增加脉动。4……</p>
+<p># 定义一个Shangpin列表，用来存储购买商品的个数。[2,3,4],gouwu(shangpin)</p>
+<p>danjia&#x3D;{“娃哈哈”:2,”王老吉”:3,”脉动”:4}</p>
+<p>leixing&#x3D;{0:”结束”,1:”娃哈哈”,2:’王老吉’,3:”脉动”}</p>
+<p>shangpin&#x3D;[0,0,0,0,0]</p>
+<p>j&#x3D;0</p>
+<p>while True:</p>
+<p>    N&#x3D;int(input(“请输入您的选择：(如0选择,1娃哈哈,2王老吉,3脉动…):”))</p>
+<p>    if N&#x3D;&#x3D;1 or N&#x3D;&#x3D;2 or N&#x3D;&#x3D;3:</p>
+<p>        L &#x3D; int(input(f”请输入购买{leixing[N]}个数：”))</p>
+<p>        shangpin[N-1]&#x3D;shangpin[N-1]+L   # shangpin[0] &#x3D; shangpin[0] + L</p>
+<p>        print(f”已添加{leixing[N]}{shangpin[N-1]}瓶。”)</p>
+<p>    elif N &#x3D;&#x3D; 0:</p>
+<p>        print(“已添加”, end&#x3D;”\t”)</p>
+<p>        for i in shangpin:</p>
+<p>            j &#x3D; j + 1</p>
+<p>            if i &#x3D;&#x3D; 0:</p>
+<p>                continue</p>
+<p>            else:</p>
+<p>                print(f”{leixing[j]}{i}瓶”, end&#x3D;”\t”)</p>
+<p>        print(“请稍后付款…”)</p>
+<p>        # print(f”已添加娃哈哈{shangpin[0]}瓶，王老吉{shangpin[1]}瓶，脉动{shangpin[2]}瓶，请稍后付款。”)</p>
+<p>        break</p>
+<p>    else:</p>
+<p>        print(“该商品暂时缺货，请耐心等待！”)</p>
+<p>totalprice&#x3D;0</p>
+<p>def Gouwu(SP):</p>
+<p>    global totalprice</p>
+<p>    totalprice&#x3D;SP[0]*danjia[“娃哈哈”]+SP[1]*danjia[“王老吉”]+SP[2]*danjia[“脉动”]</p>
+<p>    return totalprice</p>
+<p>j&#x3D;0</p>
+<p>print(“已成功付款”,end&#x3D;”\t”)</p>
+<p>for i in shangpin:</p>
+<p>    j &#x3D; j + 1</p>
+<p>    if i&#x3D;&#x3D;0:</p>
+<p>        continue</p>
+<p>    else:</p>
+<p>        print(f”{leixing[j]}{i}瓶”,end&#x3D;”\t”)</p>
+<p>print(f”总价：{Gouwu(shangpin)}元。”)</p>
+<p># print(f”已成功付款，娃哈哈{shangpin[0]}瓶，王老吉{shangpin[1]}瓶，脉动{shangpin[2]}瓶，总价：{Gouwu(shangpin)}元。”)</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/live2364li.io/categories/e5-ad-a6-e4-b9-a0/" class="category-chain-item">%e5%ad%a6%e4%b9%a0</a>
+  
+  
+    <span>></span>
+    
+  <a href="/live2364li.io/categories/e5-ad-a6-e4-b9-a0/PYCHARM/" class="category-chain-item">PYCHARM</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>python综合练习</div>
+      <div>http://example.com/live2364li.io/python综合练习.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年5月18日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/live2364li.io/ios-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html" title="iOS 使用教程">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">iOS 使用教程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/live2364li.io/%E6%B7%B7%E6%B7%86%E5%A4%A7%E5%85%A8.html" title="混淆大全">
+                        <span class="hidden-mobile">混淆大全</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/live2364li.io/js/events.js" ></script>
+<script  src="/live2364li.io/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/live2364li.io/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/live2364li.io/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/live2364li.io/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,646 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/live2364li.io/img/fluid.png">
+  <link rel="icon" href="/live2364li.io/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="简介随着大家手里免费和收费VPS越来越多，对于切换v2ray或者trojan使用方式的时候总是在各个终端上不断修改配置很麻烦，今天给大家介绍一个生成自己订阅连接的办法，只需要修改一次配置文件即可在各个使用终端上面通过更新订阅连接同步配置！ 一、建立TXT文件Windows电脑就不介绍了，鼠标右键即可新建TXT文件 Mac电脑需要打开文本编辑软件，软后点击任务栏格式-制作纯文本  用纯文本模式编辑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="像机场一样定制自己的v2ray或Trojan订阅链接">
+<meta property="og:url" content="http://example.com/live2364li.io/%E5%83%8F%E6%9C%BA%E5%9C%BA%E4%B8%80%E6%A0%B7%E5%AE%9A%E5%88%B6%E8%87%AA%E5%B7%B1%E7%9A%84v2ray%E6%88%96trojan%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="简介随着大家手里免费和收费VPS越来越多，对于切换v2ray或者trojan使用方式的时候总是在各个终端上不断修改配置很麻烦，今天给大家介绍一个生成自己订阅连接的办法，只需要修改一次配置文件即可在各个使用终端上面通过更新订阅连接同步配置！ 一、建立TXT文件Windows电脑就不介绍了，鼠标右键即可新建TXT文件 Mac电脑需要打开文本编辑软件，软后点击任务栏格式-制作纯文本  用纯文本模式编辑">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://1.bp.blogspot.com/-j6nWpKgYsG4/X8SGsxNG6VI/AAAAAAAAAO4/TuA4xuwlFA01QdSBVXp_EZNTf_S1Xiw4ACLcBGAsYHQ/s320/%25E5%2583%258F%25E6%259C%25BA%25E5%259C%25BA%25E4%25B8%2580%25E6%25A0%25B7%25E5%25AE%259A%25E5%2588%25B6%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584v2ray%25E6%2588%2596Trojan%25E8%25AE%25A2%25E9%2598%2585%25E9%2593%25BE%25E6%258E%25A5.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/30/saQ1gd6LMStoIiX.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/30/VF4oXgkhNERrbZS.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/30/o1BQpxT67bGeWZA.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/30/xbHpGYvs9zj2d3Q.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/30/2ryKcZuUvj8xMh3.png">
+<meta property="article:published_time" content="2021-05-10T04:49:11.000Z">
+<meta property="article:modified_time" content="2022-07-23T12:09:40.495Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://1.bp.blogspot.com/-j6nWpKgYsG4/X8SGsxNG6VI/AAAAAAAAAO4/TuA4xuwlFA01QdSBVXp_EZNTf_S1Xiw4ACLcBGAsYHQ/s320/%25E5%2583%258F%25E6%259C%25BA%25E5%259C%25BA%25E4%25B8%2580%25E6%25A0%25B7%25E5%25AE%259A%25E5%2588%25B6%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584v2ray%25E6%2588%2596Trojan%25E8%25AE%25A2%25E9%2598%2585%25E9%2593%25BE%25E6%258E%25A5.png">
+  
+  
+  
+  <title>像机场一样定制自己的v2ray或Trojan订阅链接 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/live2364li.io/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/live2364li.io/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/live2364li.io/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/live2364li.io/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/live2364li.io/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/live2364li.io/js/utils.js" ></script>
+  <script  src="/live2364li.io/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/live2364li.io/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/live2364li.io/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="像机场一样定制自己的v2ray或Trojan订阅链接"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-05-10 12:49" pubdate>
+          2021年5月10日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          642 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          6 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">像机场一样定制自己的v2ray或Trojan订阅链接</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><a target="_blank" rel="noopener" href="https://1.bp.blogspot.com/-j6nWpKgYsG4/X8SGsxNG6VI/AAAAAAAAAO4/TuA4xuwlFA01QdSBVXp_EZNTf_S1Xiw4ACLcBGAsYHQ/s1156/%25E5%2583%258F%25E6%259C%25BA%25E5%259C%25BA%25E4%25B8%2580%25E6%25A0%25B7%25E5%25AE%259A%25E5%2588%25B6%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584v2ray%25E6%2588%2596Trojan%25E8%25AE%25A2%25E9%2598%2585%25E9%2593%25BE%25E6%258E%25A5.png"><img src="https://1.bp.blogspot.com/-j6nWpKgYsG4/X8SGsxNG6VI/AAAAAAAAAO4/TuA4xuwlFA01QdSBVXp_EZNTf_S1Xiw4ACLcBGAsYHQ/s320/%25E5%2583%258F%25E6%259C%25BA%25E5%259C%25BA%25E4%25B8%2580%25E6%25A0%25B7%25E5%25AE%259A%25E5%2588%25B6%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584v2ray%25E6%2588%2596Trojan%25E8%25AE%25A2%25E9%2598%2585%25E9%2593%25BE%25E6%258E%25A5.png" srcset="/live2364li.io/img/loading.gif" lazyload></a></p>
+<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>随着大家手里免费和收费VPS越来越多，对于切换v2ray或者trojan使用方式的时候总是在各个终端上不断修改配置很麻烦，今天给大家介绍一个生成自己订阅连接的办法，只需要修改一次配置文件即可在各个使用终端上面通过更新订阅连接同步配置！</p>
+<h4 id="一、建立TXT文件"><a href="#一、建立TXT文件" class="headerlink" title="一、建立TXT文件"></a>一、建立TXT文件</h4><p>Windows电脑就不介绍了，鼠标右键即可新建TXT文件</p>
+<p>Mac电脑需要打开文本编辑软件，软后点击任务栏格式-制作纯文本</p>
+<p><img src="https://i.loli.net/2020/11/30/saQ1gd6LMStoIiX.png" srcset="/live2364li.io/img/loading.gif" lazyload alt="截屏2020-11-30 上午10.30.55"></p>
+<p>用纯文本模式编辑后存储就是txt格式文件了</p>
+<h4 id="二、在客户端查找Vmess或者Trojan的链接"><a href="#二、在客户端查找Vmess或者Trojan的链接" class="headerlink" title="二、在客户端查找Vmess或者Trojan的链接"></a>二、在客户端查找Vmess或者Trojan的链接</h4><p>我们需要在新建的txt文件中添加v2ray或者trojan的链接</p>
+<p>怎么找到这些链接呢，我们可以利用客户端软件，</p>
+<p>在客户端软件配置完V2ray或者Trojan后可以分享链接或者查看链接，</p>
+<p>下面给出几个客户端的例子</p>
+<p>Qv2ray</p>
+<p><img src="https://i.loli.net/2020/11/30/VF4oXgkhNERrbZS.png" srcset="/live2364li.io/img/loading.gif" lazyload alt="截屏2020-11-30 上午10.36.26"></p>
+<p>v2rayU</p>
+<p><img src="https://i.loli.net/2020/11/30/o1BQpxT67bGeWZA.png" srcset="/live2364li.io/img/loading.gif" lazyload alt="截屏2020-11-30 上午10.37.52"></p>
+<h4 id="三、转换编码"><a href="#三、转换编码" class="headerlink" title="三、转换编码"></a>三、转换编码</h4><p>新建两个TXT文件，第一个文件放入你的v2ray或者trojan链接，第二个放入转换后的代码</p>
+<p>转码网站，可以在google中搜索：64base解码</p>
+<p>也可以直接打开下面的网站</p>
+<blockquote>
+<p>网站地址 <a target="_blank" rel="noopener" href="https://base64.us/">https://base64.us/</a></p>
+</blockquote>
+<p>复制第一个链接txt文件中内容 点击 编码，</p>
+<p><img src="https://i.loli.net/2020/11/30/xbHpGYvs9zj2d3Q.png" srcset="/live2364li.io/img/loading.gif" lazyload alt="截屏2020-11-30 上午10.45.27"></p>
+<p>转完后的代码贴到第二个txt文件中保存</p>
+<h4 id="四、利用onedrive生成订阅连接"><a href="#四、利用onedrive生成订阅连接" class="headerlink" title="四、利用onedrive生成订阅连接"></a>四、利用onedrive生成订阅连接</h4><p>免费注册一个onedrive</p>
+<p>登陆后上传你的第二个txt文件</p>
+<p>点击分享，并去掉可编辑选项</p>
+<p><img src="https://i.loli.net/2020/11/30/2ryKcZuUvj8xMh3.png" srcset="/live2364li.io/img/loading.gif" lazyload alt="截屏2020-11-30 上午11.26.16"></p>
+<p>打开OneDrive直链获取工具</p>
+<blockquote>
+<p>网站地址：<a target="_blank" rel="noopener" href="https://onedrive.gimhoy.com/">https://onedrive.gimhoy.com/</a></p>
+</blockquote>
+<p>获取个永久连接</p>
+<p>复制链接，删除后面的.mp3格式，添加到客户端订阅里面即可</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/live2364li.io/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="category-chain-item">科学上网</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>像机场一样定制自己的v2ray或Trojan订阅链接</div>
+      <div>http://example.com/live2364li.io/像机场一样定制自己的v2ray或trojan订阅链接.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年5月10日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/live2364li.io/java-%E9%A5%BF%E6%B1%89%E8%AF%95.html" title="java 饿汉试">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">java 饿汉试</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/live2364li.io/%E8%81%94%E9%80%9A%E5%85%8D%E6%B5%81%E6%B7%B7%E6%B7%86host%E5%85%A8%E5%9B%BD%E9%80%9A%E7%94%A8%E5%AE%9E%E6%B5%8B%E6%9C%89%E6%95%88.html" title="联通免流混淆Host全国通用实测有效">
+                        <span class="hidden-mobile">联通免流混淆Host全国通用实测有效</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/live2364li.io/js/events.js" ></script>
+<script  src="/live2364li.io/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/live2364li.io/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/live2364li.io/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/live2364li.io/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

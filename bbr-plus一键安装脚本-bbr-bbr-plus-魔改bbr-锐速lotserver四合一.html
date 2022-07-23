@@ -1,0 +1,655 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/live2364li.io/img/fluid.png">
+  <link rel="icon" href="/live2364li.io/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="关于BBR PlusBBR是Google推出的一套拥塞控制算法，集成在最新的Linux内核中。BBR应用在VPS服务器上，可以明显改善服务器的网络传输速度，减少丢包。 而BBR Plus版本，以及魔改版BBR，则是网友在原版BBR的基础上，对一些参数进行改良后的修正版本，比原版BBR有着更为显著的加速效果。至于两个改良版本哪个加速效果更好，大家可以分别安装测试，选取最适合自己的版本。下文会提供各">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BBR Plus一键安装脚本 BBR&#x2F;BBR Plus&#x2F;魔改BBR&#x2F;锐速(LotServer)四合一">
+<meta property="og:url" content="http://example.com/live2364li.io/bbr-plus%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC-bbr-bbr-plus-%E9%AD%94%E6%94%B9bbr-%E9%94%90%E9%80%9Flotserver%E5%9B%9B%E5%90%88%E4%B8%80.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于BBR PlusBBR是Google推出的一套拥塞控制算法，集成在最新的Linux内核中。BBR应用在VPS服务器上，可以明显改善服务器的网络传输速度，减少丢包。 而BBR Plus版本，以及魔改版BBR，则是网友在原版BBR的基础上，对一些参数进行改良后的修正版本，比原版BBR有着更为显著的加速效果。至于两个改良版本哪个加速效果更好，大家可以分别安装测试，选取最适合自己的版本。下文会提供各">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ssr.tools/wp-content/uploads/2019-05-13_173325.png">
+<meta property="og:image" content="https://ssr.tools/wp-content/uploads/2019-05-13_152623.jpg">
+<meta property="og:image" content="https://ssr.tools/wp-content/uploads/2019-05-13_152802.jpg">
+<meta property="og:image" content="https://ssr.tools/wp-content/uploads/2019-05-13_155031.jpg">
+<meta property="og:image" content="https://ssr.tools/wp-content/uploads/2019-05-13_155205.jpg">
+<meta property="og:image" content="https://ssr.tools/wp-content/uploads/2018-11-29_185659.jpg">
+<meta property="article:published_time" content="2021-03-25T11:28:49.000Z">
+<meta property="article:modified_time" content="2022-07-23T12:09:40.394Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ssr.tools/wp-content/uploads/2019-05-13_173325.png">
+  
+  
+  
+  <title>BBR Plus一键安装脚本 BBR/BBR Plus/魔改BBR/锐速(LotServer)四合一 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/live2364li.io/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/live2364li.io/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/live2364li.io/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/live2364li.io/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/live2364li.io/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/live2364li.io/js/utils.js" ></script>
+  <script  src="/live2364li.io/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/live2364li.io/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/live2364li.io/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="BBR Plus一键安装脚本 BBR/BBR Plus/魔改BBR/锐速(LotServer)四合一"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-03-25 19:28" pubdate>
+          2021年3月25日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">BBR Plus一键安装脚本 BBR/BBR Plus/魔改BBR/锐速(LotServer)四合一</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><img src="https://ssr.tools/wp-content/uploads/2019-05-13_173325.png" srcset="/live2364li.io/img/loading.gif" lazyload></p>
+<h3 id="关于BBR-Plus"><a href="#关于BBR-Plus" class="headerlink" title="关于BBR Plus"></a>关于BBR Plus</h3><p>BBR是Google推出的一套拥塞控制算法，集成在最新的Linux内核中。BBR应用在VPS服务器上，可以明显改善服务器的网络传输速度，减少丢包。</p>
+<p>而BBR Plus版本，以及魔改版BBR，则是网友在原版BBR的基础上，对一些参数进行改良后的修正版本，比原版BBR有着更为显著的加速效果。至于两个改良版本哪个加速效果更好，大家可以分别安装测试，选取最适合自己的版本。下文会提供各版本的一键安装脚本。</p>
+<p><strong>BBR Plus版本的优点：</strong></p>
+<p>修正了原版BBR的以下两项缺点，加速效果更好：</p>
+<ul>
+<li>在高丢包率环境下容易失速</li>
+<li>收敛慢</li>
+</ul>
+<p><strong>BBR Plus版本的不足：</strong></p>
+<ul>
+<li>脚本仍在完善阶段，在少部分系统中可能会安装失败。</li>
+<li>由于涉及到内核的修改，部分系统环境下，可能会导致重启无法进入系统。</li>
+</ul>
+<p>虽然加速效果更好，但是考虑到系统数据安全的话，还是建议大家以试用为主，不要在生产环境下尝试安装BBR Plus。</p>
+<h3 id="BBR-Plus一键安装脚本（四合一）"><a href="#BBR-Plus一键安装脚本（四合一）" class="headerlink" title="BBR Plus一键安装脚本（四合一）"></a>BBR Plus一键安装脚本（四合一）</h3><p>本文介绍的BBR Plus一键安装脚本，来自网友cx9208。除了BBR Plus外，还另外集成有原版BBR一键安装、魔改BBR一键安装、锐速（lotServer）一键安装，为四合一版本，四个版本可以切换使用。</p>
+<p><strong>适用架构：</strong>KVM &#x2F; Xen，不支持OpenVZ（OVZ）。</p>
+<p><strong>适用系统：</strong>CentOS 7、Debian 8、Debian 9、Ubuntu 16.04、Ubuntu 18.04。</p>
+<p><strong>BBR Plus一键安装脚本使用：</strong></p>
+<p>1.Putty连接VPS服务器，运行如下脚本：</p>
+<p>1</p>
+<p>wget –no-check-certificate -O tcp.sh <a target="_blank" rel="noopener" href="https://github.com/cx9208/Linux-NetSpeed/raw/master/tcp.sh">https://github.com/cx9208/Linux-NetSpeed/raw/master/tcp.sh</a> &amp;&amp; chmod +x tcp.sh &amp;&amp; .&#x2F;tcp.sh</p>
+<p>2.接下来会出现菜单选择界面，如下图所示，我们需要先安装对应的内核，之后再开启加速。</p>
+<p>以BBR Plus版本为例，输入对应的数字2回车，开始安装内核。</p>
+<p><img src="https://ssr.tools/wp-content/uploads/2019-05-13_152623.jpg" srcset="/live2364li.io/img/loading.gif" lazyload></p>
+<p>3.原有内核卸载完毕，新内核安装成功后，会出现下图提示重启，输入Y回车：</p>
+<p><img src="https://ssr.tools/wp-content/uploads/2019-05-13_152802.jpg" srcset="/live2364li.io/img/loading.gif" lazyload></p>
+<p>4.重启后再次用Putty连接VPS服务器，运行如下命令重新打开脚本：</p>
+<p>1</p>
+<p>.&#x2F;tcp.sh</p>
+<p>5.在脚本菜单选项中，输入数字7回车，开启BBR Plus加速：</p>
+<p><img src="https://ssr.tools/wp-content/uploads/2019-05-13_155031.jpg" srcset="/live2364li.io/img/loading.gif" lazyload></p>
+<p>6.出现下图提示，则表示BBR Plus加速成功开启：</p>
+<p><img src="https://ssr.tools/wp-content/uploads/2019-05-13_155205.jpg" srcset="/live2364li.io/img/loading.gif" lazyload></p>
+<p>7.如果需要安装或切换其它版本的加速，比如原版BBR、魔改BBR、锐速（LotServer）等，那么需要重新进行以上各流程，选择对应版本的内核，内核安装成功后重启系统开启加速。</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>1.本文介绍的四合一脚本中，4个加速工具都是TCP加速，可以为Shadowsocks&#x2F;SSR&#x2F;V2ray进行网络加速。</p>
+<p>2.四个工具都涉及到内核的更改，加速效果不叠加。安装其中一版内核后，会自动替换上一版内核。</p>
+<p>3.脚本菜单中的第9项，可以卸载全部加速效果。</p>
+<p>4.脚本菜单中的第10项，可以对系统中的一些网络参数进行额外优化。</p>
+<p>5.脚本运行过程中，如果出现如下提示，用方向键选No回车：</p>
+<p><img src="https://ssr.tools/wp-content/uploads/2018-11-29_185659.jpg" srcset="/live2364li.io/img/loading.gif" lazyload></p>
+<p>6.还是建议大家不要在生产环境中使用本脚本。<strong>AD：****【便宜啦】</strong><a target="_blank" rel="noopener" href="https://ssr.tools/208">搬瓦工2020最新优惠码点我查看,全网额度最大!</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/live2364li.io/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="category-chain-item">科学上网</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>BBR Plus一键安装脚本 BBR/BBR Plus/魔改BBR/锐速(LotServer)四合一</div>
+      <div>http://example.com/live2364li.io/bbr-plus一键安装脚本-bbr-bbr-plus-魔改bbr-锐速lotserver四合一.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年3月25日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/live2364li.io/%E3%80%90%E9%A6%96%E5%8F%91%E3%80%91ibm%E5%B7%B2%E7%BB%8F%E7%8E%A9%E5%9D%8F%EF%BC%81heroku%E5%B4%9B%E8%B5%B7%EF%BC%81%E5%85%8D%E8%B4%B9%E7%9A%84vps%E5%92%B1%E4%BB%AC%E5%BA%94%E8%AF%A5%E8%BF%99.html" title="【首发】IBM已经玩坏！Heroku崛起！免费的VPS咱们应该这么玩！Clash设置套了CDN的负载均衡 稳定、快速 颠覆你对免费VPN的看法">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【首发】IBM已经玩坏！Heroku崛起！免费的VPS咱们应该这么玩！Clash设置套了CDN的负载均衡 稳定、快速 颠覆你对免费VPN的看法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/live2364li.io/%E7%9B%AE%E5%BD%95.html" title="往数据库里面增加新用户">
+                        <span class="hidden-mobile">往数据库里面增加新用户</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/live2364li.io/js/events.js" ></script>
+<script  src="/live2364li.io/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/live2364li.io/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/live2364li.io/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/live2364li.io/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

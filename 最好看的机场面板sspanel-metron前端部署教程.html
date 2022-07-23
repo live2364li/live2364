@@ -1,0 +1,650 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/live2364li.io/img/fluid.png">
+  <link rel="icon" href="/live2364li.io/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="Linux,PHP">
+  
+    <meta name="description" content="教程正文:服务器推荐： 一、半月湾  外籍华人商家，小厂经营，线路与配置较为便宜，稳定运营2年有余 推荐机房：DC5 洛杉矶9929    搬瓦工同款配置，高防线路 半月湾AFF：https:&#x2F;&#x2F;hmbcloud.com&#x2F;aff.php?aff&#x3D;449 二、六六云 同华人商家，主营香港，美国，香港主营，全站原生IP，前端架设，后端部署都适用 推荐机房： 香港CMI  站内大量优惠码 六六云 AFF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最好看的机场面板SSPanel-Metron,前端部署教程">
+<meta property="og:url" content="http://example.com/live2364li.io/%E6%9C%80%E5%A5%BD%E7%9C%8B%E7%9A%84%E6%9C%BA%E5%9C%BA%E9%9D%A2%E6%9D%BFsspanel-metron%E5%89%8D%E7%AB%AF%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="教程正文:服务器推荐： 一、半月湾  外籍华人商家，小厂经营，线路与配置较为便宜，稳定运营2年有余 推荐机房：DC5 洛杉矶9929    搬瓦工同款配置，高防线路 半月湾AFF：https:&#x2F;&#x2F;hmbcloud.com&#x2F;aff.php?aff&#x3D;449 二、六六云 同华人商家，主营香港，美国，香港主营，全站原生IP，前端架设，后端部署都适用 推荐机房： 香港CMI  站内大量优惠码 六六云 AFF">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-18T10:16:10.000Z">
+<meta property="article:modified_time" content="2022-07-23T12:09:40.642Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux,PHP">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>最好看的机场面板SSPanel-Metron,前端部署教程 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/live2364li.io/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/live2364li.io/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/live2364li.io/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/live2364li.io/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/live2364li.io/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/live2364li.io/js/utils.js" ></script>
+  <script  src="/live2364li.io/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/live2364li.io/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/live2364li.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/live2364li.io/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="最好看的机场面板SSPanel-Metron,前端部署教程"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-04-18 18:16" pubdate>
+          2022年4月18日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          31 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">最好看的机场面板SSPanel-Metron,前端部署教程</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="教程正文"><a href="#教程正文" class="headerlink" title="教程正文:"></a>教程正文:</h2><p>服务器推荐：</p>
+<p>一、<a target="_blank" rel="noopener" href="https://hmbcloud.com/aff.php?aff=449">半月湾</a>  外籍华人商家，小厂经营，线路与配置较为便宜，稳定运营2年有余</p>
+<p>推荐机房：DC5 洛杉矶9929    搬瓦工同款配置，高防线路</p>
+<p>半月湾AFF：<a target="_blank" rel="noopener" href="https://hmbcloud.com/aff.php?aff=449">https://hmbcloud.com/aff.php?aff=449</a></p>
+<p>二、<a target="_blank" rel="noopener" href="https://666clouds.com/aff.php?aff=496">六六云</a> 同华人商家，主营香港，美国，香港主营，全站原生IP，前端架设，后端部署都适用</p>
+<p>推荐机房： 香港CMI  站内大量优惠码</p>
+<p>六六云 AFF <a target="_blank" rel="noopener" href="https://666clouds.com/aff.php?aff=496">https://666clouds.com/aff.php?aff=496</a></p>
+<p>准备工作</p>
+<h2 id="将机器的IP与域名进行绑定"><a href="#将机器的IP与域名进行绑定" class="headerlink" title="将机器的IP与域名进行绑定"></a>将机器的IP与域名进行绑定</h2><h1 id="1-配置aaPanel"><a href="#1-配置aaPanel" class="headerlink" title="1.配置aaPanel"></a>1.配置aaPanel</h1><p>你需要在 aaPanel 选择你的系统获得安装方式。这里以 CentOS 7+ 作为系统环境进行安装。</p>
+<p>⚠️请务必使用 CentOS 7+ 安装aaPanel，其他系统可能会有未知问题。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> 最新脚本可以在aaPanel官网获取<br>yum install -y wget &amp;&amp; wget -O install.sh http:<span class="hljs-regexp">//</span>www.aapanel.com<span class="hljs-regexp">/script/i</span>nstall_6.<span class="hljs-number">0</span>_en.sh &amp;&amp; bash install.sh<br></code></pre></td></tr></table></figure>
+
+<p>执行完毕后，会显示类似下面的宝塔面板的登录信息，请保存好此信息</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dts">Bt-Panel: http:<span class="hljs-comment">//xxx.xxx.xx.xx:8888/xxxxxxx</span><br><span class="hljs-symbol">username:</span> xxxxxxx<br><span class="hljs-symbol">password:</span> xxxxxxxx<br></code></pre></td></tr></table></figure>
+
+<p>安装完成后我们登陆 aaPanel 进行环境的安装。<br>选择使用LNMP的环境安装方式勾选如下信息</p>
+<p>☑️ Nginx 1.17<br>☑️ MySQL 5.6<br>☑️ PHP 7.2</p>
+<p>选择 Fast 快速编译后进行安装。<br>需要一段时间才能安装完成，请等待完成。</p>
+<h1 id="2-配置PHP"><a href="#2-配置PHP" class="headerlink" title="2.配置PHP"></a>2.配置PHP</h1><p>打开 aaPanel 面板 &gt; App Store &gt; 你安装的PHP &gt; Setting，在 Disabled functions一栏删除 <code>system</code>、<code>proc_open</code>、<code>proc_get_status</code>、<code>putenv</code>、<code>pcntl_signal</code>。</p>
+<h1 id="3-安装Metron主题"><a href="#3-安装Metron主题" class="headerlink" title="3.安装Metron主题"></a>3.安装Metron主题</h1><p>aaPanel 面板 &gt; Website &gt; Add site。输入你的域名和建一个数据库，点击提交</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">cd <span class="hljs-regexp">/www/</span>wwwroot/你的网站文件夹名<br></code></pre></td></tr></table></figure>
+
+<p>上传您的源码</p>
+<p>源码github 官网 ：<a target="_blank" rel="noopener" href="https://github.com/BobCoderS9/SSPanel-Metron">BobCoderS9&#x2F;SSPanel-Metron: SSPanel-Metron主题，目前由@Bobs9维护开发中。 (github.com)</a></p>
+<p>或官网下载链接<a target="_blank" rel="noopener" href="https://github.com/BobCoderS9/SSPanel-Metron/archive/refs/heads/master.zip">点击下载</a></p>
+<p>（因为一些原因，不再提供旧版源码，请前去GitHub自行下载最新版，需要添加QQ客服接口，下载<a target="_blank" rel="noopener" href="https://blog.lvuy.xyz/wp-content/uploads/2022/03/%E5%9C%A8%E7%BA%BFQQ%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.rar">menu.tpl</a> 自行替换</p>
+<p>使用composer安装依赖</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs stylus">wget https:<span class="hljs-comment">//getcomposer.org/installer -O composer.phar</span><br>php composer<span class="hljs-selector-class">.phar</span><br>php composer<span class="hljs-selector-class">.phar</span> install<br></code></pre></td></tr></table></figure>
+
+<p>用composer安装依赖时如果内存不够的话，可以使用 宝塔面版 &gt; 首页 &gt; Linux工具箱 &gt; Swap&#x2F;虚拟内存 增加虚拟内存</p>
+<h1 id="4-复制配置文件"><a href="#4-复制配置文件" class="headerlink" title="4.复制配置文件"></a>4.复制配置文件</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs stylus">cp config/<span class="hljs-selector-class">.config</span><span class="hljs-selector-class">.example</span><span class="hljs-selector-class">.php</span> config/<span class="hljs-selector-class">.config</span><span class="hljs-selector-class">.php</span><br>cp config/<span class="hljs-selector-class">.metron_setting</span><span class="hljs-selector-class">.example</span><span class="hljs-selector-class">.php</span> config/<span class="hljs-selector-class">.metron_setting</span><span class="hljs-selector-class">.php</span><br>cp config/appprofile<span class="hljs-selector-class">.example</span><span class="hljs-selector-class">.php</span> config/appprofile.php<br></code></pre></td></tr></table></figure>
+
+<h1 id="5-配置站点目录及伪静态"><a href="#5-配置站点目录及伪静态" class="headerlink" title="5.配置站点目录及伪静态"></a>5.配置站点目录及伪静态</h1><p>添加完成后编辑添加的站点 &gt; Site directory &gt; Running directory 选择 &#x2F;public 保存。<br>取消勾选 防跨站攻击。<br>添加完成后编辑添加的站点 &gt; URL rewrite 填入伪静态信息。</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-section">location</span> / &#123;<br><span class="hljs-attribute">try_files</span> <span class="hljs-variable">$uri</span> /index.php<span class="hljs-variable">$is_args</span><span class="hljs-variable">$args</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在SSH里的网站目录下执行，给网站文件755权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ../<br><span class="hljs-built_in">chmod</span> -R 755 你的文件夹名/<br><span class="hljs-built_in">chown</span> -R www:www 你的文件夹名/<br></code></pre></td></tr></table></figure>
+
+<h1 id="6-数据库操作"><a href="#6-数据库操作" class="headerlink" title="6.数据库操作"></a>6.数据库操作</h1><p>首次迁移: 导入网站目录下的<code>sql/metron.sql</code> 文件</p>
+<h1 id="7-修改根目录配置文件"><a href="#7-修改根目录配置文件" class="headerlink" title="7.修改根目录配置文件"></a>7.修改根目录配置文件</h1><p>编辑 config.php<br>将你的数据库名字，用户名和密码填入.config.php里，类似下面这样</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-variable">$_ENV</span>[<span class="hljs-string">&#x27;baseUrl&#x27;</span>] = <span class="hljs-string">&#x27;https://www.xxxx.com&#x27;</span>; <span class="hljs-regexp">//</span>站点地址<br><span class="hljs-variable">$_ENV</span>[<span class="hljs-string">&#x27;db_database&#x27;</span>] = <span class="hljs-string">&#x27;sspanel&#x27;</span>; <span class="hljs-regexp">//</span>数据库名<br><span class="hljs-variable">$_ENV</span>[<span class="hljs-string">&#x27;db_username&#x27;</span>] = <span class="hljs-string">&#x27;sspanel&#x27;</span>; <span class="hljs-regexp">//</span>数据库用户名<br><span class="hljs-variable">$_ENV</span>[<span class="hljs-string">&#x27;db_password&#x27;</span>] = <span class="hljs-string">&#x27;sspanel_password&#x27;</span>; <span class="hljs-regexp">//</span>用户名对应的密码<br></code></pre></td></tr></table></figure>
+
+<h2 id="创建管理员账号以及其它初始化工作"><a href="#创建管理员账号以及其它初始化工作" class="headerlink" title="创建管理员账号以及其它初始化工作"></a>创建管理员账号以及其它初始化工作</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">cd /www/wwwroot/域名/<br>php xcat <span class="hljs-keyword">User</span> <span class="hljs-title">createAdmin</span><br>php xcat <span class="hljs-keyword">User</span> <span class="hljs-title">resetTraffic</span><br>php xcat SyncRadius syncusers<br>php xcat Tool initQQWry<br>php xcat Tool initdownload<br></code></pre></td></tr></table></figure>
+
+<h1 id="8-使用宝塔面板的计划任务配置"><a href="#8-使用宝塔面板的计划任务配置" class="headerlink" title="8.使用宝塔面板的计划任务配置"></a>8.使用宝塔面板的计划任务配置</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><code class="hljs awk">每日任务 (必须)<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：每天 <span class="hljs-number">0</span> 小时 <span class="hljs-number">0</span> 分钟<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat Job DailyJob<br><br>检测任务 (必须)<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：N分钟 <span class="hljs-number">1</span> 分钟<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat Job CheckJob<br><br>用户账户相关任务 (必须)<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：每小时<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat Job UserJob<br><br>定时检测邮件队列 (必须)<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：N分钟 <span class="hljs-number">1</span> 分钟<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat Job SendMail<br><br>每日流量报告 (给开启每日邮件的用户发送邮件)<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：每天 <span class="hljs-number">0</span> 小时 <span class="hljs-number">0</span> 分钟<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat SendDiaryMail<br><br>审计封禁 (建议设置)<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：N分钟 <span class="hljs-number">1</span> 分钟<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat DetectBan<br><br>检测被墙 (可选)<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：N分钟 <span class="hljs-number">1</span> 分钟<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat DetectGFW<br><br>Radius (可选)<br>synclogin<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：N分钟 <span class="hljs-number">1</span> 分钟<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat SyncRadius synclogin<br><br>syncvpn<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：N分钟 <span class="hljs-number">1</span> 分钟<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat SyncRadius syncvpn<br><br>syncnas<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：N分钟 <span class="hljs-number">1</span> 分钟<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat SyncRadius syncnas<br>自动备份 (可选)<br><br>整体备份<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：自己设置, 可以设置每<span class="hljs-number">30</span>分钟左右<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat Backup full<br><br>只备份核心数据<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：自己设置, 可以设置每<span class="hljs-number">30</span>分钟左右<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat Backup simple<br>财务报表 (可选)<br><br>日报<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：每天 <span class="hljs-number">0</span> 小时 <span class="hljs-number">0</span> 分钟<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat FinanceMail day<br><br>周报<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：每星期 周日 <span class="hljs-number">0</span> 小时 <span class="hljs-number">0</span> 分钟<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat FinanceMail week<br><br>月报<br>任务类型：Shell 脚本<br>任务名称：自行填写<br>执行周期：每月 <span class="hljs-number">1</span> 日 <span class="hljs-number">0</span> 小时 <span class="hljs-number">0</span> 分钟<br>脚本内容：php <span class="hljs-regexp">/www/</span>wwwroot<span class="hljs-regexp">/你的网站目录/</span>xcat FinanceMail month<br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/live2364li.io/categories/uncategorized/" class="category-chain-item">uncategorized</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>最好看的机场面板SSPanel-Metron,前端部署教程</div>
+      <div>http://example.com/live2364li.io/最好看的机场面板sspanel-metron前端部署教程.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年4月18日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/live2364li.io/sspanle%E6%89%8B%E5%8A%A8%E5%AF%B9%E6%8E%A5v2ray%E3%80%81trojan%E3%80%81ss.html" title="sspanle手动对接v2ray、trojan、ss">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">sspanle手动对接v2ray、trojan、ss</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/live2364li.io/xrayr%E4%B8%BAgithub%E4%B8%8A%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%EF%BC%8C%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80.html" title="免费后端 XrayR部署V2ray,Trojan">
+                        <span class="hidden-mobile">免费后端 XrayR部署V2ray,Trojan</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/live2364li.io/js/events.js" ></script>
+<script  src="/live2364li.io/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/live2364li.io/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/live2364li.io/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/live2364li.io/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
